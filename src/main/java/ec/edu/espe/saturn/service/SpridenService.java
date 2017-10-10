@@ -69,7 +69,8 @@ public class SpridenService {
     public static Spriden FindByPIDM(int spridenPidm) {
         Spriden spriden = new Spriden();
         try {
-            String sql = "SELECT * FROM SPRIDEN WHERE SPRIDEN_PIDM = " + spridenPidm;
+            String sql = "SELECT SB.SPBPERS_SSN,SP.SPRIDEN_LAST_NAME,SP.SPRIDEN_FIRST_NAME FROM SATURN.SPBPERS SB, SATURN.SPRIDEN SP \n" +
+"WHERE SB.SPBPERS_PIDM=SP.SPRIDEN_PIDM AND SP.SPRIDEN_PIDM= " + spridenPidm;
             List<Object[]> list = HibernateUtil.
                     getSessionFactory().getCurrentSession().createQuery(sql).list();
             if (!list.isEmpty()) {

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 22, 2017 9:40:44 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Spriden" table="SPRIDEN" schema="SATURN" optimistic-lock="version">
+        <comment>Person Identification/Name Repeating Table</comment>
+        <composite-id name="id" class="ec.edu.espe.saturn.model.SpridenId">
+            <key-property name="spridenPidm" type="int">
+                <column name="SPRIDEN_PIDM" precision="8" scale="0" />
+            </key-property>
+            <key-property name="spridenId" type="string">
+                <column name="SPRIDEN_ID" length="36" />
+            </key-property>
+            <key-property name="spridenLastName" type="string">
+                <column name="SPRIDEN_LAST_NAME" length="240" />
+            </key-property>
+            <key-property name="spridenFirstName" type="string">
+                <column name="SPRIDEN_FIRST_NAME" length="240" />
+            </key-property>
+            <key-property name="spridenMi" type="string">
+                <column name="SPRIDEN_MI" length="240" />
+            </key-property>
+            <key-property name="spridenChangeInd" type="string">
+                <column name="SPRIDEN_CHANGE_IND" length="4" />
+            </key-property>
+            <key-property name="spridenEntityInd" type="string">
+                <column name="SPRIDEN_ENTITY_IND" length="4" />
+            </key-property>
+            <key-property name="spridenActivityDate" type="date">
+                <column name="SPRIDEN_ACTIVITY_DATE" length="7" />
+            </key-property>
+            <key-property name="spridenUser" type="string">
+                <column name="SPRIDEN_USER" length="120" />
+            </key-property>
+            <key-property name="spridenOrigin" type="string">
+                <column name="SPRIDEN_ORIGIN" length="120" />
+            </key-property>
+            <key-property name="spridenSearchLastName" type="string">
+                <column name="SPRIDEN_SEARCH_LAST_NAME" length="240" />
+            </key-property>
+            <key-property name="spridenSearchFirstName" type="string">
+                <column name="SPRIDEN_SEARCH_FIRST_NAME" length="240" />
+            </key-property>
+            <key-property name="spridenSearchMi" type="string">
+                <column name="SPRIDEN_SEARCH_MI" length="240" />
+            </key-property>
+            <key-property name="spridenSoundexLastName" type="string">
+                <column name="SPRIDEN_SOUNDEX_LAST_NAME" length="48" />
+            </key-property>
+            <key-property name="spridenSoundexFirstName" type="string">
+                <column name="SPRIDEN_SOUNDEX_FIRST_NAME" length="48" />
+            </key-property>
+            <key-property name="spridenNtypCode" type="string">
+                <column name="SPRIDEN_NTYP_CODE" length="16" />
+            </key-property>
+            <key-property name="spridenCreateUser" type="string">
+                <column name="SPRIDEN_CREATE_USER" length="120" />
+            </key-property>
+            <key-property name="spridenCreateDate" type="date">
+                <column name="SPRIDEN_CREATE_DATE" length="7" />
+            </key-property>
+            <key-property name="spridenDataOrigin" type="string">
+                <column name="SPRIDEN_DATA_ORIGIN" length="120" />
+            </key-property>
+            <key-property name="spridenCreateFdmnCode" type="string">
+                <column name="SPRIDEN_CREATE_FDMN_CODE" length="120" />
+            </key-property>
+            <key-property name="spridenSurnamePrefix" type="string">
+                <column name="SPRIDEN_SURNAME_PREFIX" length="240" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

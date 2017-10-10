@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 22, 2017 9:40:44 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Spbpers" table="SPBPERS" schema="SATURN" optimistic-lock="version">
+        <comment>Basic Person Base Table</comment>
+        <id name="spbpersPidm" type="int">
+            <column name="SPBPERS_PIDM" precision="8" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="spbpersSsn" type="string">
+            <column name="SPBPERS_SSN" length="60">
+                <comment>This field maintains person social security number.</comment>
+            </column>
+        </property>
+        <property name="spbpersBirthDate" type="date">
+            <column name="SPBPERS_BIRTH_DATE" length="7">
+                <comment>This field maintains person birth date.</comment>
+            </column>
+        </property>
+        <property name="spbpersLgcyCode" type="string">
+            <column name="SPBPERS_LGCY_CODE" length="4">
+                <comment>This field maintains legacy code associated with person.</comment>
+            </column>
+        </property>
+        <property name="spbpersEthnCode" type="string">
+            <column name="SPBPERS_ETHN_CODE" length="8">
+                <comment>ETHNIC CODE: This field identifies the ethnic code referenced on the General Person Form (SPAPERS) and by the Source/Base Institution Year Form (SOABGIY).
+                The code is mapped to other codes which are required for government reporting.</comment>
+            </column>
+        </property>
+        <property name="spbpersMrtlCode" type="string">
+            <column name="SPBPERS_MRTL_CODE" length="4">
+                <comment>This field maintains martial status associated with person.</comment>
+            </column>
+        </property>
+        <property name="spbpersRelgCode" type="string">
+            <column name="SPBPERS_RELG_CODE" length="8">
+                <comment>This field maintains religious affiliation associated with person.</comment>
+            </column>
+        </property>
+        <property name="spbpersSex" type="string">
+            <column name="SPBPERS_SEX" length="4">
+                <comment>This field maintains the sex of person. Valid values are: M - Male, F - Female, N - Unknown.</comment>
+            </column>
+        </property>
+        <property name="spbpersConfidInd" type="string">
+            <column name="SPBPERS_CONFID_IND" length="4">
+                <comment>This field identifies if a person record is confidential Valid value is: Y - confidential.</comment>
+            </column>
+        </property>
+        <property name="spbpersDeadInd" type="string">
+            <column name="SPBPERS_DEAD_IND" length="4">
+                <comment>This field indicates if a person is deceased. Valid value is: Y - deceased.</comment>
+            </column>
+        </property>
+        <property name="spbpersVetcFileNumber" type="string">
+            <column name="SPBPERS_VETC_FILE_NUMBER" length="40">
+                <comment>This field maintains veteran identification number associated with person.</comment>
+            </column>
+        </property>
+        <property name="spbpersLegalName" type="string">
+            <column name="SPBPERS_LEGAL_NAME" length="2000">
+                <comment>This field maintains legal name associated with person.</comment>
+            </column>
+        </property>
+        <property name="spbpersPrefFirstName" type="string">
+            <column name="SPBPERS_PREF_FIRST_NAME" length="240">
+                <comment>This field maintains the preferred first name associated with person.</comment>
+            </column>
+        </property>
+        <property name="spbpersNamePrefix" type="string">
+            <column name="SPBPERS_NAME_PREFIX" length="80">
+                <comment>This field maintains the prefix (Mr, Mrs, etc) used before person name.</comment>
+            </column>
+        </property>
+        <property name="spbpersNameSuffix" type="string">
+            <column name="SPBPERS_NAME_SUFFIX" length="80">
+                <comment>This field maintains the suffix (Jr, Sr, etc) used after person name.</comment>
+            </column>
+        </property>
+        <property name="spbpersActivityDate" type="date">
+            <column name="SPBPERS_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>This field defines the most current date a record is added or changed.</comment>
+            </column>
+        </property>
+        <property name="spbpersVeraInd" type="string">
+            <column name="SPBPERS_VERA_IND" length="4">
+                <comment>Veteran Category. None, (O)ther Protected Veteran Only, (V)ietnam Veteran only, (B)oth Vietnam and Other Eligible Veteran.</comment>
+            </column>
+        </property>
+        <property name="spbpersCitzInd" type="string">
+            <column name="SPBPERS_CITZ_IND" length="4">
+                <comment>Citizen Indicator.</comment>
+            </column>
+        </property>
+        <property name="spbpersDeadDate" type="date">
+            <column name="SPBPERS_DEAD_DATE" length="7">
+                <comment>Person Deceased Date.</comment>
+            </column>
+        </property>
+        <property name="spbpersPin" type="binary">
+            <column name="SPBPERS_PIN">
+                <comment>Person Identification Number. This column is obsolete, now gobtpac_pin</comment>
+            </column>
+        </property>
+        <property name="spbpersCitzCode" type="string">
+            <column name="SPBPERS_CITZ_CODE" length="8">
+                <comment>Person Citizen Type</comment>
+            </column>
+        </property>
+        <property name="spbpersHairCode" type="string">
+            <column name="SPBPERS_HAIR_CODE" length="8">
+                <comment>The hair color of the person being defined.</comment>
+            </column>
+        </property>
+        <property name="spbpersEyesCode" type="string">
+            <column name="SPBPERS_EYES_CODE" length="8">
+                <comment>The eye color of the person being defined.</comment>
+            </column>
+        </property>
+        <property name="spbpersCityBirth" type="string">
+            <column name="SPBPERS_CITY_BIRTH" length="200">
+                <comment>The city where the person was born.</comment>
+            </column>
+        </property>
+        <property name="spbpersStatCodeBirth" type="string">
+            <column name="SPBPERS_STAT_CODE_BIRTH" length="12">
+                <comment>The state in which the person was born.</comment>
+            </column>
+        </property>
+        <property name="spbpersDriverLicense" type="string">
+            <column name="SPBPERS_DRIVER_LICENSE" length="80">
+                <comment>The Driver License Number as it appears on the actual license.</comment>
+            </column>
+        </property>
+        <property name="spbpersStatCodeDriver" type="string">
+            <column name="SPBPERS_STAT_CODE_DRIVER" length="12">
+                <comment>The State code describing the state the driver license was issued.</comment>
+            </column>
+        </property>
+        <property name="spbpersNatnCodeDriver" type="string">
+            <column name="SPBPERS_NATN_CODE_DRIVER" length="20">
+                <comment>The Nation code associated with the Nation the Driver license was issued.</comment>
+            </column>
+        </property>
+        <property name="spbpersUomsCodeHeight" type="string">
+            <column name="SPBPERS_UOMS_CODE_HEIGHT" length="16">
+                <comment>The Unit of Measure describing the height value.</comment>
+            </column>
+        </property>
+        <property name="spbpersHeight" type="java.lang.Byte">
+            <column name="SPBPERS_HEIGHT" precision="2" scale="0">
+                <comment>The number value describing the height of the person.</comment>
+            </column>
+        </property>
+        <property name="spbpersUomsCodeWeight" type="string">
+            <column name="SPBPERS_UOMS_CODE_WEIGHT" length="16">
+                <comment>The Unit of Measure describing the weight value.</comment>
+            </column>
+        </property>
+        <property name="spbpersWeight" type="java.lang.Short">
+            <column name="SPBPERS_WEIGHT" precision="4" scale="0">
+                <comment>The number value describing the weight of the person.</comment>
+            </column>
+        </property>
+        <property name="spbpersSdvetInd" type="string">
+            <column name="SPBPERS_SDVET_IND" length="4">
+                <comment>Indicator to identify an individual as a special disabled veteran.</comment>
+            </column>
+        </property>
+        <property name="spbpersLicenseIssuedDate" type="date">
+            <column name="SPBPERS_LICENSE_ISSUED_DATE" length="7">
+                <comment>The issue date of the individuals driver license.</comment>
+            </column>
+        </property>
+        <property name="spbpersLicenseExpiresDate" type="date">
+            <column name="SPBPERS_LICENSE_EXPIRES_DATE" length="7">
+                <comment>The expiration date of the individuals driver license.</comment>
+            </column>
+        </property>
+        <property name="spbpersIncarInd" type="string">
+            <column name="SPBPERS_INCAR_IND" length="4">
+                <comment>The indication of the individuals incarceration.</comment>
+            </column>
+        </property>
+        <property name="spbpersWebid" type="binary">
+            <column name="SPBPERS_WEBID">
+                <comment>Web identification session token is now obsolete.</comment>
+            </column>
+        </property>
+        <property name="spbpersWebLastAccess" type="binary">
+            <column name="SPBPERS_WEB_LAST_ACCESS">
+                <comment>Web last access time stamp is now obsolete.</comment>
+            </column>
+        </property>
+        <property name="spbpersPinDisabledInd" type="binary">
+            <column name="SPBPERS_PIN_DISABLED_IND">
+                <comment>Indicates whether or not the PIN number is disabled. This column is obsolete, now gobtpac_pin_disabled_ind</comment>
+            </column>
+        </property>
+        <property name="spbpersItin" type="java.lang.Integer">
+            <column name="SPBPERS_ITIN" precision="9" scale="0">
+                <comment>The international tax id number.</comment>
+            </column>
+        </property>
+        <property name="spbpersActiveDutySeprDate" type="date">
+            <column name="SPBPERS_ACTIVE_DUTY_SEPR_DATE" length="7">
+                <comment>Active Duty Separation Date: The Date that the person was separated from active duty.</comment>
+            </column>
+        </property>
+        <property name="spbpersDataOrigin" type="string">
+            <column name="SPBPERS_DATA_ORIGIN" length="120">
+                <comment>DATA ORIGIN: Source system that created or updated the row</comment>
+            </column>
+        </property>
+        <property name="spbpersUserId" type="string">
+            <column name="SPBPERS_USER_ID" length="120">
+                <comment>USER ID: User who inserted or last update the data</comment>
+            </column>
+        </property>
+        <property name="spbpersEthnCde" type="string">
+            <column name="SPBPERS_ETHN_CDE" length="4">
+                <comment>ETHNIC CODE: This field identifies the ethnic code defined by the U.S. government. The valid values are 1 - Not Hispanic or Latino, 2 - Hispanic or
+                Latino, or null.</comment>
+            </column>
+        </property>
+        <property name="spbpersConfirmedReCde" type="string">
+            <column name="SPBPERS_CONFIRMED_RE_CDE" length="4">
+                <comment>RACE AND ETHNICITY CONFIRMED: This field identifies the race and ethnicity has been confirmed. Valid values are (Y)es, (N)o and Null.</comment>
+            </column>
+        </property>
+        <property name="spbpersConfirmedReDate" type="date">
+            <column name="SPBPERS_CONFIRMED_RE_DATE" length="7">
+                <comment>RACE AND ETHNICITY CONFIRMED DATE: This field identifies when the race and ethnicity has been confirmed.</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

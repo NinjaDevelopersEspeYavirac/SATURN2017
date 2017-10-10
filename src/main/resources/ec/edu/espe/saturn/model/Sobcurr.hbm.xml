@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 22, 2017 9:40:44 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Sobcurr" table="SOBCURR" schema="SATURN" optimistic-lock="version">
+        <comment>Curriculum Base Rules.</comment>
+        <id name="sobcurrCurrRule" type="int">
+            <column name="SOBCURR_CURR_RULE" precision="8" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="smrprle" class="ec.edu.espe.saturn.model.Smrprle" fetch="select">
+            <column name="SOBCURR_PROGRAM" length="48">
+                <comment>Base Curriculum Program Code</comment>
+            </column>
+        </many-to-one>
+        <property name="sobcurrTermCodeInit" type="string">
+            <column name="SOBCURR_TERM_CODE_INIT" length="24" not-null="true">
+                <comment>Initial Term Associated with the Base Curriculum Rule</comment>
+            </column>
+        </property>
+        <property name="sobcurrLevlCode" type="string">
+            <column name="SOBCURR_LEVL_CODE" length="8" not-null="true">
+                <comment>Base Curriculum Level Code</comment>
+            </column>
+        </property>
+        <property name="sobcurrActivityDate" type="date">
+            <column name="SOBCURR_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>Date of Last Base Curriculum Rule Update</comment>
+            </column>
+        </property>
+        <property name="sobcurrPrimRollInd" type="string">
+            <column name="SOBCURR_PRIM_ROLL_IND" length="4" not-null="true">
+                <comment>Indicator Controlling Primary Curriculum Roll to History</comment>
+            </column>
+        </property>
+        <property name="sobcurrSecdRollInd" type="string">
+            <column name="SOBCURR_SECD_ROLL_IND" length="4" not-null="true">
+                <comment>Indicator Controlling secondary Curriculum Roll to History</comment>
+            </column>
+        </property>
+        <property name="sobcurrLockInd" type="string">
+            <column name="SOBCURR_LOCK_IND" length="4" not-null="true">
+                <comment>Indicator Controlling updates to Base Curriculum</comment>
+            </column>
+        </property>
+        <property name="sobcurrCampCode" type="string">
+            <column name="SOBCURR_CAMP_CODE" length="12">
+                <comment>Base Curriculum Campus Code</comment>
+            </column>
+        </property>
+        <property name="sobcurrCollCode" type="string">
+            <column name="SOBCURR_COLL_CODE" length="8">
+                <comment>Base Curriculum College Code</comment>
+            </column>
+        </property>
+        <property name="sobcurrDegcCode" type="string">
+            <column name="SOBCURR_DEGC_CODE" length="24">
+                <comment>Base Curriculum Degree Code</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 22, 2017 9:40:44 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Smrprle" table="SMRPRLE" schema="SATURN" optimistic-lock="version">
+        <comment>Program Rules Table</comment>
+        <id name="smrprleProgram" type="string">
+            <column name="SMRPRLE_PROGRAM" length="48" />
+            <generator class="assigned" />
+        </id>
+        <property name="smrprleProgramDesc" type="string">
+            <column name="SMRPRLE_PROGRAM_DESC" length="120" not-null="true">
+                <comment>Program description which further describes program code.</comment>
+            </column>
+        </property>
+        <property name="smrprleActivityDate" type="date">
+            <column name="SMRPRLE_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>Date of most recent activity.</comment>
+            </column>
+        </property>
+        <property name="smrprleLevlCode" type="string">
+            <column name="SMRPRLE_LEVL_CODE" length="8" not-null="true">
+                <comment>Course Level Code.</comment>
+            </column>
+        </property>
+        <property name="smrprleCurrInd" type="string">
+            <column name="SMRPRLE_CURR_IND" length="4" not-null="true">
+                <comment>Curriculum indicator.</comment>
+            </column>
+        </property>
+        <property name="smrprleLockedInd" type="string">
+            <column name="SMRPRLE_LOCKED_IND" length="4" not-null="true">
+                <comment>Program locked indicator.</comment>
+            </column>
+        </property>
+        <property name="smrprleCurrRuleInd" type="string">
+            <column name="SMRPRLE_CURR_RULE_IND" length="4" not-null="true">
+                <comment>Curriculum rules attachment. Value will be (Y) if program is on SOACURR, and (N) if program is not on SOACURR.</comment>
+            </column>
+        </property>
+        <property name="smrprleCampCode" type="string">
+            <column name="SMRPRLE_CAMP_CODE" length="12">
+                <comment>Campus code.</comment>
+            </column>
+        </property>
+        <property name="smrprleCollCode" type="string">
+            <column name="SMRPRLE_COLL_CODE" length="8">
+                <comment>Required if program is curriculum dependent.</comment>
+            </column>
+        </property>
+        <property name="smrprleDegcCode" type="string">
+            <column name="SMRPRLE_DEGC_CODE" length="24">
+                <comment>Required if program is curriculum dependent.</comment>
+            </column>
+        </property>
+        <property name="smrprlePidm" type="java.lang.Integer">
+            <column name="SMRPRLE_PIDM" precision="8" scale="0">
+                <comment>Unique student identifier which may be present if this program has been designated as unique to a particular student</comment>
+            </column>
+        </property>
+        <property name="smrprleLevlCodeStu" type="string">
+            <column name="SMRPRLE_LEVL_CODE_STU" length="8" not-null="true">
+                <comment>Student Level Code.</comment>
+            </column>
+        </property>
+        <property name="smrprleWebInd" type="string">
+            <column name="SMRPRLE_WEB_IND" length="4" not-null="true">
+                <comment>SMRPRLE_WEB_IND : This field indicates whether the Program code and/or description can be displayed on the web for what-if or degree shopping
+                fucntionality.</comment>
+            </column>
+        </property>
+        <set name="sobcurrs" table="SOBCURR" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SOBCURR_PROGRAM" length="48">
+                    <comment>Base Curriculum Program Code</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Sobcurr" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -19,21 +19,21 @@ public class SpbpersService {
      * @return
      */
     
-        public static Spbpers FindByPIDM(int spbpersPidm) {
-            Spbpers findmSpbpers = null;
+       public static Spbpers FindByPIDM(int spbpersPidm) {
+        Spbpers findmSpbpers = null;
         try {
             DAOServices ds = new DAOServices(HibernateUtil.
-                     getSessionFactory().getCurrentSession());
+                    getSessionFactory().getCurrentSession());
             QueryParameter query_1 = new QueryParameter(QueryParameter.$TYPE_WHERE);
             query_1.setColumnName("spbpersPidm");
             query_1.setWhereClause("=");
             query_1.setValue(spbpersPidm);
             List parameList = new ArrayList();
             parameList.add(query_1);
-            List < Spbpers > listClients = ds.customQuery(parameList, Spbpers.class);
-                        if (!listClients.isEmpty()) {
+            List< Spbpers> listClients = ds.customQuery(parameList, Spbpers.class);
+            if (!listClients.isEmpty()) {
                 findmSpbpers = listClients.get(0);
-                            }
+            }
         } catch (HibernateException ex) {
             log.level.info("FindByPIDM : " + ex.getMessage());
         }

@@ -21,12 +21,11 @@ public class SpridenService {
         try {
             String sql = "SELECT * FROM SPRIDEN WHERE SPRIDEN_ID = '" + spridenId + "'";
             List<Object[]> list = HibernateUtil.
-                    getSessionFactory().getCurrentSession().createQuery(sql).list();
+                    getSessionFactory().getCurrentSession().createSQLQuery(sql).list();
             if (!list.isEmpty()) {
                 for (Object[] obj : list) {
                     BigDecimal pidm = null;
                     pidm = (BigDecimal) obj[0];
-
                     spriden.getId().setSpridenPidm((int) pidm.intValue());
                     spriden.getId().setSpridenId((String) obj[1]);
                     spriden.getId().setSpridenLastName((String) obj[2]);
@@ -72,7 +71,7 @@ public class SpridenService {
             String sql = "SELECT SB.SPBPERS_SSN,SP.SPRIDEN_LAST_NAME,SP.SPRIDEN_FIRST_NAME FROM SATURN.SPBPERS SB, SATURN.SPRIDEN SP \n" +
 "WHERE SB.SPBPERS_PIDM=SP.SPRIDEN_PIDM AND SP.SPRIDEN_PIDM= " + spridenPidm;
             List<Object[]> list = HibernateUtil.
-                    getSessionFactory().getCurrentSession().createQuery(sql).list();
+                    getSessionFactory().getCurrentSession().createSQLQuery(sql).list();
             if (!list.isEmpty()) {
                 for (Object[] obj : list) {
                     BigDecimal pidm = null;
@@ -109,5 +108,7 @@ public class SpridenService {
 
         return spriden;
     }
+
+    
 
 }

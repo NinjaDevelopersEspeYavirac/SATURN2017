@@ -9,9 +9,9 @@
         <property name="hibernate.connection.password">usrwebser</property>
         <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
         <property name="hibernate.current_session_context_class">thread</property>
-        <mapping resource="ec/edu/espe/model/Spriden.hbm.xml"/>
-        <mapping resource="ec/edu/espe/model/Spbpers.hbm.xml"/>
-        <mapping resource="ec/edu/espe/model/Sobcurr.hbm.xml"/>
-        <mapping resource="ec/edu/espe/model/Smrprle.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Spriden.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Spbpers.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Sobcurr.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Smrprle.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

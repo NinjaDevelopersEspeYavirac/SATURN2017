@@ -5,10 +5,22 @@
  */
 package ec.edu.espe.saturn.test;
 
+import ec.edu.espe.saturn.controller.SpbpersController;
+import ec.edu.espe.saturn.model.Spbpers;
+
 /**
  *
  * @author luis
  */
 public class test {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Spbpers obj = SpbpersController.FindByCedula("1804110474");
+        System.out.println(">> "+obj.toString());
+    }
     
 }

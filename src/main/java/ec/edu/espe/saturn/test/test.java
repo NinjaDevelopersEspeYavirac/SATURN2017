@@ -46,9 +46,10 @@ public class test {
         System.out.println(">> " + obj.toString());*/
 
         // ya vale la busqueda de la direccion hay le prueba con este codigo.
-//        List<Spraddr> objg2 = SpraddrController.FindByPIDM(1134);
-//           System.out.println(">> " + objg2.toString());
-
+//        List<Spraddr> objg2 = SpraddrController.FindByPIDM(1116);
+//        for (Spraddr direccion : objg2) {
+//           System.out.println(">> " + direccion.toString());
+//        }
         
     }
 

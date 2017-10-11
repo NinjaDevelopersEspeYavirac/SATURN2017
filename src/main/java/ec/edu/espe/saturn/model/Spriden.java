@@ -27,8 +27,10 @@ public class Spriden  implements java.io.Serializable {
         this.id = id;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Spriden{" + "id=" + id.toString() + '}';
+    }
 
 }
 

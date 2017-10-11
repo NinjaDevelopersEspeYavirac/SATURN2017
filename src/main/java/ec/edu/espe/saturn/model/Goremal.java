@@ -100,8 +100,10 @@ public class Goremal  implements java.io.Serializable {
         this.goremalDataOrigin = goremalDataOrigin;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Goremal{" + "id=" + id.toString() + ", goremalStatusInd=" + goremalStatusInd + ", goremalPreferredInd=" + goremalPreferredInd + ", goremalActivityDate=" + goremalActivityDate + ", goremalUserId=" + goremalUserId + ", goremalComment=" + goremalComment + ", goremalDispWebInd=" + goremalDispWebInd + ", goremalDataOrigin=" + goremalDataOrigin + '}';
+    }
 
 }
 

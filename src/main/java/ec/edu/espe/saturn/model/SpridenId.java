@@ -207,8 +207,10 @@ public class SpridenId  implements java.io.Serializable {
         this.spridenSurnamePrefix = spridenSurnamePrefix;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "SpridenId{" + "spridenPidm=" + spridenPidm + ", spridenId=" + spridenId + ", spridenLastName=" + spridenLastName + ", spridenFirstName=" + spridenFirstName + ", spridenMi=" + spridenMi + ", spridenChangeInd=" + spridenChangeInd + ", spridenEntityInd=" + spridenEntityInd + ", spridenActivityDate=" + spridenActivityDate + ", spridenUser=" + spridenUser + ", spridenOrigin=" + spridenOrigin + ", spridenSearchLastName=" + spridenSearchLastName + ", spridenSearchFirstName=" + spridenSearchFirstName + ", spridenSearchMi=" + spridenSearchMi + ", spridenSoundexLastName=" + spridenSoundexLastName + ", spridenSoundexFirstName=" + spridenSoundexFirstName + ", spridenNtypCode=" + spridenNtypCode + ", spridenCreateUser=" + spridenCreateUser + ", spridenCreateDate=" + spridenCreateDate + ", spridenDataOrigin=" + spridenDataOrigin + ", spridenCreateFdmnCode=" + spridenCreateFdmnCode + ", spridenSurnamePrefix=" + spridenSurnamePrefix + '}';
+    }
 
 }
 

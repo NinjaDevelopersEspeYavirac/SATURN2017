@@ -159,8 +159,10 @@ public class Sprtele  implements java.io.Serializable {
         this.sprteleCtryCodePhone = sprteleCtryCodePhone;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Sprtele{" + "id=" + id.toString() + ", sprteleActivityDate=" + sprteleActivityDate + ", sprtelePhoneArea=" + sprtelePhoneArea + ", sprtelePhoneNumber=" + sprtelePhoneNumber + ", sprtelePhoneExt=" + sprtelePhoneExt + ", sprteleStatusInd=" + sprteleStatusInd + ", sprteleAtypCode=" + sprteleAtypCode + ", sprteleAddrSeqno=" + sprteleAddrSeqno + ", sprtelePrimaryInd=" + sprtelePrimaryInd + ", sprteleUnlistInd=" + sprteleUnlistInd + ", sprteleComment=" + sprteleComment + ", sprteleIntlAccess=" + sprteleIntlAccess + ", sprteleDataOrigin=" + sprteleDataOrigin + ", sprteleUserId=" + sprteleUserId + ", sprteleCtryCodePhone=" + sprteleCtryCodePhone + '}';
+    }
 
 }
 

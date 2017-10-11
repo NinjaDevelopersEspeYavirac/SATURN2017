@@ -437,8 +437,10 @@ public class Spbpers  implements java.io.Serializable {
         this.spbpersConfirmedReDate = spbpersConfirmedReDate;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Spbpers{" + "spbpersPidm=" + spbpersPidm + ", spbpersSsn=" + spbpersSsn + ", spbpersBirthDate=" + spbpersBirthDate + ", spbpersLgcyCode=" + spbpersLgcyCode + ", spbpersEthnCode=" + spbpersEthnCode + ", spbpersMrtlCode=" + spbpersMrtlCode + ", spbpersRelgCode=" + spbpersRelgCode + ", spbpersSex=" + spbpersSex + ", spbpersConfidInd=" + spbpersConfidInd + ", spbpersDeadInd=" + spbpersDeadInd + ", spbpersVetcFileNumber=" + spbpersVetcFileNumber + ", spbpersLegalName=" + spbpersLegalName + ", spbpersPrefFirstName=" + spbpersPrefFirstName + ", spbpersNamePrefix=" + spbpersNamePrefix + ", spbpersNameSuffix=" + spbpersNameSuffix + ", spbpersActivityDate=" + spbpersActivityDate + ", spbpersVeraInd=" + spbpersVeraInd + ", spbpersCitzInd=" + spbpersCitzInd + ", spbpersDeadDate=" + spbpersDeadDate + ", spbpersPin=" + spbpersPin + ", spbpersCitzCode=" + spbpersCitzCode + ", spbpersHairCode=" + spbpersHairCode + ", spbpersEyesCode=" + spbpersEyesCode + ", spbpersCityBirth=" + spbpersCityBirth + ", spbpersStatCodeBirth=" + spbpersStatCodeBirth + ", spbpersDriverLicense=" + spbpersDriverLicense + ", spbpersStatCodeDriver=" + spbpersStatCodeDriver + ", spbpersNatnCodeDriver=" + spbpersNatnCodeDriver + ", spbpersUomsCodeHeight=" + spbpersUomsCodeHeight + ", spbpersHeight=" + spbpersHeight + ", spbpersUomsCodeWeight=" + spbpersUomsCodeWeight + ", spbpersWeight=" + spbpersWeight + ", spbpersSdvetInd=" + spbpersSdvetInd + ", spbpersLicenseIssuedDate=" + spbpersLicenseIssuedDate + ", spbpersLicenseExpiresDate=" + spbpersLicenseExpiresDate + ", spbpersIncarInd=" + spbpersIncarInd + ", spbpersWebid=" + spbpersWebid + ", spbpersWebLastAccess=" + spbpersWebLastAccess + ", spbpersPinDisabledInd=" + spbpersPinDisabledInd + ", spbpersItin=" + spbpersItin + ", spbpersActiveDutySeprDate=" + spbpersActiveDutySeprDate + ", spbpersDataOrigin=" + spbpersDataOrigin + ", spbpersUserId=" + spbpersUserId + ", spbpersEthnCde=" + spbpersEthnCde + ", spbpersConfirmedReCde=" + spbpersConfirmedReCde + ", spbpersConfirmedReDate=" + spbpersConfirmedReDate + '}';
+    }
 
 }
 

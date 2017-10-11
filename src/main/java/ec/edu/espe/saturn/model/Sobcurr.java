@@ -128,8 +128,10 @@ public class Sobcurr  implements java.io.Serializable {
         this.sobcurrDegcCode = sobcurrDegcCode;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Sobcurr{" + "sobcurrCurrRule=" + sobcurrCurrRule + ", smrprle=" + smrprle + ", sobcurrTermCodeInit=" + sobcurrTermCodeInit + ", sobcurrLevlCode=" + sobcurrLevlCode + ", sobcurrActivityDate=" + sobcurrActivityDate + ", sobcurrPrimRollInd=" + sobcurrPrimRollInd + ", sobcurrSecdRollInd=" + sobcurrSecdRollInd + ", sobcurrLockInd=" + sobcurrLockInd + ", sobcurrCampCode=" + sobcurrCampCode + ", sobcurrCollCode=" + sobcurrCollCode + ", sobcurrDegcCode=" + sobcurrDegcCode + '}';
+    }
 
 }
 

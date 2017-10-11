@@ -44,8 +44,10 @@ public class SprteleId  implements java.io.Serializable {
         this.sprteleSeqno = sprteleSeqno;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "SprteleId{" + "sprtelePidm=" + sprtelePidm + ", sprteleTeleCode=" + sprteleTeleCode + ", sprteleSeqno=" + sprteleSeqno + '}';
+    }
 
 }
 

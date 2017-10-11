@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/10/2017 8:52:36 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Goremal" table="GOREMAL" schema="GENERAL">
+        <comment>Person E-mail repeating table.</comment>
+        <composite-id name="id" class="ec.edu.espe.saturn.model.GoremalId">
+            <key-property name="goremalPidm" type="int">
+                <column name="GOREMAL_PIDM" precision="8" scale="0" />
+            </key-property>
+            <key-property name="goremalEmalCode" type="string">
+                <column name="GOREMAL_EMAL_CODE" length="16" />
+            </key-property>
+            <key-property name="goremalEmailAddress" type="string">
+                <column name="GOREMAL_EMAIL_ADDRESS" length="512" />
+            </key-property>
+        </composite-id>
+        <property name="goremalStatusInd" type="string">
+            <column name="GOREMAL_STATUS_IND" length="4" not-null="true">
+                <comment>The status of the e-mail address: (A)ctive, (I)nactive</comment>
+            </column>
+        </property>
+        <property name="goremalPreferredInd" type="string">
+            <column name="GOREMAL_PREFERRED_IND" length="4" not-null="true">
+                <comment>This column indicates if the e-mail address is the preferred contact address.</comment>
+            </column>
+        </property>
+        <property name="goremalActivityDate" type="date">
+            <column name="GOREMAL_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>The date on which the row was added or modified.</comment>
+            </column>
+        </property>
+        <property name="goremalUserId" type="string">
+            <column name="GOREMAL_USER_ID" length="120" not-null="true">
+                <comment>The user id when the row was added or modified.</comment>
+            </column>
+        </property>
+        <property name="goremalComment" type="string">
+            <column name="GOREMAL_COMMENT" length="240">
+                <comment>This is a free format comment regarding the e-mail information.</comment>
+            </column>
+        </property>
+        <property name="goremalDispWebInd" type="string">
+            <column name="GOREMAL_DISP_WEB_IND" length="4" not-null="true">
+                <comment>Indicate whether a e-mail address should appear on Web.</comment>
+            </column>
+        </property>
+        <property name="goremalDataOrigin" type="string">
+            <column name="GOREMAL_DATA_ORIGIN" length="120">
+                <comment>DATA ORIGIN: Source system that created or updated the row</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

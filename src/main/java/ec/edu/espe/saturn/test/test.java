@@ -5,10 +5,11 @@
  */
 package ec.edu.espe.saturn.test;
 
-import ec.edu.espe.saturn.controller.SpbpersController;
-import ec.edu.espe.saturn.controller.SpridenController;
-import ec.edu.espe.saturn.model.Spbpers;
-import ec.edu.espe.saturn.model.Spriden;
+import ec.edu.espe.saturn.controller.GoremalController;
+import ec.edu.espe.saturn.controller.SprteleController;
+import ec.edu.espe.saturn.model.Goremal;
+import ec.edu.espe.saturn.model.Sprtele;
+import java.util.List;
 
 /**
  *
@@ -21,10 +22,23 @@ public class test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        List<Sprtele> objg = SprteleController.FindByPIDM(664);
+        for (Sprtele telefono : objg) {
+
+            System.out.println(">> " + telefono.toString());
+
+        }
+        /*List<Goremal> objg = GoremalController.FindByPIDM(357353);
+        for (Goremal gmail : objg) {
+
+            System.out.println(">> " + gmail.toString());
+
+        }
+        
         Spriden objs = SpridenController.FindByPIDM(775);
         System.out.println(">> " + objs.toString());
         Spbpers obj = SpbpersController.FindByCedula("1804110474");
-        System.out.println(">> " + obj.toString());
+        System.out.println(">> " + obj.toString());*/
     }
 
 }

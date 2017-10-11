@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated Sep 22, 2017 9:40:41 AM by Hibernate Tools 4.3.1
+// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
 
 
 
@@ -25,11 +25,6 @@ public class Spriden  implements java.io.Serializable {
     
     public void setId(SpridenId id) {
         this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "Spriden{" + "id=" + id + '}';
     }
 
 

@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated 11/10/2017 8:52:27 by Hibernate Tools 4.3.1
+// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -20,6 +20,7 @@ public class Goremal  implements java.io.Serializable {
      private String goremalDataOrigin;
 
     public Goremal() {
+        this.id = new GoremalId();
     }
 
 	

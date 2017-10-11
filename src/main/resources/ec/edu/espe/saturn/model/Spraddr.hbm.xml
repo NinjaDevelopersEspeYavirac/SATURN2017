@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 11, 2017 9:11:37 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Spraddr" table="SPRADDR" schema="SATURN">
+        <comment>Address Repeating Table</comment>
+        <composite-id name="id" class="ec.edu.espe.saturn.model.SpraddrId">
+            <key-property name="spraddrPidm" type="int">
+                <column name="SPRADDR_PIDM" precision="8" scale="0" />
+            </key-property>
+            <key-property name="spraddrAtypCode" type="string">
+                <column name="SPRADDR_ATYP_CODE" length="8" />
+            </key-property>
+            <key-property name="spraddrSeqno" type="byte">
+                <column name="SPRADDR_SEQNO" precision="2" scale="0" />
+            </key-property>
+            <key-property name="spraddrFromDate" type="date">
+                <column name="SPRADDR_FROM_DATE" length="7" />
+            </key-property>
+            <key-property name="spraddrToDate" type="date">
+                <column name="SPRADDR_TO_DATE" length="7" />
+            </key-property>
+            <key-property name="spraddrStreetLine1" type="string">
+                <column name="SPRADDR_STREET_LINE1" length="300" />
+            </key-property>
+            <key-property name="spraddrStreetLine2" type="string">
+                <column name="SPRADDR_STREET_LINE2" length="300" />
+            </key-property>
+            <key-property name="spraddrStreetLine3" type="string">
+                <column name="SPRADDR_STREET_LINE3" length="300" />
+            </key-property>
+            <key-property name="spraddrCity" type="string">
+                <column name="SPRADDR_CITY" length="200" />
+            </key-property>
+            <key-property name="spraddrStatCode" type="string">
+                <column name="SPRADDR_STAT_CODE" length="12" />
+            </key-property>
+            <key-property name="spraddrZip" type="string">
+                <column name="SPRADDR_ZIP" length="120" />
+            </key-property>
+            <key-property name="spraddrCntyCode" type="string">
+                <column name="SPRADDR_CNTY_CODE" length="20" />
+            </key-property>
+            <key-property name="spraddrNatnCode" type="string">
+                <column name="SPRADDR_NATN_CODE" length="20" />
+            </key-property>
+            <key-property name="spraddrPhoneArea" type="string">
+                <column name="SPRADDR_PHONE_AREA" length="24" />
+            </key-property>
+            <key-property name="spraddrPhoneNumber" type="string">
+                <column name="SPRADDR_PHONE_NUMBER" length="48" />
+            </key-property>
+            <key-property name="spraddrPhoneExt" type="string">
+                <column name="SPRADDR_PHONE_EXT" length="40" />
+            </key-property>
+            <key-property name="spraddrStatusInd" type="string">
+                <column name="SPRADDR_STATUS_IND" length="4" />
+            </key-property>
+            <key-property name="spraddrActivityDate" type="date">
+                <column name="SPRADDR_ACTIVITY_DATE" length="7" />
+            </key-property>
+            <key-property name="spraddrUser" type="string">
+                <column name="SPRADDR_USER" length="120" />
+            </key-property>
+            <key-property name="spraddrAsrcCode" type="string">
+                <column name="SPRADDR_ASRC_CODE" length="16" />
+            </key-property>
+            <key-property name="spraddrDeliveryPoint" type="java.lang.Byte">
+                <column name="SPRADDR_DELIVERY_POINT" precision="2" scale="0" />
+            </key-property>
+            <key-property name="spraddrCorrectionDigit" type="java.lang.Boolean">
+                <column name="SPRADDR_CORRECTION_DIGIT" precision="1" scale="0" />
+            </key-property>
+            <key-property name="spraddrCarrierRoute" type="string">
+                <column name="SPRADDR_CARRIER_ROUTE" length="16" />
+            </key-property>
+            <key-property name="spraddrGstTaxId" type="string">
+                <column name="SPRADDR_GST_TAX_ID" length="60" />
+            </key-property>
+            <key-property name="spraddrReviewedInd" type="string">
+                <column name="SPRADDR_REVIEWED_IND" length="4" />
+            </key-property>
+            <key-property name="spraddrReviewedUser" type="string">
+                <column name="SPRADDR_REVIEWED_USER" length="120" />
+            </key-property>
+            <key-property name="spraddrDataOrigin" type="string">
+                <column name="SPRADDR_DATA_ORIGIN" length="120" />
+            </key-property>
+            <key-property name="spraddrCtryCodePhone" type="string">
+                <column name="SPRADDR_CTRY_CODE_PHONE" length="16" />
+            </key-property>
+            <key-property name="spraddrHouseNumber" type="string">
+                <column name="SPRADDR_HOUSE_NUMBER" length="40" />
+            </key-property>
+            <key-property name="spraddrStreetLine4" type="string">
+                <column name="SPRADDR_STREET_LINE4" length="300" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

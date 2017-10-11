@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Sep 22, 2017 9:40:44 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Oct 11, 2017 9:11:37 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="ec.edu.espe.saturn.model.Spbpers" table="SPBPERS" schema="SATURN" optimistic-lock="version">
+    <class name="ec.edu.espe.saturn.model.Spbpers" table="SPBPERS" schema="SATURN">
         <comment>Basic Person Base Table</comment>
         <id name="spbpersPidm" type="int">
             <column name="SPBPERS_PIDM" precision="8" scale="0" />
-            <generator class="assigned" />
+            <generator class="assigned"></generator>
         </id>
         <property name="spbpersSsn" type="string">
             <column name="SPBPERS_SSN" length="60">

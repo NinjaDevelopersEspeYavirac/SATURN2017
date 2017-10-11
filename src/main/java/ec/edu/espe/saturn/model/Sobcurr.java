@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated Sep 22, 2017 9:40:41 AM by Hibernate Tools 4.3.1
+// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -128,10 +128,8 @@ public class Sobcurr  implements java.io.Serializable {
         this.sobcurrDegcCode = sobcurrDegcCode;
     }
 
-    @Override
-    public String toString() {
-        return "Sobcurr{" + "sobcurrCurrRule=" + sobcurrCurrRule + ", smrprle=" + smrprle + ", sobcurrTermCodeInit=" + sobcurrTermCodeInit + ", sobcurrLevlCode=" + sobcurrLevlCode + ", sobcurrActivityDate=" + sobcurrActivityDate + ", sobcurrPrimRollInd=" + sobcurrPrimRollInd + ", sobcurrSecdRollInd=" + sobcurrSecdRollInd + ", sobcurrLockInd=" + sobcurrLockInd + ", sobcurrCampCode=" + sobcurrCampCode + ", sobcurrCollCode=" + sobcurrCollCode + ", sobcurrDegcCode=" + sobcurrDegcCode + '}';
-    }
+
+
 
 }
 

@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated 11/10/2017 8:52:27 by Hibernate Tools 4.3.1
+// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
 
 
 
@@ -45,6 +45,25 @@ public class GoremalId  implements java.io.Serializable {
     }
 
 
+   public boolean equals(Object other) {
+         if ( (this == other ) ) return true;
+		 if ( (other == null ) ) return false;
+		 if ( !(other instanceof GoremalId) ) return false;
+		 GoremalId castOther = ( GoremalId ) other; 
+         
+		 return (this.getGoremalPidm()==castOther.getGoremalPidm())
+ && ( (this.getGoremalEmalCode()==castOther.getGoremalEmalCode()) || ( this.getGoremalEmalCode()!=null && castOther.getGoremalEmalCode()!=null && this.getGoremalEmalCode().equals(castOther.getGoremalEmalCode()) ) )
+ && ( (this.getGoremalEmailAddress()==castOther.getGoremalEmailAddress()) || ( this.getGoremalEmailAddress()!=null && castOther.getGoremalEmailAddress()!=null && this.getGoremalEmailAddress().equals(castOther.getGoremalEmailAddress()) ) );
+   }
+   
+   public int hashCode() {
+         int result = 17;
+         
+         result = 37 * result + this.getGoremalPidm();
+         result = 37 * result + ( getGoremalEmalCode() == null ? 0 : this.getGoremalEmalCode().hashCode() );
+         result = 37 * result + ( getGoremalEmailAddress() == null ? 0 : this.getGoremalEmailAddress().hashCode() );
+         return result;
+   }   
 
 
 }

@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated Sep 22, 2017 9:40:41 AM by Hibernate Tools 4.3.1
+// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,6 +29,7 @@ public class Smrprle implements java.io.Serializable {
     private List<Sobcurr> currs = new ArrayList<>();
 
     public Smrprle() {
+        this.currs = new ArrayList<>();
     }
 
     public Smrprle(String smrprleProgram, String smrprleProgramDesc, Date smrprleActivityDate, String smrprleLevlCode, String smrprleCurrInd, String smrprleLockedInd, String smrprleCurrRuleInd, String smrprleLevlCodeStu, String smrprleWebInd) {
@@ -180,8 +181,4 @@ public class Smrprle implements java.io.Serializable {
         this.currs = currs;
     }
 
-    @Override
-    public String toString() {
-        return "Smrprle{" + "smrprleProgram=" + smrprleProgram + ", smrprleProgramDesc=" + smrprleProgramDesc + ", smrprleActivityDate=" + smrprleActivityDate + ", smrprleLevlCode=" + smrprleLevlCode + ", smrprleCurrInd=" + smrprleCurrInd + ", smrprleLockedInd=" + smrprleLockedInd + ", smrprleCurrRuleInd=" + smrprleCurrRuleInd + ", smrprleCampCode=" + smrprleCampCode + ", smrprleCollCode=" + smrprleCollCode + ", smrprleDegcCode=" + smrprleDegcCode + ", smrprlePidm=" + smrprlePidm + ", smrprleLevlCodeStu=" + smrprleLevlCodeStu + ", smrprleWebInd=" + smrprleWebInd + '}';
-    }
 }

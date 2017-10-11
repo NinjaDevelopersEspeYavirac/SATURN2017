@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Sep 22, 2017 9:40:44 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Oct 11, 2017 9:11:37 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="ec.edu.espe.saturn.model.Spriden" table="SPRIDEN" schema="SATURN" optimistic-lock="version">
+    <class name="ec.edu.espe.saturn.model.Spriden" table="SPRIDEN" schema="SATURN">
         <comment>Person Identification/Name Repeating Table</comment>
         <composite-id name="id" class="ec.edu.espe.saturn.model.SpridenId">
             <key-property name="spridenPidm" type="int">

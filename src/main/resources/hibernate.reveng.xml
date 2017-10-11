@@ -6,4 +6,6 @@
     <table-filter match-name="SPBPERS"/>
     <table-filter match-name="SOBCURR"/>
     <table-filter match-name="SMRPRLE"/>
+    <table-filter match-name="SPRTELE"/>
+    <table-filter match-name="SPRADDR"/>
 </hibernate-reverse-engineering>

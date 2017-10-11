@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated Sep 22, 2017 9:40:41 AM by Hibernate Tools 4.3.1
+// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -35,13 +35,6 @@ public class SpridenId  implements java.io.Serializable {
     public SpridenId() {
     }
 
-	
-    public SpridenId(int spridenPidm, String spridenId, String spridenLastName, Date spridenActivityDate) {
-        this.spridenPidm = spridenPidm;
-        this.spridenId = spridenId;
-        this.spridenLastName = spridenLastName;
-        this.spridenActivityDate = spridenActivityDate;
-    }
     public SpridenId(int spridenPidm, String spridenId, String spridenLastName, String spridenFirstName, String spridenMi, String spridenChangeInd, String spridenEntityInd, Date spridenActivityDate, String spridenUser, String spridenOrigin, String spridenSearchLastName, String spridenSearchFirstName, String spridenSearchMi, String spridenSoundexLastName, String spridenSoundexFirstName, String spridenNtypCode, String spridenCreateUser, Date spridenCreateDate, String spridenDataOrigin, String spridenCreateFdmnCode, String spridenSurnamePrefix) {
        this.spridenPidm = spridenPidm;
        this.spridenId = spridenId;
@@ -214,67 +207,7 @@ public class SpridenId  implements java.io.Serializable {
         this.spridenSurnamePrefix = spridenSurnamePrefix;
     }
 
-    @Override
-    public String toString() {
-        return "SpridenId{" + "spridenPidm=" + spridenPidm + ", spridenId=" + spridenId + ", spridenLastName=" + spridenLastName + ", spridenFirstName=" + spridenFirstName + ", spridenMi=" + spridenMi + ", spridenChangeInd=" + spridenChangeInd + ", spridenEntityInd=" + spridenEntityInd + ", spridenActivityDate=" + spridenActivityDate + ", spridenUser=" + spridenUser + ", spridenOrigin=" + spridenOrigin + ", spridenSearchLastName=" + spridenSearchLastName + ", spridenSearchFirstName=" + spridenSearchFirstName + ", spridenSearchMi=" + spridenSearchMi + ", spridenSoundexLastName=" + spridenSoundexLastName + ", spridenSoundexFirstName=" + spridenSoundexFirstName + ", spridenNtypCode=" + spridenNtypCode + ", spridenCreateUser=" + spridenCreateUser + ", spridenCreateDate=" + spridenCreateDate + ", spridenDataOrigin=" + spridenDataOrigin + ", spridenCreateFdmnCode=" + spridenCreateFdmnCode + ", spridenSurnamePrefix=" + spridenSurnamePrefix + '}';
-    }
 
-
-   public boolean equals(Object other) {
-         if ( (this == other ) ) return true;
-		 if ( (other == null ) ) return false;
-		 if ( !(other instanceof SpridenId) ) return false;
-		 SpridenId castOther = ( SpridenId ) other; 
-         
-		 return (this.getSpridenPidm()==castOther.getSpridenPidm())
- && ( (this.getSpridenId()==castOther.getSpridenId()) || ( this.getSpridenId()!=null && castOther.getSpridenId()!=null && this.getSpridenId().equals(castOther.getSpridenId()) ) )
- && ( (this.getSpridenLastName()==castOther.getSpridenLastName()) || ( this.getSpridenLastName()!=null && castOther.getSpridenLastName()!=null && this.getSpridenLastName().equals(castOther.getSpridenLastName()) ) )
- && ( (this.getSpridenFirstName()==castOther.getSpridenFirstName()) || ( this.getSpridenFirstName()!=null && castOther.getSpridenFirstName()!=null && this.getSpridenFirstName().equals(castOther.getSpridenFirstName()) ) )
- && ( (this.getSpridenMi()==castOther.getSpridenMi()) || ( this.getSpridenMi()!=null && castOther.getSpridenMi()!=null && this.getSpridenMi().equals(castOther.getSpridenMi()) ) )
- && ( (this.getSpridenChangeInd()==castOther.getSpridenChangeInd()) || ( this.getSpridenChangeInd()!=null && castOther.getSpridenChangeInd()!=null && this.getSpridenChangeInd().equals(castOther.getSpridenChangeInd()) ) )
- && ( (this.getSpridenEntityInd()==castOther.getSpridenEntityInd()) || ( this.getSpridenEntityInd()!=null && castOther.getSpridenEntityInd()!=null && this.getSpridenEntityInd().equals(castOther.getSpridenEntityInd()) ) )
- && ( (this.getSpridenActivityDate()==castOther.getSpridenActivityDate()) || ( this.getSpridenActivityDate()!=null && castOther.getSpridenActivityDate()!=null && this.getSpridenActivityDate().equals(castOther.getSpridenActivityDate()) ) )
- && ( (this.getSpridenUser()==castOther.getSpridenUser()) || ( this.getSpridenUser()!=null && castOther.getSpridenUser()!=null && this.getSpridenUser().equals(castOther.getSpridenUser()) ) )
- && ( (this.getSpridenOrigin()==castOther.getSpridenOrigin()) || ( this.getSpridenOrigin()!=null && castOther.getSpridenOrigin()!=null && this.getSpridenOrigin().equals(castOther.getSpridenOrigin()) ) )
- && ( (this.getSpridenSearchLastName()==castOther.getSpridenSearchLastName()) || ( this.getSpridenSearchLastName()!=null && castOther.getSpridenSearchLastName()!=null && this.getSpridenSearchLastName().equals(castOther.getSpridenSearchLastName()) ) )
- && ( (this.getSpridenSearchFirstName()==castOther.getSpridenSearchFirstName()) || ( this.getSpridenSearchFirstName()!=null && castOther.getSpridenSearchFirstName()!=null && this.getSpridenSearchFirstName().equals(castOther.getSpridenSearchFirstName()) ) )
- && ( (this.getSpridenSearchMi()==castOther.getSpridenSearchMi()) || ( this.getSpridenSearchMi()!=null && castOther.getSpridenSearchMi()!=null && this.getSpridenSearchMi().equals(castOther.getSpridenSearchMi()) ) )
- && ( (this.getSpridenSoundexLastName()==castOther.getSpridenSoundexLastName()) || ( this.getSpridenSoundexLastName()!=null && castOther.getSpridenSoundexLastName()!=null && this.getSpridenSoundexLastName().equals(castOther.getSpridenSoundexLastName()) ) )
- && ( (this.getSpridenSoundexFirstName()==castOther.getSpridenSoundexFirstName()) || ( this.getSpridenSoundexFirstName()!=null && castOther.getSpridenSoundexFirstName()!=null && this.getSpridenSoundexFirstName().equals(castOther.getSpridenSoundexFirstName()) ) )
- && ( (this.getSpridenNtypCode()==castOther.getSpridenNtypCode()) || ( this.getSpridenNtypCode()!=null && castOther.getSpridenNtypCode()!=null && this.getSpridenNtypCode().equals(castOther.getSpridenNtypCode()) ) )
- && ( (this.getSpridenCreateUser()==castOther.getSpridenCreateUser()) || ( this.getSpridenCreateUser()!=null && castOther.getSpridenCreateUser()!=null && this.getSpridenCreateUser().equals(castOther.getSpridenCreateUser()) ) )
- && ( (this.getSpridenCreateDate()==castOther.getSpridenCreateDate()) || ( this.getSpridenCreateDate()!=null && castOther.getSpridenCreateDate()!=null && this.getSpridenCreateDate().equals(castOther.getSpridenCreateDate()) ) )
- && ( (this.getSpridenDataOrigin()==castOther.getSpridenDataOrigin()) || ( this.getSpridenDataOrigin()!=null && castOther.getSpridenDataOrigin()!=null && this.getSpridenDataOrigin().equals(castOther.getSpridenDataOrigin()) ) )
- && ( (this.getSpridenCreateFdmnCode()==castOther.getSpridenCreateFdmnCode()) || ( this.getSpridenCreateFdmnCode()!=null && castOther.getSpridenCreateFdmnCode()!=null && this.getSpridenCreateFdmnCode().equals(castOther.getSpridenCreateFdmnCode()) ) )
- && ( (this.getSpridenSurnamePrefix()==castOther.getSpridenSurnamePrefix()) || ( this.getSpridenSurnamePrefix()!=null && castOther.getSpridenSurnamePrefix()!=null && this.getSpridenSurnamePrefix().equals(castOther.getSpridenSurnamePrefix()) ) );
-   }
-   
-   public int hashCode() {
-         int result = 17;
-         
-         result = 37 * result + this.getSpridenPidm();
-         result = 37 * result + ( getSpridenId() == null ? 0 : this.getSpridenId().hashCode() );
-         result = 37 * result + ( getSpridenLastName() == null ? 0 : this.getSpridenLastName().hashCode() );
-         result = 37 * result + ( getSpridenFirstName() == null ? 0 : this.getSpridenFirstName().hashCode() );
-         result = 37 * result + ( getSpridenMi() == null ? 0 : this.getSpridenMi().hashCode() );
-         result = 37 * result + ( getSpridenChangeInd() == null ? 0 : this.getSpridenChangeInd().hashCode() );
-         result = 37 * result + ( getSpridenEntityInd() == null ? 0 : this.getSpridenEntityInd().hashCode() );
-         result = 37 * result + ( getSpridenActivityDate() == null ? 0 : this.getSpridenActivityDate().hashCode() );
-         result = 37 * result + ( getSpridenUser() == null ? 0 : this.getSpridenUser().hashCode() );
-         result = 37 * result + ( getSpridenOrigin() == null ? 0 : this.getSpridenOrigin().hashCode() );
-         result = 37 * result + ( getSpridenSearchLastName() == null ? 0 : this.getSpridenSearchLastName().hashCode() );
-         result = 37 * result + ( getSpridenSearchFirstName() == null ? 0 : this.getSpridenSearchFirstName().hashCode() );
-         result = 37 * result + ( getSpridenSearchMi() == null ? 0 : this.getSpridenSearchMi().hashCode() );
-         result = 37 * result + ( getSpridenSoundexLastName() == null ? 0 : this.getSpridenSoundexLastName().hashCode() );
-         result = 37 * result + ( getSpridenSoundexFirstName() == null ? 0 : this.getSpridenSoundexFirstName().hashCode() );
-         result = 37 * result + ( getSpridenNtypCode() == null ? 0 : this.getSpridenNtypCode().hashCode() );
-         result = 37 * result + ( getSpridenCreateUser() == null ? 0 : this.getSpridenCreateUser().hashCode() );
-         result = 37 * result + ( getSpridenCreateDate() == null ? 0 : this.getSpridenCreateDate().hashCode() );
-         result = 37 * result + ( getSpridenDataOrigin() == null ? 0 : this.getSpridenDataOrigin().hashCode() );
-         result = 37 * result + ( getSpridenCreateFdmnCode() == null ? 0 : this.getSpridenCreateFdmnCode().hashCode() );
-         result = 37 * result + ( getSpridenSurnamePrefix() == null ? 0 : this.getSpridenSurnamePrefix().hashCode() );
-         return result;
-   }   
 
 
 }

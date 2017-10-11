@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 11, 2017 9:11:37 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Sprtele" table="SPRTELE" schema="SATURN">
+        <comment>Telephone Table</comment>
+        <composite-id name="id" class="ec.edu.espe.saturn.model.SprteleId">
+            <key-property name="sprtelePidm" type="int">
+                <column name="SPRTELE_PIDM" precision="8" scale="0" />
+            </key-property>
+            <key-property name="sprteleTeleCode" type="string">
+                <column name="SPRTELE_TELE_CODE" length="16" />
+            </key-property>
+            <key-property name="sprteleSeqno" type="short">
+                <column name="SPRTELE_SEQNO" precision="3" scale="0" />
+            </key-property>
+        </composite-id>
+        <property name="sprteleActivityDate" type="date">
+            <column name="SPRTELE_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>Date of last activity for telephone record.</comment>
+            </column>
+        </property>
+        <property name="sprtelePhoneArea" type="string">
+            <column name="SPRTELE_PHONE_AREA" length="24">
+                <comment>Telephone number area code.</comment>
+            </column>
+        </property>
+        <property name="sprtelePhoneNumber" type="string">
+            <column name="SPRTELE_PHONE_NUMBER" length="48">
+                <comment>Telephone number.</comment>
+            </column>
+        </property>
+        <property name="sprtelePhoneExt" type="string">
+            <column name="SPRTELE_PHONE_EXT" length="40">
+                <comment>Telephone number extention.</comment>
+            </column>
+        </property>
+        <property name="sprteleStatusInd" type="string">
+            <column name="SPRTELE_STATUS_IND" length="4">
+                <comment>STATUS: Status of telephone number, active or inactive.</comment>
+            </column>
+        </property>
+        <property name="sprteleAtypCode" type="string">
+            <column name="SPRTELE_ATYP_CODE" length="8">
+                <comment>Optional Address Type code associated with telephone number.</comment>
+            </column>
+        </property>
+        <property name="sprteleAddrSeqno" type="java.lang.Byte">
+            <column name="SPRTELE_ADDR_SEQNO" precision="2" scale="0">
+                <comment>Address type sequence number associated with address type.</comment>
+            </column>
+        </property>
+        <property name="sprtelePrimaryInd" type="string">
+            <column name="SPRTELE_PRIMARY_IND" length="4">
+                <comment>Primary indicator to denote primary telephone numbers based on telephone types.</comment>
+            </column>
+        </property>
+        <property name="sprteleUnlistInd" type="string">
+            <column name="SPRTELE_UNLIST_IND" length="4">
+                <comment>Unlisted telephone number indicator.</comment>
+            </column>
+        </property>
+        <property name="sprteleComment" type="string">
+            <column name="SPRTELE_COMMENT" length="240">
+                <comment>Comment relating to telephone number.</comment>
+            </column>
+        </property>
+        <property name="sprteleIntlAccess" type="string">
+            <column name="SPRTELE_INTL_ACCESS" length="64">
+                <comment>Free format International access code for telephone number including country and city code.</comment>
+            </column>
+        </property>
+        <property name="sprteleDataOrigin" type="string">
+            <column name="SPRTELE_DATA_ORIGIN" length="120">
+                <comment>DATA SOURCE: Source system that generated the data</comment>
+            </column>
+        </property>
+        <property name="sprteleUserId" type="string">
+            <column name="SPRTELE_USER_ID" length="120">
+                <comment>USER ID: User who inserted or last update the data</comment>
+            </column>
+        </property>
+        <property name="sprteleCtryCodePhone" type="string">
+            <column name="SPRTELE_CTRY_CODE_PHONE" length="16">
+                <comment>COUNTRY CODE: Telephone code that designates the region and country.</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

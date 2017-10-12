@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
+// Generated 12/10/2017 13:02:22 by Hibernate Tools 4.3.1
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -181,9 +181,10 @@ public class Smrprle implements java.io.Serializable {
         this.currs = currs;
     }
 
+    
     @Override
     public String toString() {
-        return "Smrprle{" + "smrprleProgram=" + smrprleProgram + ", smrprleProgramDesc=" + smrprleProgramDesc + ", smrprleActivityDate=" + smrprleActivityDate + ", smrprleLevlCode=" + smrprleLevlCode + ", smrprleCurrInd=" + smrprleCurrInd + ", smrprleLockedInd=" + smrprleLockedInd + ", smrprleCurrRuleInd=" + smrprleCurrRuleInd + ", smrprleCampCode=" + smrprleCampCode + ", smrprleCollCode=" + smrprleCollCode + ", smrprleDegcCode=" + smrprleDegcCode + ", smrprlePidm=" + smrprlePidm + ", smrprleLevlCodeStu=" + smrprleLevlCodeStu + ", smrprleWebInd=" + smrprleWebInd + ", sobcurrs=" + sobcurrs + ", currs=" + currs + '}';
+        return "Smrprle{" + "smrprleProgram=" + smrprleProgram + ", smrprleProgramDesc=" + smrprleProgramDesc + ", smrprleActivityDate=" + smrprleActivityDate + ", smrprleLevlCode=" + smrprleLevlCode + ", smrprleCurrInd=" + smrprleCurrInd + ", smrprleLockedInd=" + smrprleLockedInd + ", smrprleCurrRuleInd=" + smrprleCurrRuleInd + ", smrprleCampCode=" + smrprleCampCode + ", smrprleCollCode=" + smrprleCollCode + ", smrprleDegcCode=" + smrprleDegcCode + ", smrprlePidm=" + smrprlePidm + ", smrprleLevlCodeStu=" + smrprleLevlCodeStu + ", smrprleWebInd=" + smrprleWebInd + ", sobcurrs=" + sobcurrs + '}';
     }
 
 }

@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
+// Generated 12/10/2017 13:02:22 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -292,6 +292,10 @@ public class SpraddrId  implements java.io.Serializable {
     public String toString() {
         return "SpraddrId{" + "spraddrPidm=" + spraddrPidm + ", spraddrAtypCode=" + spraddrAtypCode + ", spraddrSeqno=" + spraddrSeqno + ", spraddrFromDate=" + spraddrFromDate + ", spraddrToDate=" + spraddrToDate + ", spraddrStreetLine1=" + spraddrStreetLine1 + ", spraddrStreetLine2=" + spraddrStreetLine2 + ", spraddrStreetLine3=" + spraddrStreetLine3 + ", spraddrCity=" + spraddrCity + ", spraddrStatCode=" + spraddrStatCode + ", spraddrZip=" + spraddrZip + ", spraddrCntyCode=" + spraddrCntyCode + ", spraddrNatnCode=" + spraddrNatnCode + ", spraddrPhoneArea=" + spraddrPhoneArea + ", spraddrPhoneNumber=" + spraddrPhoneNumber + ", spraddrPhoneExt=" + spraddrPhoneExt + ", spraddrStatusInd=" + spraddrStatusInd + ", spraddrActivityDate=" + spraddrActivityDate + ", spraddrUser=" + spraddrUser + ", spraddrAsrcCode=" + spraddrAsrcCode + ", spraddrDeliveryPoint=" + spraddrDeliveryPoint + ", spraddrCorrectionDigit=" + spraddrCorrectionDigit + ", spraddrCarrierRoute=" + spraddrCarrierRoute + ", spraddrGstTaxId=" + spraddrGstTaxId + ", spraddrReviewedInd=" + spraddrReviewedInd + ", spraddrReviewedUser=" + spraddrReviewedUser + ", spraddrDataOrigin=" + spraddrDataOrigin + ", spraddrCtryCodePhone=" + spraddrCtryCodePhone + ", spraddrHouseNumber=" + spraddrHouseNumber + ", spraddrStreetLine4=" + spraddrStreetLine4 + '}';
     }
+
+
+
+
 }
 
 

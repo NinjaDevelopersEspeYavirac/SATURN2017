@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
-    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
-    <property name="hibernate.connection.url">jdbc:oracle:thin:@10.1.0.113:1521:pas8</property>
-    <property name="hibernate.connection.username">usrwebser</property>
-    <property name="hibernate.connection.password">usrwebser</property>
-    <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
-    <property name="hibernate.current_session_context_class">thread</property>
-    <mapping resource="ec/edu/espe/saturn/model/Spraddr.hbm.xml"/>
-    <mapping resource="ec/edu/espe/saturn/model/Spriden.hbm.xml"/>
-    <mapping resource="ec/edu/espe/saturn/model/Spbpers.hbm.xml"/>
-    <mapping resource="ec/edu/espe/saturn/model/Sprtele.hbm.xml"/>
-    <mapping resource="ec/edu/espe/saturn/model/Smrprle.hbm.xml"/>
-    <mapping resource="ec/edu/espe/saturn/model/Sobcurr.hbm.xml"/>
-    <mapping resource="ec/edu/espe/saturn/model/Goremal.hbm.xml"/>
-  </session-factory>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@10.1.0.113:1521:pas8</property>
+        <property name="hibernate.connection.username">usrwebser</property>
+        <property name="hibernate.connection.password">usrwebser</property>
+        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <mapping resource="ec/edu/espe/saturn/model/Spraddr.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Spbpers.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Spriden.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Sgbstdn.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Sfrstcr.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Sobcurr.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Sprtele.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Smrprle.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Stvcamp.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Stvcoll.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Pebempl.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Goremal.hbm.xml"/>
+    </session-factory>
 </hibernate-configuration>

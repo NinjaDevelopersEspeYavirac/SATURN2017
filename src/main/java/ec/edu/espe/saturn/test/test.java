@@ -24,27 +24,27 @@ public class test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //List<Sprtele> objg = SprteleController.FindByPIDM(664);
-        //for (Sprtele telefono : objg) {
+       /* List<Sprtele> objg = SprteleController.FindByPIDM(664);
+        for (Sprtele telefono : objg) {
 
-          //  System.out.println(">> " + telefono.toString());
+          System.out.println(">> " + telefono.toString());
 
-        //}
-        /*List<Goremal> objg = GoremalController.FindByPIDM(357353);
+        }*/
+        List<Goremal> objg = GoremalController.FindByPIDM(357353);
         for (Goremal gmail : objg) {
 
             System.out.println(">> " + gmail.toString());
 
         }
-        
+        /*
         Spriden objs = SpridenController.FindByPIDM(775);
         System.out.println(">> " + objs.toString());
         
         
         
         Spbpers obj = SpbpersController.FindByCedula("1804110474");
-        System.out.println(">> " + obj.toString());*/
-
+        System.out.println(">> " + obj.toString());
+*/
         // ya vale la busqueda de la direccion hay le prueba con este codigo.
 //        List<Spraddr> objg2 = SpraddrController.FindByPIDM(1116);
 //        for (Spraddr direccion : objg2) {

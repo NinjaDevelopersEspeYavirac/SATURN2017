@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/10/2017 13:03:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Pebempl" table="PEBEMPL" schema="PAYROLL">
+        <comment>Employee Base Table</comment>
+        <id name="pebemplPidm" type="int">
+            <column name="PEBEMPL_PIDM" precision="8" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="pebemplEmplStatus" type="string">
+            <column name="PEBEMPL_EMPL_STATUS" length="4" not-null="true">
+                <comment>The status of the employee. Valid values are A - Active, B - Leave without pay and with benefits, L -Leave without pay and without benefits, F - Leave
+                with pay and with benefits, P - Leave with partial pay and with benefits, T - Terminated.</comment>
+            </column>
+        </property>
+        <property name="pebemplCoasCodeHome" type="string">
+            <column name="PEBEMPL_COAS_CODE_HOME" length="4">
+                <comment>The Home Chart of Accounts Code for the employee.</comment>
+            </column>
+        </property>
+        <property name="pebemplOrgnCodeHome" type="string">
+            <column name="PEBEMPL_ORGN_CODE_HOME" length="24" not-null="true">
+                <comment>The Home Organization code of the employee.</comment>
+            </column>
+        </property>
+        <property name="pebemplCoasCodeDist" type="string">
+            <column name="PEBEMPL_COAS_CODE_DIST" length="4">
+                <comment>The Chart of Accounts Code to which the employee's documents, such as checks, are distributed.</comment>
+            </column>
+        </property>
+        <property name="pebemplOrgnCodeDist" type="string">
+            <column name="PEBEMPL_ORGN_CODE_DIST" length="24" not-null="true">
+                <comment>The organization code used for document distribution.</comment>
+            </column>
+        </property>
+        <property name="pebemplEclsCode" type="string">
+            <column name="PEBEMPL_ECLS_CODE" length="8" not-null="true">
+                <comment>The employee grouping to which the employee belongs.</comment>
+            </column>
+        </property>
+        <property name="pebemplLcatCode" type="string">
+            <column name="PEBEMPL_LCAT_CODE" length="8" not-null="true">
+                <comment>The leave category to which the employee belongs.</comment>
+            </column>
+        </property>
+        <property name="pebemplBcatCode" type="string">
+            <column name="PEBEMPL_BCAT_CODE" length="8" not-null="true">
+                <comment>The benefit category to which the employee belongs.</comment>
+            </column>
+        </property>
+        <property name="pebemplFirstHireDate" type="date">
+            <column name="PEBEMPL_FIRST_HIRE_DATE" length="7" not-null="true">
+                <comment>The date the employee was first hired.</comment>
+            </column>
+        </property>
+        <property name="pebemplCurrentHireDate" type="date">
+            <column name="PEBEMPL_CURRENT_HIRE_DATE" length="7" not-null="true">
+                <comment>The employees current date of hire.</comment>
+            </column>
+        </property>
+        <property name="pebemplAdjServiceDate" type="date">
+            <column name="PEBEMPL_ADJ_SERVICE_DATE" length="7" not-null="true">
+                <comment>Date used to determine years of service for leave accrual if the First Hire Date and the Current Hire Date are not equal.</comment>
+            </column>
+        </property>
+        <property name="pebemplSeniorityDate" type="date">
+            <column name="PEBEMPL_SENIORITY_DATE" length="7" not-null="true">
+                <comment>Date that establishes service and can be used for leave accrual.</comment>
+            </column>
+        </property>
+        <property name="pebemplLreaCode" type="string">
+            <column name="PEBEMPL_LREA_CODE" length="8">
+                <comment>A code identifying the reason for the leave of absence of the employee.</comment>
+            </column>
+        </property>
+        <property name="pebemplLoaBegDate" type="date">
+            <column name="PEBEMPL_LOA_BEG_DATE" length="7">
+                <comment>The begin date of a leave of absence for the employee.</comment>
+            </column>
+        </property>
+        <property name="pebemplLoaEndDate" type="date">
+            <column name="PEBEMPL_LOA_END_DATE" length="7">
+                <comment>The anticipated end date for an employee's leave of absence.</comment>
+            </column>
+        </property>
+        <property name="pebemplTreaCode" type="string">
+            <column name="PEBEMPL_TREA_CODE" length="8">
+                <comment>Code used to identify the reason of termination.</comment>
+            </column>
+        </property>
+        <property name="pebemplTermDate" type="date">
+            <column name="PEBEMPL_TERM_DATE" length="7">
+                <comment>Termination date of the employee.</comment>
+            </column>
+        </property>
+        <property name="pebemplI9FormInd" type="string">
+            <column name="PEBEMPL_I9_FORM_IND" length="4">
+                <comment>Indicates whether or not immigration information has been received. Valid values are R - Received, N - Not received, T - Temporary, E - Exempt, NULL -
+                None.</comment>
+            </column>
+        </property>
+        <property name="pebemplI9Date" type="date">
+            <column name="PEBEMPL_I9_DATE" length="7">
+                <comment>The date immigration information was received.</comment>
+            </column>
+        </property>
+        <property name="pebemplI9ExpireDate" type="date">
+            <column name="PEBEMPL_I9_EXPIRE_DATE" length="7">
+                <comment>The date the immigration information expires.</comment>
+            </column>
+        </property>
+        <property name="pebemplActivityDate" type="date">
+            <column name="PEBEMPL_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>ACTIVITY DATE: Date when the record was inserted or last modified.</comment>
+            </column>
+        </property>
+        <property name="pebemplWkprCode" type="string">
+            <column name="PEBEMPL_WKPR_CODE" length="16">
+                <comment>Work Period Code.</comment>
+            </column>
+        </property>
+        <property name="pebemplFlsaInd" type="string">
+            <column name="PEBEMPL_FLSA_IND" length="4" not-null="true">
+                <comment>Used for Fair Labor Standards Overtime compensation. Valid values are C - Cash, A - Accrual, N - No FLSA.</comment>
+            </column>
+        </property>
+        <property name="pebemplStgrCode" type="string">
+            <column name="PEBEMPL_STGR_CODE" length="8">
+                <comment>Statistics Canada Grouping Code.</comment>
+            </column>
+        </property>
+        <property name="pebemplDaysInCanada" type="java.lang.Short">
+            <column name="PEBEMPL_DAYS_IN_CANADA" precision="3" scale="0">
+                <comment>Number of days the employee worked in Canada.</comment>
+            </column>
+        </property>
+        <property name="pebempl1042RecipientCd" type="string">
+            <column name="PEBEMPL_1042_RECIPIENT_CD" length="8">
+                <comment>Identifies the type of individual who is receiving a 1042 statement.</comment>
+            </column>
+        </property>
+        <property name="pebemplInternalFtPtInd" type="string">
+            <column name="PEBEMPL_INTERNAL_FT_PT_IND" length="4" not-null="true">
+                <comment>Internal Part Time/Full Time Indicator, used for EEO reporting. Valid values are F - Full-time, P - Part-time, O - Other.</comment>
+            </column>
+        </property>
+        <property name="pebemplDicdCode" type="string">
+            <column name="PEBEMPL_DICD_CODE" length="12">
+                <comment>The district or division associated with an employee.</comment>
+            </column>
+        </property>
+        <property name="pebemplEgrpCode" type="string">
+            <column name="PEBEMPL_EGRP_CODE" length="16">
+                <comment>The employee group is a sub-category of the Employee Class.</comment>
+            </column>
+        </property>
+        <property name="pebemplIpedsSoftMoneyInd" type="string">
+            <column name="PEBEMPL_IPEDS_SOFT_MONEY_IND" length="4" not-null="true">
+                <comment>IPEDS Soft Money Indicator. Valid values are Y - Yes, N - No.</comment>
+            </column>
+        </property>
+        <property name="pebemplFirstWorkDate" type="date">
+            <column name="PEBEMPL_FIRST_WORK_DATE" length="7">
+                <comment>The first day that the employee worked.</comment>
+            </column>
+        </property>
+        <property name="pebemplLastWorkDate" type="date">
+            <column name="PEBEMPL_LAST_WORK_DATE" length="7">
+                <comment>The last day that the employee worked.</comment>
+            </column>
+        </property>
+        <property name="pebemplCalifPensionInd" type="string">
+            <column name="PEBEMPL_CALIF_PENSION_IND" length="4">
+                <comment>California Pension Indicator. Valid values are B - STRS/PERS member, E - PERS retiree, N - Non member, P - PERS member, R - STRS retiree, S - STRS member,
+                T - STRS/PERS retiree, NULL - None.</comment>
+            </column>
+        </property>
+        <property name="pebemplNrsiCode" type="string">
+            <column name="PEBEMPL_NRSI_CODE" length="16">
+                <comment>Non-resident Service Code.</comment>
+            </column>
+        </property>
+        <property name="pebemplSsnLastName" type="string">
+            <column name="PEBEMPL_SSN_LAST_NAME" length="80">
+                <comment>Social security last name used in reporting.</comment>
+            </column>
+        </property>
+        <property name="pebemplSsnFirstName" type="string">
+            <column name="PEBEMPL_SSN_FIRST_NAME" length="60">
+                <comment>Social security first name used in reporting.</comment>
+            </column>
+        </property>
+        <property name="pebemplSsnMi" type="string">
+            <column name="PEBEMPL_SSN_MI" length="60">
+                <comment>Social security middle name used in reporting.</comment>
+            </column>
+        </property>
+        <property name="pebemplSsnSuffix" type="string">
+            <column name="PEBEMPL_SSN_SUFFIX" length="16">
+                <comment>Social security name suffix used in reporting.</comment>
+            </column>
+        </property>
+        <property name="pebemplJblnCode" type="string">
+            <column name="PEBEMPL_JBLN_CODE" length="24">
+                <comment>The Location to which the employee belongs.</comment>
+            </column>
+        </property>
+        <property name="pebemplCollCode" type="string">
+            <column name="PEBEMPL_COLL_CODE" length="8">
+                <comment>The College to which the employee belongs.</comment>
+            </column>
+        </property>
+        <property name="pebemplCampCode" type="string">
+            <column name="PEBEMPL_CAMP_CODE" length="12">
+                <comment>The Campus to which the employee belongs.</comment>
+            </column>
+        </property>
+        <property name="pebemplUserId" type="string">
+            <column name="PEBEMPL_USER_ID" length="120">
+                <comment>The user who last created or updated the employee record.</comment>
+            </column>
+        </property>
+        <property name="pebemplDataOrigin" type="string">
+            <column name="PEBEMPL_DATA_ORIGIN" length="120">
+                <comment>Source system that generated the data.</comment>
+            </column>
+        </property>
+        <property name="pebemplEw2ConsentInd" type="string">
+            <column name="PEBEMPL_EW2_CONSENT_IND" length="4" not-null="true">
+                <comment>ELECTRONIC W-2 CONSENT INDICATOR: Indicator to identify the employee has consented to receive the W-2 electronically. Valid values are (Y)es or (N)o.
+                Default value is (N)o.</comment>
+            </column>
+        </property>
+        <property name="pebemplEw2ConsentDate" type="date">
+            <column name="PEBEMPL_EW2_CONSENT_DATE" length="7">
+                <comment>ELECTRONIC W-2 CONSENT DATE: This field identifies the most recent date the Electronic W-2 Consent Indicator was updated.</comment>
+            </column>
+        </property>
+        <property name="pebemplEw2ConsentUserId" type="string">
+            <column name="PEBEMPL_EW2_CONSENT_USER_ID" length="120">
+                <comment>ELECTRONIC W-2 CONSENT USER ID: The unique identification of the user who last updated the Electronic W-2 Consent Indicator.</comment>
+            </column>
+        </property>
+        <property name="pebemplIpedsPrimaryFunction" type="string">
+            <column name="PEBEMPL_IPEDS_PRIMARY_FUNCTION" length="12" not-null="true">
+                <comment>IPEDS PRIMARY FUNCTION: Field to select the primary function for the PERIPED report. Valid values are: None (N), Primarily Instruction (PI), Primarily
+                Research (PR), Primarily Public Service (PS), Instruction combined with Research/Public Service (IRP)</comment>
+            </column>
+        </property>
+        <property name="pebemplIpedsMedDentalInd" type="string">
+            <column name="PEBEMPL_IPEDS_MED_DENTAL_IND" length="4" not-null="true">
+                <comment>IPEDS MEDICAL AND DENTAL INDICATOR: Indicator determines where the person is reported for the PERIPED report. Valid values are: Y = Yes and reported under
+                the Medical/Dental section. N = No and reported under the Non-medical section. The default is N.</comment>
+            </column>
+        </property>
+        <property name="pebemplEtaxConsentInd" type="string">
+            <column name="PEBEMPL_ETAX_CONSENT_IND" length="4" not-null="true">
+                <comment>ELECTRONIC TAX FORM CONSENT INDICATOR: Indicator to identify the employee has consented to receive the tax form electronically. Valid values are Y and N
+                (Default).</comment>
+            </column>
+        </property>
+        <property name="pebemplEtaxConsentDate" type="date">
+            <column name="PEBEMPL_ETAX_CONSENT_DATE" length="7">
+                <comment>ELECTRONIC TAX FORM CONSENT DATE: This field identifies the most recent date the Electronic Tax Form Consent Indicator was updated.</comment>
+            </column>
+        </property>
+        <property name="pebemplEtaxConsentUserId" type="string">
+            <column name="PEBEMPL_ETAX_CONSENT_USER_ID" length="120">
+                <comment>ELECTRONIC TAX FORM CONSENT USER ID: The unique identification of the user who last updated the Electronic Tax Form Consent Indicator.</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/10/2017 13:03:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Sfrstcr" table="SFRSTCR" schema="SATURN">
+        <comment>Student Course Registration Repeating Table</comment>
+        <composite-id name="id" class="ec.edu.espe.saturn.model.SfrstcrId">
+            <key-property name="sfrstcrTermCode" type="string">
+                <column name="SFRSTCR_TERM_CODE" length="24" />
+            </key-property>
+            <key-property name="sfrstcrPidm" type="int">
+                <column name="SFRSTCR_PIDM" precision="8" scale="0" />
+            </key-property>
+            <key-property name="sfrstcrCrn" type="string">
+                <column name="SFRSTCR_CRN" length="20" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="stvcamp" class="ec.edu.espe.saturn.model.Stvcamp" fetch="select">
+            <column name="SFRSTCR_CAMP_CODE" length="12" not-null="true">
+                <comment>This field identifies the campus code of this CRN.</comment>
+            </column>
+        </many-to-one>
+        <property name="sfrstcrClassSortKey" type="java.lang.Short">
+            <column name="SFRSTCR_CLASS_SORT_KEY" precision="4" scale="0">
+                <comment>This field identifies the class of the registrant.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrRegSeq" type="short">
+            <column name="SFRSTCR_REG_SEQ" precision="4" scale="0" not-null="true">
+                <comment>This field identifies the sequence in which the student enrolled in the associated class section.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrPtrmCode" type="string">
+            <column name="SFRSTCR_PTRM_CODE" length="12">
+                <comment>This field identifies the part-of-term code associated with this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrRstsCode" type="string">
+            <column name="SFRSTCR_RSTS_CODE" length="8">
+                <comment>This field identifies the course registration status associated with this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrRstsDate" type="date">
+            <column name="SFRSTCR_RSTS_DATE" length="7">
+                <comment>This field identifies the date associated with the course registration status of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrErrorFlag" type="string">
+            <column name="SFRSTCR_ERROR_FLAG" length="4">
+                <comment>This field identifies an error associated with the registration of this CRN. Valid values are F=Fatal, D=Do not count in enrollment, L=WaitListed,
+                O=Override, W=Warning, X=Delete (used only by SFRSTCR POSTUPDATE DB trigger).</comment>
+            </column>
+        </property>
+        <property name="sfrstcrMessage" type="string">
+            <column name="SFRSTCR_MESSAGE" length="800">
+                <comment>This field identifies a message associated with the registration of the CRN</comment>
+            </column>
+        </property>
+        <property name="sfrstcrBillHr" type="big_decimal">
+            <column name="SFRSTCR_BILL_HR" precision="7" scale="3">
+                <comment>This field identifies the billing hours associated with this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrWaivHr" type="big_decimal">
+            <column name="SFRSTCR_WAIV_HR" precision="7" scale="3">
+                <comment>This field identifies the waived hours associated with this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrCreditHr" type="big_decimal">
+            <column name="SFRSTCR_CREDIT_HR" precision="7" scale="3">
+                <comment>This field identifies the credit hours associated with this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrBillHrHold" type="big_decimal">
+            <column name="SFRSTCR_BILL_HR_HOLD" precision="7" scale="3">
+                <comment>This field identifies the billing hours to hold for reinstatements.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrCreditHrHold" type="big_decimal">
+            <column name="SFRSTCR_CREDIT_HR_HOLD" precision="7" scale="3">
+                <comment>This field identifies the credit hours to hold for reinstatements.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrGmodCode" type="string">
+            <column name="SFRSTCR_GMOD_CODE" length="4">
+                <comment>This field identifies the grade mode associated with this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrGrdeCode" type="string">
+            <column name="SFRSTCR_GRDE_CODE" length="24">
+                <comment>This field identifies the grade code associated with this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrGrdeCodeMid" type="string">
+            <column name="SFRSTCR_GRDE_CODE_MID" length="24">
+                <comment>This field identifies the mid-term grade code associated with this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrGrdeDate" type="date">
+            <column name="SFRSTCR_GRDE_DATE" length="7">
+                <comment>This field identifies the date associated with the grade of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrDuplOver" type="string">
+            <column name="SFRSTCR_DUPL_OVER" length="4">
+                <comment>This field identifies the duplicate course override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrLinkOver" type="string">
+            <column name="SFRSTCR_LINK_OVER" length="4">
+                <comment>This field identifies the link override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrCorqOver" type="string">
+            <column name="SFRSTCR_CORQ_OVER" length="4">
+                <comment>This field identifies the corequisite override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrPreqOver" type="string">
+            <column name="SFRSTCR_PREQ_OVER" length="4">
+                <comment>This field identifies the prerequisite override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrTimeOver" type="string">
+            <column name="SFRSTCR_TIME_OVER" length="4">
+                <comment>This field identifies the time conflict override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrCapcOver" type="string">
+            <column name="SFRSTCR_CAPC_OVER" length="4">
+                <comment>This field identifies the capacity override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrLevlOver" type="string">
+            <column name="SFRSTCR_LEVL_OVER" length="4">
+                <comment>This field identifies the level restriction override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrCollOver" type="string">
+            <column name="SFRSTCR_COLL_OVER" length="4">
+                <comment>This field identifies the college restriction override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrMajrOver" type="string">
+            <column name="SFRSTCR_MAJR_OVER" length="4">
+                <comment>This field identifies the major restriction override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrClasOver" type="string">
+            <column name="SFRSTCR_CLAS_OVER" length="4">
+                <comment>This field identifies the class restriction override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrApprOver" type="string">
+            <column name="SFRSTCR_APPR_OVER" length="4">
+                <comment>This field identifies the special approval override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrApprReceivedInd" type="string">
+            <column name="SFRSTCR_APPR_RECEIVED_IND" length="4">
+                <comment>This field identifies the special approval received indicator for this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrAddDate" type="date">
+            <column name="SFRSTCR_ADD_DATE" length="7" not-null="true">
+                <comment>This field identifies the add date of the registrant in this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrActivityDate" type="date">
+            <column name="SFRSTCR_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>This field identifies the most current date record was created or updated.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrLevlCode" type="string">
+            <column name="SFRSTCR_LEVL_CODE" length="8" not-null="true">
+                <comment>This field identifies the level the registrant is enrolled for this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrReservedKey" type="string">
+            <column name="SFRSTCR_RESERVED_KEY" length="328">
+                <comment>Student Course Registration Table Reserved Key.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrAttendHr" type="big_decimal">
+            <column name="SFRSTCR_ATTEND_HR" precision="9" scale="3">
+                <comment>This column contains the number of hours the student attended this class</comment>
+            </column>
+        </property>
+        <property name="sfrstcrReptOver" type="string">
+            <column name="SFRSTCR_REPT_OVER" length="4">
+                <comment>This field identifies the repeat course restriction override of the CRN</comment>
+            </column>
+        </property>
+        <property name="sfrstcrRpthOver" type="string">
+            <column name="SFRSTCR_RPTH_OVER" length="4">
+                <comment>This field identifies the repeat course hour restriction override of the CRN</comment>
+            </column>
+        </property>
+        <property name="sfrstcrTestOver" type="string">
+            <column name="SFRSTCR_TEST_OVER" length="4">
+                <comment>This field identifies the test score restriction override of the CRN</comment>
+            </column>
+        </property>
+        <property name="sfrstcrCampOver" type="string">
+            <column name="SFRSTCR_CAMP_OVER" length="4">
+                <comment>The Campus Registration Restriction override code</comment>
+            </column>
+        </property>
+        <property name="sfrstcrUser" type="string">
+            <column name="SFRSTCR_USER" length="120">
+                <comment>Identifies the user who entered the registration request.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrDegcOver" type="string">
+            <column name="SFRSTCR_DEGC_OVER" length="4">
+                <comment>Degree restriction override indicator</comment>
+            </column>
+        </property>
+        <property name="sfrstcrProgOver" type="string">
+            <column name="SFRSTCR_PROG_OVER" length="4">
+                <comment>Program restriction override indicator</comment>
+            </column>
+        </property>
+        <property name="sfrstcrLastAttend" type="date">
+            <column name="SFRSTCR_LAST_ATTEND" length="7">
+                <comment>Date student last attended this class</comment>
+            </column>
+        </property>
+        <property name="sfrstcrGcmtCode" type="string">
+            <column name="SFRSTCR_GCMT_CODE" length="28">
+                <comment>GRADE COMMENT CODE: This field indicates the grade comment (result code) for the section.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrDataOrigin" type="string">
+            <column name="SFRSTCR_DATA_ORIGIN" length="120">
+                <comment>DATA SOURCE: Source system that created or updated the row</comment>
+            </column>
+        </property>
+        <property name="sfrstcrAssessActivityDate" type="date">
+            <column name="SFRSTCR_ASSESS_ACTIVITY_DATE" length="7">
+                <comment>This field identifies the date when registration activity impacting Fee Assessment occurred. This date is used in flat charge refunding to determine
+                courses that have been updated since the student's last assessment.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrDeptOver" type="string">
+            <column name="SFRSTCR_DEPT_OVER" length="4">
+                <comment>DEPARTMENT OVERRIDE: This field identifies the department restriction override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrAttsOver" type="string">
+            <column name="SFRSTCR_ATTS_OVER" length="4">
+                <comment>STUDENT ATTRIBUTE OVERRIDE: This field identifies the student attribute restriction override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrChrtOver" type="string">
+            <column name="SFRSTCR_CHRT_OVER" length="4">
+                <comment>COHORT OVERRIDE: This field identifies the cohort restriction override of this CRN.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrRmsgCde" type="string">
+            <column name="SFRSTCR_RMSG_CDE" length="16">
+                <comment>MESSAGE CODE: Specifies the type of error message.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrWlPriority" type="big_decimal">
+            <column name="SFRSTCR_WL_PRIORITY" precision="11" scale="6">
+                <comment>WAITLIST PRIORITY: The Waitlist priority.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrWlPriorityOrig" type="string">
+            <column name="SFRSTCR_WL_PRIORITY_ORIG" length="4">
+                <comment>PRIORITY ORIGIN: Waitlist priority origin. Valid values are S-system originated, M-manually originated.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrGrdeCodeIncmpFinal" type="string">
+            <column name="SFRSTCR_GRDE_CODE_INCMP_FINAL" length="24">
+                <comment>INCOMPLETE FINAL DEFAULT GRADE CODE: Grade code to identify default final grade for incomplete coursework.</comment>
+            </column>
+        </property>
+        <property name="sfrstcrIncompleteExtDate" type="date">
+            <column name="SFRSTCR_INCOMPLETE_EXT_DATE" length="7">
+                <comment>INCOMPLETE DEFAULT EXTENSION DATE: Date to identify when the default final grade will be applied to academic history if coursework is
+                incomplete.</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

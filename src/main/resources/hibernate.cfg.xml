@@ -10,11 +10,16 @@
     <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="ec/edu/espe/saturn/model/Spraddr.hbm.xml"/>
-    <mapping resource="ec/edu/espe/saturn/model/Spriden.hbm.xml"/>
     <mapping resource="ec/edu/espe/saturn/model/Spbpers.hbm.xml"/>
+    <mapping resource="ec/edu/espe/saturn/model/Spriden.hbm.xml"/>
+    <mapping resource="ec/edu/espe/saturn/model/Sgbstdn.hbm.xml"/>
+    <mapping resource="ec/edu/espe/saturn/model/Sfrstcr.hbm.xml"/>
+    <mapping resource="ec/edu/espe/saturn/model/Sobcurr.hbm.xml"/>
     <mapping resource="ec/edu/espe/saturn/model/Sprtele.hbm.xml"/>
     <mapping resource="ec/edu/espe/saturn/model/Smrprle.hbm.xml"/>
-    <mapping resource="ec/edu/espe/saturn/model/Sobcurr.hbm.xml"/>
+    <mapping resource="ec/edu/espe/saturn/model/Stvcamp.hbm.xml"/>
+    <mapping resource="ec/edu/espe/saturn/model/Stvcoll.hbm.xml"/>
+    <mapping resource="ec/edu/espe/saturn/model/Pebempl.hbm.xml"/>
     <mapping resource="ec/edu/espe/saturn/model/Goremal.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

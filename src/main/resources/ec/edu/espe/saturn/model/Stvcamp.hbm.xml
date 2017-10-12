@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/10/2017 13:03:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Stvcamp" table="STVCAMP" schema="SATURN">
+        <comment>Campus Validation Table</comment>
+        <id name="stvcampCode" type="string">
+            <column name="STVCAMP_CODE" length="12" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="stvcampDesc" type="string">
+            <column name="STVCAMP_DESC" length="120">
+                <comment>This field defines the institution"s campus associated with the campus code.</comment>
+            </column>
+        </property>
+        <property name="stvcampActivityDate" type="date">
+            <column name="STVCAMP_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>This field identifies the most recent date a record was created or updated.</comment>
+            </column>
+        </property>
+        <property name="stvcampDicdCode" type="string">
+            <column name="STVCAMP_DICD_CODE" length="12">
+                <comment>District Identifier Code validated by HR form PTVDICD.</comment>
+            </column>
+        </property>
+        <set name="sgbstdnsForSgbstdnCampCode2" table="SGBSTDN" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SGBSTDN_CAMP_CODE_2" length="12">
+                    <comment>Curriculum 2 Campus Code</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Sgbstdn" />
+        </set>
+        <set name="sobcurrs" table="SOBCURR" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SOBCURR_CAMP_CODE" length="12">
+                    <comment>Base Curriculum Campus Code</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Sobcurr" />
+        </set>
+        <set name="smrprles" table="SMRPRLE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SMRPRLE_CAMP_CODE" length="12">
+                    <comment>Campus code.</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Smrprle" />
+        </set>
+        <set name="sgbstdnsForSgbstdnCampCode" table="SGBSTDN" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SGBSTDN_CAMP_CODE" length="12">
+                    <comment>This field identifies the campus location associated with the student for the effective term.</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Sgbstdn" />
+        </set>
+        <set name="sfrstcrs" table="SFRSTCR" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SFRSTCR_CAMP_CODE" length="12" not-null="true">
+                    <comment>This field identifies the campus code of this CRN.</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Sfrstcr" />
+        </set>
+    </class>
+</hibernate-mapping>

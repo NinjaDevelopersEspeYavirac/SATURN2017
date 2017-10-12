@@ -46,12 +46,16 @@ public class SprteleService {
                     sprtele.setSprtelePhoneExt((String) obj[6]);
                     sprtele.setSprteleStatusInd((String) obj[7]);
                     sprtele.setSprteleAtypCode((String) obj[8]);
+                    
+                    
                     Object ssbyte = obj[9];
                     if(ssbyte == null){
                         ssbyte = Vacio;
                     }
                     String objbyte = ssbyte.toString();
                     sprtele.setSprteleAddrSeqno(Byte.parseByte(objbyte));
+                    
+                    
                     sprtele.setSprtelePrimaryInd((String) obj[10]);
                     sprtele.setSprteleUnlistInd((String) obj[11]);
                     sprtele.setSprteleComment((String) obj[12]);

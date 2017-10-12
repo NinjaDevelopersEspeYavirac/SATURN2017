@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
+// Generated 12/10/2017 13:02:22 by Hibernate Tools 4.3.1
 
 
 
@@ -48,6 +48,9 @@ public class SprteleId  implements java.io.Serializable {
     public String toString() {
         return "SprteleId{" + "sprtelePidm=" + sprtelePidm + ", sprteleTeleCode=" + sprteleTeleCode + ", sprteleSeqno=" + sprteleSeqno + '}';
     }
+
+
+
 
 }
 

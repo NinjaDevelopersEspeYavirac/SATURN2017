@@ -1,0 +1,543 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/10/2017 13:03:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Sgbstdn" table="SGBSTDN" schema="SATURN">
+        <comment>Student Base Table</comment>
+        <composite-id name="id" class="ec.edu.espe.saturn.model.SgbstdnId">
+            <key-property name="sgbstdnPidm" type="int">
+                <column name="SGBSTDN_PIDM" precision="8" scale="0" />
+            </key-property>
+            <key-property name="sgbstdnTermCodeEff" type="string">
+                <column name="SGBSTDN_TERM_CODE_EFF" length="24" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="smrprleBySgbstdnProgram1" class="ec.edu.espe.saturn.model.Smrprle" fetch="select">
+            <column name="SGBSTDN_PROGRAM_1" length="48">
+                <comment>Curriculum 1 Program Code</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="smrprleBySgbstdnProgram2" class="ec.edu.espe.saturn.model.Smrprle" fetch="select">
+            <column name="SGBSTDN_PROGRAM_2" length="48">
+                <comment>Curriculum 2 Program Code</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="sobcurrBySgbstdnCurrRule2" class="ec.edu.espe.saturn.model.Sobcurr" fetch="select">
+            <column name="SGBSTDN_CURR_RULE_2" precision="8" scale="0">
+                <comment>Curriculum 2 Rule Reference</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="sobcurrBySgbstdnCurrRule1" class="ec.edu.espe.saturn.model.Sobcurr" fetch="select">
+            <column name="SGBSTDN_CURR_RULE_1" precision="8" scale="0">
+                <comment>Curriculum 1 Rule reference</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stvcampBySgbstdnCampCode2" class="ec.edu.espe.saturn.model.Stvcamp" fetch="select">
+            <column name="SGBSTDN_CAMP_CODE_2" length="12">
+                <comment>Curriculum 2 Campus Code</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stvcampBySgbstdnCampCode" class="ec.edu.espe.saturn.model.Stvcamp" fetch="select">
+            <column name="SGBSTDN_CAMP_CODE" length="12">
+                <comment>This field identifies the campus location associated with the student for the effective term.</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stvcollBySgbstdnCollCode2" class="ec.edu.espe.saturn.model.Stvcoll" fetch="select">
+            <column name="SGBSTDN_COLL_CODE_2" length="8">
+                <comment>This field identifies the college within the secondary curriculum for the effective term.</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stvcollBySgbstdnCollCode1" class="ec.edu.espe.saturn.model.Stvcoll" fetch="select">
+            <column name="SGBSTDN_COLL_CODE_1" length="8">
+                <comment>This field identifies the college associated with the primary curriculum for the effective term..</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="stvcollBySgbstdnCollCodeDual" class="ec.edu.espe.saturn.model.Stvcoll" fetch="select">
+            <column name="SGBSTDN_COLL_CODE_DUAL" length="8" />
+        </many-to-one>
+        <property name="sgbstdnStstCode" type="string">
+            <column name="SGBSTDN_STST_CODE" length="8" not-null="true">
+                <comment>This field identifies the students status for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnLevlCode" type="string">
+            <column name="SGBSTDN_LEVL_CODE" length="8">
+                <comment>This field identifies the level of the student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnStypCode" type="string">
+            <column name="SGBSTDN_STYP_CODE" length="4" not-null="true">
+                <comment>This field identifies the student type for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnTermCodeMatric" type="string">
+            <column name="SGBSTDN_TERM_CODE_MATRIC" length="24">
+                <comment>This field identifies the effective term of matriculation.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnTermCodeAdmit" type="string">
+            <column name="SGBSTDN_TERM_CODE_ADMIT" length="24">
+                <comment>This field identifies the term student was first admitted to institution.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnExpGradDate" type="date">
+            <column name="SGBSTDN_EXP_GRAD_DATE" length="7">
+                <comment>This field identifies expected graduation date.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnFullPartInd" type="string">
+            <column name="SGBSTDN_FULL_PART_IND" length="4">
+                <comment>This field identifies whether the student is a full or part-time student.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnSessCode" type="string">
+            <column name="SGBSTDN_SESS_CODE" length="4">
+                <comment>This field identifies the session student is attending for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnResdCode" type="string">
+            <column name="SGBSTDN_RESD_CODE" length="4">
+                <comment>This field identifies the residency status of the student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnDegcCode1" type="string">
+            <column name="SGBSTDN_DEGC_CODE_1" length="24">
+                <comment>This field identifies the degree within the primary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCode1" type="string">
+            <column name="SGBSTDN_MAJR_CODE_1" length="16">
+                <comment>This field identifies the primary major within the primary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeMinr1" type="string">
+            <column name="SGBSTDN_MAJR_CODE_MINR_1" length="16">
+                <comment>This field identifies the primary minor within the primary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeMinr12" type="string">
+            <column name="SGBSTDN_MAJR_CODE_MINR_1_2" length="16">
+                <comment>This field identifies the secondary minor of the student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc1" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_1" length="16">
+                <comment>This field identifies the primary concentration within the primary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc12" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_1_2" length="16">
+                <comment>This field identifies the secondary concentration within the primary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc13" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_1_3" length="16">
+                <comment>This field identifies the third concentration within the primary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnDegcCode2" type="string">
+            <column name="SGBSTDN_DEGC_CODE_2" length="24">
+                <comment>This field identifies the degree within the secondary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCode2" type="string">
+            <column name="SGBSTDN_MAJR_CODE_2" length="16">
+                <comment>This field identifies the primary major within the secondary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeMinr2" type="string">
+            <column name="SGBSTDN_MAJR_CODE_MINR_2" length="16">
+                <comment>This field identifies the primary minor within the secondary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeMinr22" type="string">
+            <column name="SGBSTDN_MAJR_CODE_MINR_2_2" length="16">
+                <comment>This field identifies the secondary minor within the secondary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc2" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_2" length="16">
+                <comment>This field identifies the primary concentration within the secondary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc22" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_2_2" length="16">
+                <comment>This field identifies the secondary concentration within the secondary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc23" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_2_3" length="16">
+                <comment>This field identifies the third concentration within the secondary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnOrsnCode" type="string">
+            <column name="SGBSTDN_ORSN_CODE" length="4">
+                <comment>This field identifies the orientation session assigned to the student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnPracCode" type="string">
+            <column name="SGBSTDN_PRAC_CODE" length="8">
+                <comment>This field identifies the practical training experience of the student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnAdvrPidm" type="java.lang.Integer">
+            <column name="SGBSTDN_ADVR_PIDM" precision="8" scale="0">
+                <comment>This field identifies the internal identification number for the advisor assigned to the student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnGradCreditApprInd" type="string">
+            <column name="SGBSTDN_GRAD_CREDIT_APPR_IND" length="4">
+                <comment>This field identifies eligibility of student to take graduate courses for credit for the effective term. Valid values are Y or blank only.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCaplCode" type="string">
+            <column name="SGBSTDN_CAPL_CODE" length="8">
+                <comment>This field identifies career plan of the student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnLeavCode" type="string">
+            <column name="SGBSTDN_LEAV_CODE" length="4">
+                <comment>This field identifies reason of leave of absence of student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnLeavFromDate" type="date">
+            <column name="SGBSTDN_LEAV_FROM_DATE" length="7">
+                <comment>This field identifies the begin date of leave of absence of student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnLeavToDate" type="date">
+            <column name="SGBSTDN_LEAV_TO_DATE" length="7">
+                <comment>This field identifies the end date of leave of absence of student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnAstdCode" type="string">
+            <column name="SGBSTDN_ASTD_CODE" length="8">
+                <comment>This field identifies the academic standing override for a student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnTermCodeAstd" type="string">
+            <column name="SGBSTDN_TERM_CODE_ASTD" length="24">
+                <comment>This field identifies the term associated with the academic standing override.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnRateCode" type="string">
+            <column name="SGBSTDN_RATE_CODE" length="20">
+                <comment>This field identifies a specific assessment rate of the student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnActivityDate" type="date">
+            <column name="SGBSTDN_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>This field identifies the most current date record was created or updated.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCode12" type="string">
+            <column name="SGBSTDN_MAJR_CODE_1_2" length="16">
+                <comment>This field identifies the secondary major within the primary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCode22" type="string">
+            <column name="SGBSTDN_MAJR_CODE_2_2" length="16">
+                <comment>This field identifies the secondary major within the secondary curriculum for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnEdlvCode" type="string">
+            <column name="SGBSTDN_EDLV_CODE" length="12">
+                <comment>A two position alphanumeric field which indicate the highest level of the education that the student completed</comment>
+            </column>
+        </property>
+        <property name="sgbstdnIncmCode" type="string">
+            <column name="SGBSTDN_INCM_CODE" length="8">
+                <comment>A two position alphanumeric field which indicate the income range of the student</comment>
+            </column>
+        </property>
+        <property name="sgbstdnAdmtCode" type="string">
+            <column name="SGBSTDN_ADMT_CODE" length="8">
+                <comment>Admissions type from the admissions application</comment>
+            </column>
+        </property>
+        <property name="sgbstdnEmexCode" type="string">
+            <column name="SGBSTDN_EMEX_CODE" length="8">
+                <comment>General Student Employment Expectation Code</comment>
+            </column>
+        </property>
+        <property name="sgbstdnAprnCode" type="string">
+            <column name="SGBSTDN_APRN_CODE" length="8">
+                <comment>General Student Apprenticeship Code</comment>
+            </column>
+        </property>
+        <property name="sgbstdnTrcnCode" type="string">
+            <column name="SGBSTDN_TRCN_CODE" length="8">
+                <comment>General Student Transfer Center Code</comment>
+            </column>
+        </property>
+        <property name="sgbstdnGainCode" type="string">
+            <column name="SGBSTDN_GAIN_CODE" length="8">
+                <comment>This field identifies the employment and training code of the student for the effective term.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnVoedCode" type="string">
+            <column name="SGBSTDN_VOED_CODE" length="8">
+                <comment>General Student Vocation Eduaction Status Code</comment>
+            </column>
+        </property>
+        <property name="sgbstdnBlckCode" type="string">
+            <column name="SGBSTDN_BLCK_CODE" length="40">
+                <comment>Block Schedule Code</comment>
+            </column>
+        </property>
+        <property name="sgbstdnTermCodeGrad" type="string">
+            <column name="SGBSTDN_TERM_CODE_GRAD" length="24">
+                <comment>Term student intends to graduate.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnAcyrCode" type="string">
+            <column name="SGBSTDN_ACYR_CODE" length="16">
+                <comment>Year student intends to graduate.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnDeptCode" type="string">
+            <column name="SGBSTDN_DEPT_CODE" length="16">
+                <comment>Department Code.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnSiteCode" type="string">
+            <column name="SGBSTDN_SITE_CODE" length="12">
+                <comment>Site Code.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnDeptCode2" type="string">
+            <column name="SGBSTDN_DEPT_CODE_2" length="16">
+                <comment>Department Code for second curriculum.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnEgolCode" type="string">
+            <column name="SGBSTDN_EGOL_CODE" length="8">
+                <comment>Educational Goal code.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnDegcCodeDual" type="string">
+            <column name="SGBSTDN_DEGC_CODE_DUAL" length="24" />
+        </property>
+        <property name="sgbstdnLevlCodeDual" type="string">
+            <column name="SGBSTDN_LEVL_CODE_DUAL" length="8" />
+        </property>
+        <property name="sgbstdnDeptCodeDual" type="string">
+            <column name="SGBSTDN_DEPT_CODE_DUAL" length="16" />
+        </property>
+        <property name="sgbstdnMajrCodeDual" type="string">
+            <column name="SGBSTDN_MAJR_CODE_DUAL" length="16" />
+        </property>
+        <property name="sgbstdnBsklCode" type="string">
+            <column name="SGBSTDN_BSKL_CODE" length="8">
+                <comment>Student Basic Skills Code</comment>
+            </column>
+        </property>
+        <property name="sgbstdnPrimRollInd" type="string">
+            <column name="SGBSTDN_PRIM_ROLL_IND" length="4">
+                <comment>Indicates whether the Primary Curriculum should be Rolled to Academic History</comment>
+            </column>
+        </property>
+        <property name="sgbstdnTermCodeCtlg1" type="string">
+            <column name="SGBSTDN_TERM_CODE_CTLG_1" length="24">
+                <comment>Curriculum 1 Catalog Term Code</comment>
+            </column>
+        </property>
+        <property name="sgbstdnDeptCode12" type="string">
+            <column name="SGBSTDN_DEPT_CODE_1_2" length="16">
+                <comment>Curriculum 1 - Department 2</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc121" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_121" length="16">
+                <comment>Concentration Code 1 on Second Major of First Curriculum</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc122" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_122" length="16">
+                <comment>Concentration Code 2 on Second Major on First Curriculum</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc123" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_123" length="16">
+                <comment>Concentration Code 3 on Second Major on First Curriculum</comment>
+            </column>
+        </property>
+        <property name="sgbstdnSecdRollInd" type="string">
+            <column name="SGBSTDN_SECD_ROLL_IND" length="4">
+                <comment>Indicates whether the Secondary Curriculum should be Rolled to Academic History</comment>
+            </column>
+        </property>
+        <property name="sgbstdnTermCodeAdmit2" type="string">
+            <column name="SGBSTDN_TERM_CODE_ADMIT_2" length="24">
+                <comment>Admission Term Code associated with the Secondary Curriculum</comment>
+            </column>
+        </property>
+        <property name="sgbstdnAdmtCode2" type="string">
+            <column name="SGBSTDN_ADMT_CODE_2" length="8">
+                <comment>Admissions Type Code associated with the Secondary Curriculum</comment>
+            </column>
+        </property>
+        <property name="sgbstdnTermCodeCtlg2" type="string">
+            <column name="SGBSTDN_TERM_CODE_CTLG_2" length="24">
+                <comment>Curriculum 2 Catalog Term Code</comment>
+            </column>
+        </property>
+        <property name="sgbstdnLevlCode2" type="string">
+            <column name="SGBSTDN_LEVL_CODE_2" length="8">
+                <comment>Curriculum 2 Level Code</comment>
+            </column>
+        </property>
+        <property name="sgbstdnDeptCode22" type="string">
+            <column name="SGBSTDN_DEPT_CODE_2_2" length="16">
+                <comment>Curriculum 2 - Department 2</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc221" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_221" length="16">
+                <comment>Concentration 1 on Second Major of Second Curriculum</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc222" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_222" length="16">
+                <comment>Concentration 2 on Second Major of Second Curriculum</comment>
+            </column>
+        </property>
+        <property name="sgbstdnMajrCodeConc223" type="string">
+            <column name="SGBSTDN_MAJR_CODE_CONC_223" length="16">
+                <comment>Concentration 3 on Second Major of Second Curriculum</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCmjrRule11" type="java.lang.Integer">
+            <column name="SGBSTDN_CMJR_RULE_1_1" precision="8" scale="0">
+                <comment>Curriculum 1 Major 1 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule111" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_11_1" precision="8" scale="0">
+                <comment>Concentration 1, Major 1, Curriculum 1 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule112" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_11_2" precision="8" scale="0">
+                <comment>Concentration 2, Major 1, Curriculum 1 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule113" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_11_3" precision="8" scale="0">
+                <comment>Concentration 3, Major 1, Curriculum 1 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCmjrRule12" type="java.lang.Integer">
+            <column name="SGBSTDN_CMJR_RULE_1_2" precision="8" scale="0">
+                <comment>Major 2, Curriculum Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule121" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_12_1" precision="8" scale="0">
+                <comment>Concentration 1, Major 2, Curriculum 1 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule122" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_12_2" precision="8" scale="0">
+                <comment>Concentration 2, Major 2, Curriculum 1 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule123" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_12_3" precision="8" scale="0">
+                <comment>Concentration 3, Major 2, Curriculum 1 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCmnrRule11" type="java.lang.Integer">
+            <column name="SGBSTDN_CMNR_RULE_1_1" precision="8" scale="0">
+                <comment>Minor 1, Curriculum 1 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCmnrRule12" type="java.lang.Integer">
+            <column name="SGBSTDN_CMNR_RULE_1_2" precision="8" scale="0">
+                <comment>Minor 2, Curriculum 1 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCmjrRule21" type="java.lang.Integer">
+            <column name="SGBSTDN_CMJR_RULE_2_1" precision="8" scale="0">
+                <comment>Major 1, Curriculum 2 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule211" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_21_1" precision="8" scale="0">
+                <comment>Concentration 1, Major 1, Curriculum 2 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule212" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_21_2" precision="8" scale="0">
+                <comment>Concentration 2, Major 1, Curriculum 2 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule213" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_21_3" precision="8" scale="0">
+                <comment>Concentration 3, Major 1, Curriculum 2 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCmjrRule22" type="java.lang.Integer">
+            <column name="SGBSTDN_CMJR_RULE_2_2" precision="8" scale="0">
+                <comment>Major 2, Curriculum 2 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule221" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_22_1" precision="8" scale="0">
+                <comment>Concentration 1, Major 2, Curriculum 2 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule222" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_22_2" precision="8" scale="0">
+                <comment>Concentration 2, Major 2, Curriculum 2 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCconRule223" type="java.lang.Integer">
+            <column name="SGBSTDN_CCON_RULE_22_3" precision="8" scale="0">
+                <comment>Concentration 3, Major 2, Curriculum 2 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCmnrRule21" type="java.lang.Integer">
+            <column name="SGBSTDN_CMNR_RULE_2_1" precision="8" scale="0">
+                <comment>Minor 1, Curriculum 2 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCmnrRule22" type="java.lang.Integer">
+            <column name="SGBSTDN_CMNR_RULE_2_2" precision="8" scale="0">
+                <comment>Minor 2, Curriculum 2 Rule Reference</comment>
+            </column>
+        </property>
+        <property name="sgbstdnPrevCode" type="string">
+            <column name="SGBSTDN_PREV_CODE" length="8">
+                <comment>General Student record Progress Evaluation code. This code overrides the code in SHRTTRM.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnTermCodePrev" type="string">
+            <column name="SGBSTDN_TERM_CODE_PREV" length="24">
+                <comment>General Student record Progress Evaluation term. This is the term for which the progress evaluation code override becomes effective.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnCastCode" type="string">
+            <column name="SGBSTDN_CAST_CODE" length="8">
+                <comment>General Student record Combined Academic Standing code. This code overrides the code in SHRTTRM.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnTermCodeCast" type="string">
+            <column name="SGBSTDN_TERM_CODE_CAST" length="24">
+                <comment>General Student record Combined Academic Standing term. This is the term for which the combined academic standing code override becomes
+                effective.</comment>
+            </column>
+        </property>
+        <property name="sgbstdnDataOrigin" type="string">
+            <column name="SGBSTDN_DATA_ORIGIN" length="120">
+                <comment>DATA SOURCE: Source system that created or updated the row</comment>
+            </column>
+        </property>
+        <property name="sgbstdnUserId" type="string">
+            <column name="SGBSTDN_USER_ID" length="120">
+                <comment>USER ID: The most recent user to create or update a record.</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

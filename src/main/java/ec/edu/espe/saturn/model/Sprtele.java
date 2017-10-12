@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
+// Generated 12/10/2017 13:02:22 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -161,8 +161,11 @@ public class Sprtele  implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Sprtele{" + "id=" + id.toString() + ", sprteleActivityDate=" + sprteleActivityDate + ", sprtelePhoneArea=" + sprtelePhoneArea + ", sprtelePhoneNumber=" + sprtelePhoneNumber + ", sprtelePhoneExt=" + sprtelePhoneExt + ", sprteleStatusInd=" + sprteleStatusInd + ", sprteleAtypCode=" + sprteleAtypCode + ", sprteleAddrSeqno=" + sprteleAddrSeqno + ", sprtelePrimaryInd=" + sprtelePrimaryInd + ", sprteleUnlistInd=" + sprteleUnlistInd + ", sprteleComment=" + sprteleComment + ", sprteleIntlAccess=" + sprteleIntlAccess + ", sprteleDataOrigin=" + sprteleDataOrigin + ", sprteleUserId=" + sprteleUserId + ", sprteleCtryCodePhone=" + sprteleCtryCodePhone + '}';
+        return "Sprtele{" + "id=" + id + ", sprteleActivityDate=" + sprteleActivityDate + ", sprtelePhoneArea=" + sprtelePhoneArea + ", sprtelePhoneNumber=" + sprtelePhoneNumber + ", sprtelePhoneExt=" + sprtelePhoneExt + ", sprteleStatusInd=" + sprteleStatusInd + ", sprteleAtypCode=" + sprteleAtypCode + ", sprteleAddrSeqno=" + sprteleAddrSeqno + ", sprtelePrimaryInd=" + sprtelePrimaryInd + ", sprteleUnlistInd=" + sprteleUnlistInd + ", sprteleComment=" + sprteleComment + ", sprteleIntlAccess=" + sprteleIntlAccess + ", sprteleDataOrigin=" + sprteleDataOrigin + ", sprteleUserId=" + sprteleUserId + ", sprteleCtryCodePhone=" + sprteleCtryCodePhone + '}';
     }
+
+
+
 
 }
 

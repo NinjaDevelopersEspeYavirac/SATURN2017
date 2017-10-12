@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/10/2017 13:03:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Stvcoll" table="STVCOLL" schema="SATURN">
+        <comment>College Validation Table</comment>
+        <id name="stvcollCode" type="string">
+            <column name="STVCOLL_CODE" length="8" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="stvcollDesc" type="string">
+            <column name="STVCOLL_DESC" length="120" not-null="true">
+                <comment>This field specifies the college or school (i.e. **Banner"s** highest administrative unit) associated with the college code.</comment>
+            </column>
+        </property>
+        <property name="stvcollAddrStreetLine1" type="string">
+            <column name="STVCOLL_ADDR_STREET_LINE1" length="300">
+                <comment>This field is not currently in use.</comment>
+            </column>
+        </property>
+        <property name="stvcollAddrStreetLine2" type="string">
+            <column name="STVCOLL_ADDR_STREET_LINE2" length="300">
+                <comment>This field is not currently in use.</comment>
+            </column>
+        </property>
+        <property name="stvcollAddrStreetLine3" type="string">
+            <column name="STVCOLL_ADDR_STREET_LINE3" length="300">
+                <comment>This field is not currently in use.</comment>
+            </column>
+        </property>
+        <property name="stvcollAddrCity" type="string">
+            <column name="STVCOLL_ADDR_CITY" length="200">
+                <comment>This field is not currently in use.</comment>
+            </column>
+        </property>
+        <property name="stvcollAddrState" type="string">
+            <column name="STVCOLL_ADDR_STATE" length="8">
+                <comment>This field is not currently in use.</comment>
+            </column>
+        </property>
+        <property name="stvcollAddrCountry" type="string">
+            <column name="STVCOLL_ADDR_COUNTRY" length="112">
+                <comment>This field is not currently in use.</comment>
+            </column>
+        </property>
+        <property name="stvcollAddrZipCode" type="string">
+            <column name="STVCOLL_ADDR_ZIP_CODE" length="40">
+                <comment>This field is not currently in use.</comment>
+            </column>
+        </property>
+        <property name="stvcollActivityDate" type="date">
+            <column name="STVCOLL_ACTIVITY_DATE" length="7">
+                <comment>This field identifies the most recent date a record was created or updated.</comment>
+            </column>
+        </property>
+        <property name="stvcollSystemReqInd" type="string">
+            <column name="STVCOLL_SYSTEM_REQ_IND" length="4">
+                <comment>System Required Indicator</comment>
+            </column>
+        </property>
+        <property name="stvcollVrMsgNo" type="java.lang.Integer">
+            <column name="STVCOLL_VR_MSG_NO" precision="6" scale="0">
+                <comment>The Voice Response message number assigned to the recorded message that describes the college code.</comment>
+            </column>
+        </property>
+        <property name="stvcollStatscanCde3" type="string">
+            <column name="STVCOLL_STATSCAN_CDE3" length="24">
+                <comment>Statistics Canadian reporting institution specific code.</comment>
+            </column>
+        </property>
+        <property name="stvcollDicdCode" type="string">
+            <column name="STVCOLL_DICD_CODE" length="12">
+                <comment>MIS DISTRICT/DIVISION CODE: This field indicates equivalent district or division associated with an Institution.</comment>
+            </column>
+        </property>
+        <property name="stvcollHouseNumber" type="string">
+            <column name="STVCOLL_HOUSE_NUMBER" length="40">
+                <comment>HOUSE NUMBER: Building or lot number on a street or in an area.</comment>
+            </column>
+        </property>
+        <property name="stvcollAddrStreetLine4" type="string">
+            <column name="STVCOLL_ADDR_STREET_LINE4" length="300">
+                <comment>This field is not currently in use.</comment>
+            </column>
+        </property>
+        <set name="sgbstdnsForSgbstdnCollCode2" table="SGBSTDN" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SGBSTDN_COLL_CODE_2" length="8">
+                    <comment>This field identifies the college within the secondary curriculum for the effective term.</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Sgbstdn" />
+        </set>
+        <set name="sgbstdnsForSgbstdnCollCode1" table="SGBSTDN" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SGBSTDN_COLL_CODE_1" length="8">
+                    <comment>This field identifies the college associated with the primary curriculum for the effective term..</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Sgbstdn" />
+        </set>
+        <set name="smrprles" table="SMRPRLE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SMRPRLE_COLL_CODE" length="8">
+                    <comment>Required if program is curriculum dependent.</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Smrprle" />
+        </set>
+        <set name="sgbstdnsForSgbstdnCollCodeDual" table="SGBSTDN" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SGBSTDN_COLL_CODE_DUAL" length="8" />
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Sgbstdn" />
+        </set>
+        <set name="sobcurrs" table="SOBCURR" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SOBCURR_COLL_CODE" length="8">
+                    <comment>Base Curriculum College Code</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Sobcurr" />
+        </set>
+    </class>
+</hibernate-mapping>

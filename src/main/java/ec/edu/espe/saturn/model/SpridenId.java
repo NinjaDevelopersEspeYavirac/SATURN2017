@@ -1,5 +1,5 @@
 package ec.edu.espe.saturn.model;
-// Generated Oct 11, 2017 9:11:35 AM by Hibernate Tools 4.3.1
+// Generated 12/10/2017 13:02:22 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -211,6 +211,9 @@ public class SpridenId  implements java.io.Serializable {
     public String toString() {
         return "SpridenId{" + "spridenPidm=" + spridenPidm + ", spridenId=" + spridenId + ", spridenLastName=" + spridenLastName + ", spridenFirstName=" + spridenFirstName + ", spridenMi=" + spridenMi + ", spridenChangeInd=" + spridenChangeInd + ", spridenEntityInd=" + spridenEntityInd + ", spridenActivityDate=" + spridenActivityDate + ", spridenUser=" + spridenUser + ", spridenOrigin=" + spridenOrigin + ", spridenSearchLastName=" + spridenSearchLastName + ", spridenSearchFirstName=" + spridenSearchFirstName + ", spridenSearchMi=" + spridenSearchMi + ", spridenSoundexLastName=" + spridenSoundexLastName + ", spridenSoundexFirstName=" + spridenSoundexFirstName + ", spridenNtypCode=" + spridenNtypCode + ", spridenCreateUser=" + spridenCreateUser + ", spridenCreateDate=" + spridenCreateDate + ", spridenDataOrigin=" + spridenDataOrigin + ", spridenCreateFdmnCode=" + spridenCreateFdmnCode + ", spridenSurnamePrefix=" + spridenSurnamePrefix + '}';
     }
+
+
+
 
 }
 

@@ -22,7 +22,9 @@ import org.hibernate.HibernateException;
 public class SprteleService {
     private final static L log = new L(SprteleService.class);
     
+    
     public static List<Sprtele> FindByPIDM(int sprtelePidm) {
+        int Vacio = 1;
         List<Sprtele> sprtelelist = new ArrayList<>();
         try {
             String sql = "SELECT * FROM SPRTELE WHERE SPRTELE_PIDM=" + sprtelePidm;
@@ -45,6 +47,9 @@ public class SprteleService {
                     sprtele.setSprteleStatusInd((String) obj[7]);
                     sprtele.setSprteleAtypCode((String) obj[8]);
                     Object ssbyte = obj[9];
+                    if(ssbyte == null){
+                        ssbyte = Vacio;
+                    }
                     String objbyte = ssbyte.toString();
                     sprtele.setSprteleAddrSeqno(Byte.parseByte(objbyte));
                     sprtele.setSprtelePrimaryInd((String) obj[10]);

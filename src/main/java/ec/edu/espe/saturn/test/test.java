@@ -9,11 +9,13 @@ import ec.edu.espe.saturn.controller.GoremalController;
 import ec.edu.espe.saturn.controller.PebemplController;
 import ec.edu.espe.saturn.controller.SpraddrController;
 import ec.edu.espe.saturn.controller.SprteleController;
+import ec.edu.espe.saturn.controller.StvcampController;
 
 import ec.edu.espe.saturn.model.Goremal;
 import ec.edu.espe.saturn.model.Pebempl;
 import ec.edu.espe.saturn.model.Spraddr;
 import ec.edu.espe.saturn.model.Sprtele;
+import ec.edu.espe.saturn.model.Stvcamp;
 import java.util.List;
 
 /**
@@ -48,7 +50,8 @@ public class test {
 //           System.out.println(">> " + direccion.toString());
 //        }
          
-        
+        List<Stvcamp> obj = StvcampController.FindByCode("01");
+        System.out.println(">>"+obj.toString());
         //ClASE PEBEMPLCONTROLLER (CAMPUS)    
 //        List<Pebempl> obj = PebemplController.FindByPIDM(16992);
 //        for (Pebempl telefono : obj) {

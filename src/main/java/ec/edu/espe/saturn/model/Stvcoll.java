@@ -2,8 +2,10 @@ package ec.edu.espe.saturn.model;
 // Generated 12/10/2017 13:02:22 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -33,8 +35,18 @@ public class Stvcoll  implements java.io.Serializable {
      private Set smrprles = new HashSet(0);
      private Set sgbstdnsForSgbstdnCollCodeDual = new HashSet(0);
      private Set sobcurrs = new HashSet(0);
+     private List<Sgbstdn> sgbstdnsforsgbstdncollcode2 = new ArrayList<>();
+     private List<Sgbstdn> sgbstdnsforsgbstdncollcode1 = new ArrayList<>();
+     private List<Smrprle> smrprless = new ArrayList<>();
+     private List<Sgbstdn> sgbstdnsforsgbstdncollcodedual = new ArrayList<>();
+     private List<Sobcurr> sobcurrss = new ArrayList<>();
 
     public Stvcoll() {
+        this.sgbstdnsforsgbstdncollcode2 = new ArrayList<>();
+     this.sgbstdnsforsgbstdncollcode1 = new ArrayList<>();
+     this.smrprless = new ArrayList<>();
+     this.sgbstdnsforsgbstdncollcodedual = new ArrayList<>();
+     this.sobcurrss = new ArrayList<>();
     }
 
 	
@@ -214,13 +226,53 @@ public class Stvcoll  implements java.io.Serializable {
         this.sobcurrs = sobcurrs;
     }
 
-    @Override
-    public String toString() {
-        return "Stvcoll{" + "stvcollCode=" + stvcollCode + ", stvcollDesc=" + stvcollDesc + ", stvcollAddrStreetLine1=" + stvcollAddrStreetLine1 + ", stvcollAddrStreetLine2=" + stvcollAddrStreetLine2 + ", stvcollAddrStreetLine3=" + stvcollAddrStreetLine3 + ", stvcollAddrCity=" + stvcollAddrCity + ", stvcollAddrState=" + stvcollAddrState + ", stvcollAddrCountry=" + stvcollAddrCountry + ", stvcollAddrZipCode=" + stvcollAddrZipCode + ", stvcollActivityDate=" + stvcollActivityDate + ", stvcollSystemReqInd=" + stvcollSystemReqInd + ", stvcollVrMsgNo=" + stvcollVrMsgNo + ", stvcollStatscanCde3=" + stvcollStatscanCde3 + ", stvcollDicdCode=" + stvcollDicdCode + ", stvcollHouseNumber=" + stvcollHouseNumber + ", stvcollAddrStreetLine4=" + stvcollAddrStreetLine4 + ", sgbstdnsForSgbstdnCollCode2=" + sgbstdnsForSgbstdnCollCode2 + ", sgbstdnsForSgbstdnCollCode1=" + sgbstdnsForSgbstdnCollCode1 + ", smrprles=" + smrprles + ", sgbstdnsForSgbstdnCollCodeDual=" + sgbstdnsForSgbstdnCollCodeDual + ", sobcurrs=" + sobcurrs + '}';
+    
+
+    public List<Sgbstdn> getSgbstdnsforsgbstdncollcode2() {
+        return sgbstdnsforsgbstdncollcode2;
+    }
+
+    public void setSgbstdnsforsgbstdncollcode2(List<Sgbstdn> sgbstdnsforsgbstdncollcode2) {
+        this.sgbstdnsforsgbstdncollcode2 = sgbstdnsforsgbstdncollcode2;
+    }
+
+    public List<Sgbstdn> getSgbstdnsforsgbstdncollcode1() {
+        return sgbstdnsforsgbstdncollcode1;
+    }
+
+    public void setSgbstdnsforsgbstdncollcode1(List<Sgbstdn> sgbstdnsforsgbstdncollcode1) {
+        this.sgbstdnsforsgbstdncollcode1 = sgbstdnsforsgbstdncollcode1;
+    }
+
+    public List<Smrprle> getSmrprless() {
+        return smrprless;
+    }
+
+    public void setSmrprless(List<Smrprle> smrprless) {
+        this.smrprless = smrprless;
+    }
+
+    public List<Sgbstdn> getSgbstdnsforsgbstdncollcodedual() {
+        return sgbstdnsforsgbstdncollcodedual;
+    }
+
+    public void setSgbstdnsforsgbstdncollcodedual(List<Sgbstdn> sgbstdnsforsgbstdncollcodedual) {
+        this.sgbstdnsforsgbstdncollcodedual = sgbstdnsforsgbstdncollcodedual;
+    }
+
+    public List<Sobcurr> getSobcurrss() {
+        return sobcurrss;
+    }
+
+    public void setSobcurrss(List<Sobcurr> sobcurrss) {
+        this.sobcurrss = sobcurrss;
     }
 
 
-
+@Override
+    public String toString() {
+        return "Stvcoll{" + "stvcollCode=" + stvcollCode + ", stvcollDesc=" + stvcollDesc + ", stvcollAddrStreetLine1=" + stvcollAddrStreetLine1 + ", stvcollAddrStreetLine2=" + stvcollAddrStreetLine2 + ", stvcollAddrStreetLine3=" + stvcollAddrStreetLine3 + ", stvcollAddrCity=" + stvcollAddrCity + ", stvcollAddrState=" + stvcollAddrState + ", stvcollAddrCountry=" + stvcollAddrCountry + ", stvcollAddrZipCode=" + stvcollAddrZipCode + ", stvcollActivityDate=" + stvcollActivityDate + ", stvcollSystemReqInd=" + stvcollSystemReqInd + ", stvcollVrMsgNo=" + stvcollVrMsgNo + ", stvcollStatscanCde3=" + stvcollStatscanCde3 + ", stvcollDicdCode=" + stvcollDicdCode + ", stvcollHouseNumber=" + stvcollHouseNumber + ", stvcollAddrStreetLine4=" + stvcollAddrStreetLine4 + ", sgbstdnsForSgbstdnCollCode2=" + sgbstdnsForSgbstdnCollCode2 + ", sgbstdnsForSgbstdnCollCode1=" + sgbstdnsForSgbstdnCollCode1 + ", smrprles=" + smrprles + ", sgbstdnsForSgbstdnCollCodeDual=" + sgbstdnsForSgbstdnCollCodeDual + ", sobcurrs=" + sobcurrs + '}';
+    }
 
 }
 

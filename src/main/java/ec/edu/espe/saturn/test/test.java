@@ -10,12 +10,14 @@ import ec.edu.espe.saturn.controller.PebemplController;
 import ec.edu.espe.saturn.controller.SpraddrController;
 import ec.edu.espe.saturn.controller.SprteleController;
 import ec.edu.espe.saturn.controller.StvcampController;
+import ec.edu.espe.saturn.controller.StvcollController;
 
 import ec.edu.espe.saturn.model.Goremal;
 import ec.edu.espe.saturn.model.Pebempl;
 import ec.edu.espe.saturn.model.Spraddr;
 import ec.edu.espe.saturn.model.Sprtele;
 import ec.edu.espe.saturn.model.Stvcamp;
+import ec.edu.espe.saturn.model.Stvcoll;
 import java.util.List;
 
 /**
@@ -45,13 +47,18 @@ public class test {
 //        }
         
         // CLASE SPRADDR (DIRECCION)
-//        List<Spraddr> objg2 = SpraddrController.FindByPIDM(1116);
-//        for (Spraddr direccion : objg2) {
-//           System.out.println(">> " + direccion.toString());
-//        }
-         
-        List<Stvcamp> obj = StvcampController.FindByCode("01");
-        System.out.println(">>"+obj.toString());
+        /*
+        List<Spraddr> objg2 = SpraddrController.FindByPIDM(1116);
+        for (Spraddr direccion : objg2) {
+           System.out.println(">> " + direccion.toString());
+        }
+        */
+        List<Stvcoll> obj = StvcollController.FindByCode("99");
+        for (Stvcoll carrera: obj) {
+            System.out.println(">>"+carrera.toString());
+        }
+//        List<Stvcamp> obj = StvcampController.FindByCode("01");
+//        System.out.println(">>"+obj.toString());
         //ClASE PEBEMPLCONTROLLER (CAMPUS)    
 //        List<Pebempl> obj = PebemplController.FindByPIDM(16992);
 //        for (Pebempl telefono : obj) {

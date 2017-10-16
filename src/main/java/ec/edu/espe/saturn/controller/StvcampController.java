@@ -17,12 +17,13 @@ import java.util.List;
  * @author Pcmaster2
  */
 public class StvcampController {
+
     private final static L log = new L(SpridenController.class);
-    
+
     static {
         HibernateUtil.init();
     }
-    
+
     public static List<Stvcamp> FindByCode(String stvcampCode) {
 
         List<Stvcamp> findmStvcamp = null;
@@ -30,7 +31,7 @@ public class StvcampController {
         Exception delegateException = null;
         try {
 
-            if (stvcampCode.equals("")) {
+            if (stvcampCode != null && !stvcampCode.equals("")) {
                 findmStvcamp = StvcampService.FindByCode(stvcampCode);
 
             }

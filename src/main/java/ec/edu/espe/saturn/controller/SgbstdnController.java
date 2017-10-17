@@ -17,10 +17,37 @@ import java.util.List;
  * @author Pcmaster2
  */
 public class SgbstdnController {
+
     private final static L log = new L(SgbstdnController.class);
-        static {
+
+    static {
         HibernateUtil.init();
     }
+
+    public static Sgbstdn FindByPIDM_H(int sgbstdnPidm) {
+        Sgbstdn findmSgbstdn = null;
+        HibernateSessionHandler hss = new HibernateSessionHandler();
+        Exception delegateException = null;
+        try {
+            if (sgbstdnPidm != 0) {
+                findmSgbstdn = SgbstdnService.FindByPIDM_H(sgbstdnPidm);
+            }
+        } catch (Exception ex) {
+            log.level.error("FindByPIDM : " + ex.getMessage());
+            delegateException = ex;
+        } finally {
+            hss.close();
+            if (delegateException != null) {
+                try {
+                    throw delegateException;
+                } catch (Exception ex) {
+                    log.level.info("delageException " + ex.toString());
+                }
+            }
+        }
+        return findmSgbstdn;
+    }
+
     public static List<Sgbstdn> FindByPIDM(int sgbstdnPidm) {
 
         List<Sgbstdn> findmSgbstdn = null;

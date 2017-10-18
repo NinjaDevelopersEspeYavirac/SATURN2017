@@ -9,6 +9,7 @@ import ec.edu.espe.saturn.logger.L;
 import ec.edu.espe.saturn.model.Goremal;
 import ec.edu.espe.saturn.service.GoremalService;
 import ec.edu.espe.saturn.util.HibernateSessionHandler;
+import ec.edu.espe.saturn.util.HibernateUtil;
 import java.util.List;
 
 /**
@@ -16,7 +17,13 @@ import java.util.List;
  * @author marlo
  */
 public class GoremalController {
+
     private final static L log = new L(SpridenController.class);
+
+    static {
+        HibernateUtil.init();
+    }
+
     public static List<Goremal> FindByPIDM(int goremalPidm) {
 
         List<Goremal> findmGoremal = null;
@@ -25,7 +32,7 @@ public class GoremalController {
         try {
 
             if (goremalPidm != 0) {
-                findmGoremal = GoremalService.FindByPIDM(goremalPidm);
+                findmGoremal = GoremalService.findByPIDM(goremalPidm);
 
             }
         } catch (Exception ex) {

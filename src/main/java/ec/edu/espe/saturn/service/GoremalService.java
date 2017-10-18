@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.saturn.service;
 
+import ec.edu.espe.saturn.dao.DAOServices;
+import ec.edu.espe.saturn.dao.QueryParameter;
 import ec.edu.espe.saturn.logger.L;
 import ec.edu.espe.saturn.model.Goremal;
 import ec.edu.espe.saturn.util.HibernateUtil;
@@ -19,9 +21,9 @@ import org.hibernate.HibernateException;
  * @author marlo
  */
 public class GoremalService {
-    
+
     private final static L log = new L(SpridenService.class);
-    
+
     public static List<Goremal> FindByPIDM(int goremalPidm) {
         List<Goremal> goremalist = new ArrayList<>();
         try {
@@ -42,17 +44,39 @@ public class GoremalService {
                     goremal.setGoremalUserId((String) obj[6]);
                     goremal.setGoremalComment((String) obj[7]);
                     goremal.setGoremalDispWebInd((String) obj[8]);
-                    goremal.setGoremalDataOrigin((String) obj[9]); 
+                    goremal.setGoremalDataOrigin((String) obj[9]);
                     goremalist.add(goremal);
                 }
             } else {
                 goremalist = null;
             }
-            
+
         } catch (HibernateException ex) {
             log.level.info("FindByPIDM : " + ex.getMessage());
         }
-        
+
         return goremalist;
+    }
+
+    public static List<Goremal> findByPIDM(int spbpersPidm) {
+        List<Goremal> findmGoremal = null;
+        try {
+            DAOServices ds = new DAOServices(HibernateUtil.
+                    getSessionFactory().getCurrentSession());
+            QueryParameter query_1 = new QueryParameter(QueryParameter.$TYPE_WHERE);
+            query_1.setColumnName("id.goremalPidm");
+            query_1.setWhereClause("=");
+            query_1.setValue(spbpersPidm);
+            List parameList = new ArrayList();
+            parameList.add(query_1);
+            List< Goremal> listClients = ds.customQuery(parameList, Goremal.class);
+            if (!listClients.isEmpty()) {
+                findmGoremal = listClients;
+            }
+        } catch (HibernateException ex) {
+            log.level.info("FindByPIDM : " + ex.getMessage());
+        }
+
+        return findmGoremal;
     }
 }

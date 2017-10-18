@@ -146,20 +146,21 @@ public class SfrstcrService {
         return sfrstcrlist;
     }
 
-    public static Sfrstcr HFindByPidem(int sfrstcrPidm) {
+    public static Sfrstcr findByPidem(int sfrstcrPidm) {
         Sfrstcr findmSfrstcr = null;
         try {
             DAOServices ds = new DAOServices(HibernateUtil.
                     getSessionFactory().getCurrentSession());
             QueryParameter query_1 = new QueryParameter(QueryParameter.$TYPE_WHERE);
-            query_1.setColumnName("sfrstcrPidm");
+            query_1.setColumnName("id.sfrstcrPidm");
             query_1.setWhereClause("=");
             query_1.setValue(sfrstcrPidm);
             List parameList = new ArrayList();
             parameList.add(query_1);
             List<Sfrstcr> listClients = ds.customQuery(parameList, Sfrstcr.class);
             if (!listClients.isEmpty()) {
-                findmSfrstcr = listClients.get(0);
+                int item = listClients.size();
+                findmSfrstcr = listClients.get(item - 1);
             }
         } catch (HibernateException ex) {
             log.level.info("HFindByPidem : " + ex.getMessage());

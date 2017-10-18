@@ -169,7 +169,8 @@ public class Stvcamp implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Stvcamp{" + "stvcampCode=" + stvcampCode + ", stvcampDesc=" + stvcampDesc + ", stvcampActivityDate=" + stvcampActivityDate + ", stvcampDicdCode=" + stvcampDicdCode + ", sgbstdnsForSgbstdnCampCode2=" + sgbstdnsForSgbstdnCampCode2 + ", sobcurrs=" + sobcurrs + ", smrprles=" + smrprles + ", sgbstdnsForSgbstdnCampCode=" + sgbstdnsForSgbstdnCampCode + ", sfrstcrs=" + sfrstcrs + '}';
+        return "Stvcamp{" + "stvcampCode=" + stvcampCode + ", stvcampDesc=" + stvcampDesc + ", stvcampActivityDate=" + stvcampActivityDate + ", stvcampDicdCode=" + stvcampDicdCode + '}';
     }
+
 
 }

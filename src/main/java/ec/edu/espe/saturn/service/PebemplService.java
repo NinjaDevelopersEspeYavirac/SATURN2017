@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.saturn.service;
 
+import ec.edu.espe.saturn.dao.DAOServices;
+import ec.edu.espe.saturn.dao.QueryParameter;
 import ec.edu.espe.saturn.logger.L;
 import ec.edu.espe.saturn.model.Pebempl;
 import ec.edu.espe.saturn.util.HibernateUtil;
@@ -99,5 +101,27 @@ public class PebemplService {
         }
 
         return pebemplist;
+    }
+    
+        public static List<Pebempl>  findByPIDM(int sgbstdnPidm) {
+       List<Pebempl> findmPebempl = null;
+        try {
+            DAOServices ds = new DAOServices(HibernateUtil.
+                    getSessionFactory().getCurrentSession());
+            QueryParameter query_1 = new QueryParameter(QueryParameter.$TYPE_WHERE);
+            query_1.setColumnName("pebemplPidm");
+            query_1.setWhereClause("=");
+            query_1.setValue(sgbstdnPidm);
+            List parameList = new ArrayList();
+            parameList.add(query_1);
+            List<Pebempl> listPebempl = ds.customQuery(parameList, Pebempl.class);
+            if (!listPebempl.isEmpty()) {
+                findmPebempl = listPebempl;
+            }
+        } catch (HibernateException ex) {
+            log.level.info("FindByPIDM : " + ex.getMessage());
+        }
+
+        return findmPebempl;
     }
 }

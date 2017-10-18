@@ -17,12 +17,14 @@ import java.util.List;
  * @author Pcmaster2
  */
 public class PebemplController {
+
     private final static L log = new L(PebemplController.class);
 
     static {
         HibernateUtil.init();
     }
-   /* public static Pebempl FindByPIDM(int pebemplPidm) {
+
+    /* public static Pebempl FindByPIDM(int pebemplPidm) {
         Pebempl findmPebempl = null;
         HibernateSessionHandler hss = new HibernateSessionHandler();
         Exception delegateException = null;
@@ -51,7 +53,7 @@ public class PebemplController {
     //
     //*/
 
- public static List<Pebempl> FindByPIDM(int pebemplPidm) {
+    public static List<Pebempl> FindByPIDM(int pebemplPidm) {
 
         List<Pebempl> findmPebempl = null;
         HibernateSessionHandler hss = new HibernateSessionHandler();
@@ -59,7 +61,7 @@ public class PebemplController {
         try {
 
             if (pebemplPidm != 0) {
-                findmPebempl = PebemplService.FindByPIDM(pebemplPidm);
+                findmPebempl = PebemplService.findByPIDM(pebemplPidm);
 
             }
         } catch (Exception ex) {

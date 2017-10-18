@@ -31,20 +31,20 @@ public class SgbstdnService {
      * @param sgbstdnPidm
      * @return
      */
-    public static Sgbstdn FindByPIDM_H(int sgbstdnPidm) {
-        Sgbstdn findmSgbstdn = null;
+    public static List<Sgbstdn> FindByPIDM_H(int sgbstdnPidm) {
+        List<Sgbstdn> findmSgbstdn = null;
         try {
             DAOServices ds = new DAOServices(HibernateUtil.
                     getSessionFactory().getCurrentSession());
             QueryParameter query_1 = new QueryParameter(QueryParameter.$TYPE_WHERE);
-            query_1.setColumnName("sgbstdnPidm");
+            query_1.setColumnName("id.sgbstdnPidm");
             query_1.setWhereClause("=");
             query_1.setValue(sgbstdnPidm);
             List parameList = new ArrayList();
             parameList.add(query_1);
-            List< Sgbstdn> listSgbstdn = ds.customQuery(parameList, Sgbstdn.class);
+            List<Sgbstdn> listSgbstdn = ds.customQuery(parameList, Sgbstdn.class);
             if (!listSgbstdn.isEmpty()) {
-                findmSgbstdn = listSgbstdn.get(0);
+                findmSgbstdn = listSgbstdn;
             }
         } catch (HibernateException ex) {
             log.level.info("FindByPIDM : " + ex.getMessage());

@@ -30,7 +30,7 @@ public class SgbstdnController {
         Exception delegateException = null;
         try {
             if (sgbstdnPidm != 0) {
-                findmSgbstdn = SgbstdnService.FindByPIDM_H(sgbstdnPidm);
+                //findmSgbstdn = SgbstdnService.FindByPIDM_H(sgbstdnPidm);
             }
         } catch (Exception ex) {
             log.level.error("FindByPIDM : " + ex.getMessage());
@@ -54,10 +54,8 @@ public class SgbstdnController {
         HibernateSessionHandler hss = new HibernateSessionHandler();
         Exception delegateException = null;
         try {
-
             if (sgbstdnPidm != 0) {
-                findmSgbstdn = SgbstdnService.FindByPIDM(sgbstdnPidm);
-
+                findmSgbstdn = SgbstdnService.FindByPIDM_H(sgbstdnPidm);
             }
         } catch (Exception ex) {
             log.level.error("FindByPIDM : " + ex.getMessage());

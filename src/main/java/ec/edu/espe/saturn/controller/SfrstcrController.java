@@ -51,13 +51,13 @@ public class SfrstcrController {
         return findmSfrstcr;
     }
 
-    public static Sfrstcr HFindByPidem(int sfrstcrPidm) {
+    public static Sfrstcr findByPidem(int sfrstcrPidm) {
         Sfrstcr findmSfrstcr = null;
         HibernateSessionHandler hss = new HibernateSessionHandler();
         Exception delegateException = null;
         try {
             if (sfrstcrPidm != 0) {
-                findmSfrstcr = SfrstcrService.HFindByPidem(sfrstcrPidm);
+                findmSfrstcr = SfrstcrService.findByPidem(sfrstcrPidm);
             }
         } catch (Exception ex) {
             log.level.error("HFindByPidem : " + ex.getMessage());

@@ -5,6 +5,16 @@
  */
 package ec.edu.espe.saturn.test.hib;
 
+import ec.edu.espe.saturn.controller.GoremalController;
+import ec.edu.espe.saturn.controller.PebemplController;
+import ec.edu.espe.saturn.controller.SfrstcrController;
+import ec.edu.espe.saturn.controller.SgbstdnController;
+import ec.edu.espe.saturn.model.Goremal;
+import ec.edu.espe.saturn.model.Pebempl;
+import ec.edu.espe.saturn.model.Sfrstcr;
+import ec.edu.espe.saturn.model.Sgbstdn;
+import java.util.List;
+
 /**
  *
  * @author luis
@@ -16,6 +26,24 @@ public class test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        List<Goremal> list = GoremalController.FindByPIDM(775);
+        System.out.println(">> " + list.size());
+        for (Goremal gmail : list) {
+            System.out.println(">> " + gmail.toString());
+        }
+
+        List<Sgbstdn> sgbslist = SgbstdnController.FindByPIDM(331906);
+        System.out.println(">> " + sgbslist.size());
+        //depuracion
+        
+        List<Pebempl> PebemplList = PebemplController.FindByPIDM(12630);
+        System.out.println(">> "+PebemplList.size());
+        for(Pebempl peml : PebemplList){
+            System.out.println(">> "+peml.toString());
+        }
+        
+        Sfrstcr SfrstcrLits = SfrstcrController.findByPidem(755);
+        System.out.println(">> "+SfrstcrLits.getStvcamp().getStvcampCode());
     }
-    
+
 }

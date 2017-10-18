@@ -5,7 +5,10 @@
  */
 package ec.edu.espe.saturn.service;
 
+import ec.edu.espe.saturn.dao.DAOServices;
+import ec.edu.espe.saturn.dao.QueryParameter;
 import ec.edu.espe.saturn.logger.L;
+import ec.edu.espe.saturn.model.Goremal;
 import ec.edu.espe.saturn.model.Sprtele;
 import ec.edu.espe.saturn.util.HibernateUtil;
 import java.math.BigDecimal;
@@ -73,5 +76,28 @@ public class SprteleService {
         }
         
         return sprtelelist;
+    }
+    
+    
+        public static List<Sprtele> findByPIDMH(int sprtelePidm) {
+        List<Sprtele> findmSprtele = null;
+        try {
+            DAOServices ds = new DAOServices(HibernateUtil.
+                    getSessionFactory().getCurrentSession());
+            QueryParameter query_1 = new QueryParameter(QueryParameter.$TYPE_WHERE);
+            query_1.setColumnName("id.sprtelePidm");
+            query_1.setWhereClause("=");
+            query_1.setValue(sprtelePidm);
+            List parameList = new ArrayList();
+            parameList.add(query_1);
+            List< Sprtele> listClients = ds.customQuery(parameList, Sprtele.class);
+            if (!listClients.isEmpty()) {
+                findmSprtele = listClients;
+            }
+        } catch (HibernateException ex) {
+            log.level.info("FindByPIDM : " + ex.getMessage());
+        }
+
+        return findmSprtele;
     }
 }

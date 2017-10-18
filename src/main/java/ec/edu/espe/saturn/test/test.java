@@ -78,8 +78,15 @@ public class test {
 //      Sgbstdn objsg = SgbstdnController.FindByPIDM_H(2889);
 //           System.out.println(">>"+objsg.toString());
         //QUERY HIBERNATE
-        List<Sgbstdn> objsg = SgbstdnController.FindByPIDM(2889);
+       /* List<Sgbstdn> objsg = SgbstdnController.FindByPIDM(2889);
             System.out.println(">>"+objsg.toString());
+         */   
+            
+        List<Sprtele> SprteleList = SprteleController.FindByPIDM(12630);
+        System.out.println(">> "+SprteleList.size());
+        for(Sprtele peml : SprteleList){
+            System.out.println(">> "+peml.toString());
+        }
       
         
 

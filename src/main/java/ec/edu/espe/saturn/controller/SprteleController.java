@@ -25,7 +25,7 @@ public class SprteleController {
         try {
 
             if (sprtelePidm != 0) {
-                findmSprtele = SprteleService.FindByPIDM(sprtelePidm);
+                findmSprtele = SprteleService.findByPIDMH(sprtelePidm);
 
             }
         } catch (Exception ex) {

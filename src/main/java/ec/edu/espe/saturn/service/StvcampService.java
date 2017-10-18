@@ -8,7 +8,6 @@ package ec.edu.espe.saturn.service;
 import ec.edu.espe.saturn.dao.DAOServices;
 import ec.edu.espe.saturn.dao.QueryParameter;
 import ec.edu.espe.saturn.logger.L;
-import ec.edu.espe.saturn.model.Spbpers;
 import ec.edu.espe.saturn.model.Stvcamp;
 import ec.edu.espe.saturn.util.HibernateUtil;
 import java.util.ArrayList;

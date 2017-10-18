@@ -9,6 +9,7 @@ import ec.edu.espe.saturn.controller.GoremalController;
 import ec.edu.espe.saturn.controller.PebemplController;
 
 import ec.edu.espe.saturn.controller.SgbstdnController;
+import ec.edu.espe.saturn.controller.SmrprleController;
 import ec.edu.espe.saturn.controller.SpbpersController;
 import ec.edu.espe.saturn.controller.SpraddrController;
 import ec.edu.espe.saturn.controller.SpridenController;
@@ -20,6 +21,7 @@ import ec.edu.espe.saturn.model.Goremal;
 import ec.edu.espe.saturn.model.Pebempl;
 import ec.edu.espe.saturn.model.Sfrstcr;
 import ec.edu.espe.saturn.model.Sgbstdn;
+import ec.edu.espe.saturn.model.Smrprle;
 import ec.edu.espe.saturn.model.Spbpers;
 import ec.edu.espe.saturn.model.Spraddr;
 import ec.edu.espe.saturn.model.Spriden;
@@ -46,8 +48,47 @@ public class test {
         // clase spbpers
         Spbpers objspbpers = SpbpersController.FindByPIDM(331906);
         System.out.println(">>"+objspbpers.getSpbpersPidm()+" "+objspbpers.getSpbpersSsn()+" "+objspbpers.getSpbpersSex()+" "+objspbpers.getSpbpersUserId()+" "+objspbpers.getSpbpersBirthDate());
+        //clase Goremal
+        List<Goremal> objgoremal = GoremalController.FindByPIDM(331906);          
+            for(Goremal email : objgoremal){
+                System.out.println(">> "+email.getId().getGoremalPidm()+" "+email.getId().getGoremalEmalCode()+" "+email.getId().getGoremalEmailAddress());
+                
+            }
+        //clase sprtele
+        List<Sprtele> objsprtele = SprteleController.FindByPIDM(331906);
+            for(Sprtele telefono : objsprtele){
+                System.out.println(">> "+telefono.getId().getSprtelePidm()+" "+telefono.getId().getSprteleTeleCode()+" "
+                        +telefono.getSprtelePhoneArea()+" "+telefono.getSprtelePhoneExt()+" "+telefono.getSprtelePhoneNumber());
+            }
+        //clase spraddr
+        List<Spraddr> objspraddr = SpraddrController.FindByPIDM(331906);
+            for(Spraddr direccion : objspraddr){
+                System.out.println(">>"+direccion.getId().getSpraddrPidm()+" "+direccion.getId().getSpraddrHouseNumber()+" "+
+                        direccion.getId().getSpraddrStreetLine1()+" "+direccion.getId().getSpraddrStreetLine2()+" "+direccion.getId().getSpraddrStreetLine3());
+            }
+        //clase sobcurr
         
-        
+        //clase stvcoll
+        Stvcoll objstvcoll = StvcollController.HFindByCODE("99");
+                System.out.println(">>"+objstvcoll.getStvcollCode()+" "+objstvcoll.getStvcollDesc());
+                
+        //clase stvcamp
+        Stvcamp objstvcamp = StvcampController.HFindByCODE("10");
+            System.out.println(">>"+objstvcamp.getStvcampCode()+" "+objstvcamp.getStvcampDesc());
+            
+        //clase smrprle
+        List<Smrprle>  objsmrprle = SmrprleController.ListSmrprle();
+            for(Smrprle smrprle : objsmrprle ){
+                System.out.println(">>"+smrprle.getSmrprleProgram()+" "+smrprle.getSmrprleProgramDesc());
+            }
+            
+         //clase pebempl
+         List<Pebempl> objpebempl = PebemplController.FindByPIDM(331906);
+            for(Pebempl pebempl: objpebempl){
+                System.out.println(">>"+pebempl.getPebemplJblnCode());
+            }
+            
+            
         /*
         List<Sprtele> objg = SprteleController.FindByPIDM(664);
         for (Sprtele telefono : objg) {

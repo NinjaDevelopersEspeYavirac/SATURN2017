@@ -5,7 +5,10 @@
  */
 package ec.edu.espe.saturn.service;
 
+import ec.edu.espe.saturn.dao.DAOServices;
+import ec.edu.espe.saturn.dao.QueryParameter;
 import ec.edu.espe.saturn.logger.L;
+import ec.edu.espe.saturn.model.Spbpers;
 import ec.edu.espe.saturn.model.Stvcamp;
 import ec.edu.espe.saturn.util.HibernateUtil;
 import java.util.ArrayList;
@@ -46,5 +49,27 @@ public class StvcampService {
         }
 
         return stvcamplist;
+    }
+    
+        public static Stvcamp HFindByCODE(String stvcampCode) {
+        Stvcamp findmStvcamp = null;
+        try {
+            DAOServices ds = new DAOServices(HibernateUtil.
+                    getSessionFactory().getCurrentSession());
+            QueryParameter query_1 = new QueryParameter(QueryParameter.$TYPE_WHERE);
+            query_1.setColumnName("stvcampCode");
+            query_1.setWhereClause("=");
+            query_1.setValue(stvcampCode);
+            List parameList = new ArrayList();
+            parameList.add(query_1);
+            List< Stvcamp> listClients = ds.customQuery(parameList, Stvcamp.class);
+            if (!listClients.isEmpty()) {
+                findmStvcamp = listClients.get(0);
+            }
+        } catch (HibernateException ex) {
+            log.level.info("HFindByCODE : " + ex.getMessage());
+        }
+
+        return findmStvcamp;
     }
 }

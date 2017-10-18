@@ -22,18 +22,18 @@ public class Stvcamp implements java.io.Serializable {
     private Set smrprles = new HashSet(0);
     private Set sgbstdnsForSgbstdnCampCode = new HashSet(0);
     private Set sfrstcrs = new HashSet(0);
-    private List<Sgbstdn> sgbstdnsforsgbstdncampcode2 = new ArrayList<>();
-    private List<Sobcurr> sobcurr = new ArrayList<>();
-    private List<Smrprle> smrprle = new ArrayList<>();
-    private List<Sgbstdn> sgbstdnsforsgbstdncampcode = new ArrayList<>();
-    private List<Sfrstcr> sfrstcr = new ArrayList<>();
+    private List<Sgbstdn> sgbstdnsforsgbstdncampcode2sa = new ArrayList<>();
+    private List<Sobcurr> sobcurrsa = new ArrayList<>();
+    private List<Smrprle> smrprlesa = new ArrayList<>();
+    private List<Sgbstdn> sgbstdnsforsgbstdncampcodesa = new ArrayList<>();
+    private List<Sfrstcr> sfrstcrsa = new ArrayList<>();
 
     public Stvcamp() {
-        this.sgbstdnsforsgbstdncampcode2 = new ArrayList<>();
-        this.sobcurr = new ArrayList<>();
-        this.smrprle = new ArrayList<>();
-        this.sgbstdnsforsgbstdncampcode = new ArrayList<>();
-        this.sfrstcr = new ArrayList<>();
+        this.sgbstdnsforsgbstdncampcode2sa = new ArrayList<>();
+        this.sobcurrsa = new ArrayList<>();
+        this.smrprlesa = new ArrayList<>();
+        this.sgbstdnsforsgbstdncampcodesa = new ArrayList<>();
+        this.sfrstcrsa = new ArrayList<>();
 
     }
 
@@ -128,43 +128,43 @@ public class Stvcamp implements java.io.Serializable {
     }
 
     public List<Sgbstdn> getSgbstdnsforsgbstdncampcode2() {
-        return sgbstdnsforsgbstdncampcode2;
+        return sgbstdnsforsgbstdncampcode2sa;
     }
 
     public void setSgbstdnsforsgbstdncampcode2(List<Sgbstdn> sgbstdnsforsgbstdncampcode2) {
-        this.sgbstdnsforsgbstdncampcode2 = sgbstdnsforsgbstdncampcode2;
+        this.sgbstdnsforsgbstdncampcode2sa = sgbstdnsforsgbstdncampcode2;
     }
 
     public List<Sobcurr> getSobcurr() {
-        return sobcurr;
+        return sobcurrsa;
     }
 
     public void setSobcurr(List<Sobcurr> sobcurr) {
-        this.sobcurr = sobcurr;
+        this.sobcurrsa = sobcurr;
     }
 
     public List<Smrprle> getSmrprle() {
-        return smrprle;
+        return smrprlesa;
     }
 
     public void setSmrprle(List<Smrprle> smrprle) {
-        this.smrprle = smrprle;
+        this.smrprlesa = smrprle;
     }
 
     public List<Sgbstdn> getSgbstdnsforsgbstdncampcode() {
-        return sgbstdnsforsgbstdncampcode;
+        return sgbstdnsforsgbstdncampcodesa;
     }
 
     public void setSgbstdnsforsgbstdncampcode(List<Sgbstdn> sgbstdnsforsgbstdncampcode) {
-        this.sgbstdnsforsgbstdncampcode = sgbstdnsforsgbstdncampcode;
+        this.sgbstdnsforsgbstdncampcodesa = sgbstdnsforsgbstdncampcode;
     }
 
     public List<Sfrstcr> getSfrstcr() {
-        return sfrstcr;
+        return sfrstcrsa;
     }
 
     public void setSfrstcr(List<Sfrstcr> sfrstcr) {
-        this.sfrstcr = sfrstcr;
+        this.sfrstcrsa = sfrstcr;
     }
 
     @Override

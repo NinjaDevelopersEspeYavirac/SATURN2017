@@ -6,7 +6,9 @@
 package ec.edu.espe.saturn.controller;
 
 import ec.edu.espe.saturn.logger.L;
+import ec.edu.espe.saturn.model.Spbpers;
 import ec.edu.espe.saturn.model.Stvcamp;
+import ec.edu.espe.saturn.service.SpbpersService;
 import ec.edu.espe.saturn.service.StvcampService;
 import ec.edu.espe.saturn.util.HibernateSessionHandler;
 import ec.edu.espe.saturn.util.HibernateUtil;
@@ -49,5 +51,30 @@ public class StvcampController {
             }
         }
         return findmStvcamp;
+    }
+    
+        public static Stvcamp HFindByCODE(String stvcampCode) {
+        Stvcamp findmStvcamp = null;
+        HibernateSessionHandler hss = new HibernateSessionHandler();
+        Exception delegateException = null;
+        try {
+            if (stvcampCode != null && !stvcampCode.equals("")) {
+               findmStvcamp = StvcampService.HFindByCODE(stvcampCode);
+            }
+        } catch (Exception ex) {
+            log.level.error("HFindByCODE : " + ex.getMessage());
+            delegateException = ex;
+        } finally {
+            hss.close();
+            if (delegateException != null) {
+                try {
+                    throw delegateException;
+                } catch (Exception ex) {
+                    log.level.info("delageException " + ex.toString());
+                }
+            }
+        }
+        return findmStvcamp;
+
     }
 }

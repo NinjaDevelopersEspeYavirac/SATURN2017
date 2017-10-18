@@ -9,10 +9,12 @@ import ec.edu.espe.saturn.controller.GoremalController;
 import ec.edu.espe.saturn.controller.PebemplController;
 import ec.edu.espe.saturn.controller.SfrstcrController;
 import ec.edu.espe.saturn.controller.SgbstdnController;
+import ec.edu.espe.saturn.controller.SpraddrController;
 import ec.edu.espe.saturn.model.Goremal;
 import ec.edu.espe.saturn.model.Pebempl;
 import ec.edu.espe.saturn.model.Sfrstcr;
 import ec.edu.espe.saturn.model.Sgbstdn;
+import ec.edu.espe.saturn.model.Spraddr;
 import java.util.List;
 
 /**
@@ -44,6 +46,13 @@ public class test {
         
         Sfrstcr SfrstcrLits = SfrstcrController.findByPidem(755);
         System.out.println(">> "+SfrstcrLits.getStvcamp().getStvcampCode());
+        
+        List<Spraddr> spraddrslist = SpraddrController.FindByPIDM(755);
+        System.out.println(">> "+spraddrslist.size());
+        for(Spraddr addr : spraddrslist){
+            System.out.println(">> "+addr.toString());
+        }
+        
     }
 
 }

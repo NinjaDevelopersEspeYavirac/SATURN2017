@@ -5,7 +5,6 @@
  */
 package ec.edu.espe.saturn.service;
 
-import com.mchange.v2.ser.SerializableUtils;
 import ec.edu.espe.saturn.logger.L;
 import ec.edu.espe.saturn.model.Sprtele;
 import ec.edu.espe.saturn.util.HibernateUtil;

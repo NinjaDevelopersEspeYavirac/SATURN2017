@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.saturn.service;
 
+import ec.edu.espe.saturn.dao.DAOServices;
+import ec.edu.espe.saturn.dao.QueryParameter;
 import ec.edu.espe.saturn.logger.L;
 import ec.edu.espe.saturn.model.Spraddr;
 import ec.edu.espe.saturn.util.HibernateUtil;
@@ -19,12 +21,12 @@ import org.hibernate.HibernateException;
  * @author Gabriel-PC
  */
 public class SpraddrService {
+
     private final static L log = new L(SpraddrService.class);
 
-
     public static List<Spraddr> FindByPIDM(int spraddrPidm) {
-         List<Spraddr> spraddrlist = new ArrayList<>();         
-        
+        List<Spraddr> spraddrlist = new ArrayList<>();
+
         try {
             String sql = "SELECT * FROM SPRADDR WHERE SPRADDR_PIDM = " + spraddrPidm;
             List<Object[]> list = HibernateUtil.
@@ -35,8 +37,8 @@ public class SpraddrService {
                     BigDecimal pidm = null;
                     pidm = (BigDecimal) obj[0];
                     spraddr.getId().setSpraddrPidm((int) pidm.intValue());
-                   spraddr.getId().setSpraddrAtypCode((String) obj[1]);
-                   Object ssbyte = obj[2];
+                    spraddr.getId().setSpraddrAtypCode((String) obj[1]);
+                    Object ssbyte = obj[2];
                     String objbyte = ssbyte.toString();
                     spraddr.getId().setSpraddrSeqno(Byte.parseByte(objbyte));
                     spraddr.getId().setSpraddrFromDate((Date) obj[3]);
@@ -66,7 +68,7 @@ public class SpraddrService {
                     spraddr.getId().setSpraddrCtryCodePhone((String) obj[27]);
                     spraddr.getId().setSpraddrHouseNumber((String) obj[28]);
                     spraddr.getId().setSpraddrStreetLine4((String) obj[29]);
-                    spraddrlist.add(spraddr);      
+                    spraddrlist.add(spraddr);
                 }
             } else {
                 spraddrlist = null;
@@ -77,5 +79,27 @@ public class SpraddrService {
         }
 
         return spraddrlist;
+    }
+
+    public static List<Spraddr> findByPIDM(int spbpersPidm) {
+        List<Spraddr> findmSpraddr = null;
+        try {
+            DAOServices ds = new DAOServices(HibernateUtil.
+                    getSessionFactory().getCurrentSession());
+            QueryParameter query_1 = new QueryParameter(QueryParameter.$TYPE_WHERE);
+            query_1.setColumnName("id.spraddrPidm");
+            query_1.setWhereClause("=");
+            query_1.setValue(spbpersPidm);
+            List parameList = new ArrayList();
+            parameList.add(query_1);
+            List< Spraddr> listClients = ds.customQuery(parameList, Spraddr.class);
+            if (!listClients.isEmpty()) {
+                findmSpraddr = listClients;
+            }
+        } catch (HibernateException ex) {
+            log.level.info("FindByPIDM : " + ex.getMessage());
+        }
+
+        return findmSpraddr;
     }
 }

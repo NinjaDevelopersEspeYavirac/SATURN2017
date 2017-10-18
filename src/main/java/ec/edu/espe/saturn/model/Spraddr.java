@@ -29,7 +29,7 @@ public class Spraddr  implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Spraddr{" + "id=" + id + '}';
+        return "Spraddr{" + "id=" + id.toString() + '}';
     }
 
 

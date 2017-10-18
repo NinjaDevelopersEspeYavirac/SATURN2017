@@ -289,5 +289,7 @@ public class Stvcoll implements java.io.Serializable {
         return "Stvcoll{" + "stvcollCode=" + stvcollCode + ", stvcollDesc=" + stvcollDesc + ", stvcollAddrStreetLine1=" + stvcollAddrStreetLine1 + ", stvcollAddrStreetLine2=" + stvcollAddrStreetLine2 + ", stvcollAddrStreetLine3=" + stvcollAddrStreetLine3 + ", stvcollAddrCity=" + stvcollAddrCity + ", stvcollAddrState=" + stvcollAddrState + ", stvcollAddrCountry=" + stvcollAddrCountry + ", stvcollAddrZipCode=" + stvcollAddrZipCode + ", stvcollActivityDate=" + stvcollActivityDate + ", stvcollSystemReqInd=" + stvcollSystemReqInd + ", stvcollVrMsgNo=" + stvcollVrMsgNo + ", stvcollStatscanCde3=" + stvcollStatscanCde3 + ", stvcollDicdCode=" + stvcollDicdCode + ", stvcollHouseNumber=" + stvcollHouseNumber + ", stvcollAddrStreetLine4=" + stvcollAddrStreetLine4 + '}';
     }
 
+   
+
     
 }

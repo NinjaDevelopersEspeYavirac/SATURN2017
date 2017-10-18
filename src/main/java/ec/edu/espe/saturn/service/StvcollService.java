@@ -5,7 +5,11 @@
  */
 package ec.edu.espe.saturn.service;
 
+import ec.edu.espe.saturn.dao.DAOServices;
+import ec.edu.espe.saturn.dao.QueryParameter;
 import ec.edu.espe.saturn.logger.L;
+import ec.edu.espe.saturn.model.Stvcoll;
+import ec.edu.espe.saturn.model.Stvcoll;
 import ec.edu.espe.saturn.model.Stvcoll;
 import ec.edu.espe.saturn.util.HibernateUtil;
 import java.util.ArrayList;
@@ -18,7 +22,7 @@ import org.hibernate.HibernateException;
  * @author marlo
  */
 public class StvcollService {
-    private final static L log = new L(StvcampService.class);
+    private final static L log = new L(StvcollService.class);
 
     public static List<Stvcoll> FindByCode(String stvcollCode) {
         Stvcoll stvcoll = new Stvcoll();
@@ -62,5 +66,26 @@ public class StvcollService {
 
         return stvcolllist;
     }
+    
+    public static Stvcoll HFindByCODE(String stvcollCode) {
+        Stvcoll findmStvcoll = null;
+        try {
+            DAOServices ds = new DAOServices(HibernateUtil.
+                    getSessionFactory().getCurrentSession());
+            QueryParameter query_1 = new QueryParameter(QueryParameter.$TYPE_WHERE);
+            query_1.setColumnName("stvcollCode");
+            query_1.setWhereClause("=");
+            query_1.setValue(stvcollCode);
+            List parameList = new ArrayList();
+            parameList.add(query_1);
+            List< Stvcoll> listClients = ds.customQuery(parameList, Stvcoll.class);
+            if (!listClients.isEmpty()) {
+                findmStvcoll = listClients.get(0);
+            }
+        } catch (HibernateException ex) {
+            log.level.info("HFindByCODE : " + ex.getMessage());
+        }
 
+        return findmStvcoll;
+    }
 }

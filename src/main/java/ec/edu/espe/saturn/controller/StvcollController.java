@@ -6,8 +6,10 @@
 package ec.edu.espe.saturn.controller;
 
 import ec.edu.espe.saturn.logger.L;
+import ec.edu.espe.saturn.model.Stvcoll;
 
 import ec.edu.espe.saturn.model.Stvcoll;
+import ec.edu.espe.saturn.service.StvcollService;
 
 import ec.edu.espe.saturn.service.StvcollService;
 import ec.edu.espe.saturn.util.HibernateSessionHandler;
@@ -50,5 +52,29 @@ public class StvcollController {
             }
         }
         return findmStvcoll;
+    }
+    public static Stvcoll HFindByCODE(String stvcollCode) {
+        Stvcoll findmStvcoll = null;
+        HibernateSessionHandler hss = new HibernateSessionHandler();
+        Exception delegateException = null;
+        try {
+            if (stvcollCode != null && !stvcollCode.equals("")) {
+               findmStvcoll = StvcollService.HFindByCODE(stvcollCode);
+            }
+        } catch (Exception ex) {
+            log.level.error("HFindByCODE : " + ex.getMessage());
+            delegateException = ex;
+        } finally {
+            hss.close();
+            if (delegateException != null) {
+                try {
+                    throw delegateException;
+                } catch (Exception ex) {
+                    log.level.info("delageException " + ex.toString());
+                }
+            }
+        }
+        return findmStvcoll;
+
     }
 }

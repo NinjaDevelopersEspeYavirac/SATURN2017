@@ -5,8 +5,6 @@
  */
 package ec.edu.espe.saturn.service;
 
-import ec.edu.espe.saturn.dao.DAOServices;
-import ec.edu.espe.saturn.dao.QueryParameter;
 import ec.edu.espe.saturn.logger.L;
 import ec.edu.espe.saturn.model.Pebempl;
 import ec.edu.espe.saturn.util.HibernateUtil;

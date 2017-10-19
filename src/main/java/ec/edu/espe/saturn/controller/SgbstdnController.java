@@ -30,10 +30,10 @@ public class SgbstdnController {
         Exception delegateException = null;
         try {
             if (sgbstdnPidm != 0) {
-                //findmSgbstdn = SgbstdnService.FindByPIDM_H(sgbstdnPidm);
+                findmSgbstdn = SgbstdnService.FindByPIDM_H(sgbstdnPidm);
             }
         } catch (Exception ex) {
-            log.level.error("FindByPIDM : " + ex.getMessage());
+            log.level.error("FindByPIDM_H : " + ex.getMessage());
             delegateException = ex;
         } finally {
             hss.close();
@@ -55,7 +55,7 @@ public class SgbstdnController {
         Exception delegateException = null;
         try {
             if (sgbstdnPidm != 0) {
-                findmSgbstdn = SgbstdnService.FindByPIDM_H(sgbstdnPidm);
+               // findmSgbstdn = SgbstdnService.FindByPIDM_H(sgbstdnPidm);
             }
         } catch (Exception ex) {
             log.level.error("FindByPIDM : " + ex.getMessage());

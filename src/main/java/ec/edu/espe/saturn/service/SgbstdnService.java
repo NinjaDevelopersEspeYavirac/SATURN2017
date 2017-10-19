@@ -31,8 +31,8 @@ public class SgbstdnService {
      * @param sgbstdnPidm
      * @return
      */
-    public static List<Sgbstdn> FindByPIDM_H(int sgbstdnPidm) {
-        List<Sgbstdn> findmSgbstdn = null;
+    public static Sgbstdn FindByPIDM_H(int sgbstdnPidm) {
+        Sgbstdn findmSgbstdn = null;
         try {
             DAOServices ds = new DAOServices(HibernateUtil.
                     getSessionFactory().getCurrentSession());
@@ -44,7 +44,8 @@ public class SgbstdnService {
             parameList.add(query_1);
             List<Sgbstdn> listSgbstdn = ds.customQuery(parameList, Sgbstdn.class);
             if (!listSgbstdn.isEmpty()) {
-                findmSgbstdn = listSgbstdn;
+               int item = listSgbstdn.size();
+                findmSgbstdn = listSgbstdn.get(item -1);
             }
         } catch (HibernateException ex) {
             log.level.info("FindByPIDM : " + ex.getMessage());

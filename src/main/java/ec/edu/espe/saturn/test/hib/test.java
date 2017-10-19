@@ -38,11 +38,11 @@ public class test {
         System.out.println(">> " + sgbslist.size());
         //depuracion
         
-        List<Pebempl> PebemplList = PebemplController.FindByPIDM(12630);
-        System.out.println(">> "+PebemplList.size());
-        for(Pebempl peml : PebemplList){
-            System.out.println(">> "+peml.toString());
-        }
+//        List<Pebempl> PebemplList = PebemplController.FindByPIDM(12630);
+//        System.out.println(">> "+PebemplList.size());
+//        for(Pebempl peml : PebemplList){
+//            System.out.println(">> "+peml.toString());
+//        }
         
         Sfrstcr SfrstcrLits = SfrstcrController.findByPidem(755);
         System.out.println(">> "+SfrstcrLits.getStvcamp().getStvcampCode());

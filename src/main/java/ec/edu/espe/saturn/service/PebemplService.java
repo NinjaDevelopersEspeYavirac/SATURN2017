@@ -103,8 +103,8 @@ public class PebemplService {
         return pebemplist;
     }
     
-        public static List<Pebempl>  findByPIDM(int sgbstdnPidm) {
-       List<Pebempl> findmPebempl = null;
+        public static Pebempl  findByPIDM_H(int sgbstdnPidm) {
+        Pebempl findmPebempl = null;
         try {
             DAOServices ds = new DAOServices(HibernateUtil.
                     getSessionFactory().getCurrentSession());
@@ -116,7 +116,7 @@ public class PebemplService {
             parameList.add(query_1);
             List<Pebempl> listPebempl = ds.customQuery(parameList, Pebempl.class);
             if (!listPebempl.isEmpty()) {
-                findmPebempl = listPebempl;
+                findmPebempl = listPebempl.get(0);
             }
         } catch (HibernateException ex) {
             log.level.info("FindByPIDM : " + ex.getMessage());

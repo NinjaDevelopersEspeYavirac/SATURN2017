@@ -53,19 +53,19 @@ public class PebemplController {
     //
     //*/
 
-    public static List<Pebempl> FindByPIDM(int pebemplPidm) {
+    public static Pebempl FindByPIDM_H(int pebemplPidm) {
 
-        List<Pebempl> findmPebempl = null;
+        Pebempl findmPebempl = null;
         HibernateSessionHandler hss = new HibernateSessionHandler();
         Exception delegateException = null;
         try {
 
             if (pebemplPidm != 0) {
-                findmPebempl = PebemplService.findByPIDM(pebemplPidm);
+                findmPebempl = PebemplService.findByPIDM_H(pebemplPidm);
 
             }
         } catch (Exception ex) {
-            log.level.error("FindByPIDM2: " + ex.getMessage());
+            log.level.error("FindByPIDM_H: " + ex.getMessage());
             delegateException = ex;
         } finally {
             hss.close();

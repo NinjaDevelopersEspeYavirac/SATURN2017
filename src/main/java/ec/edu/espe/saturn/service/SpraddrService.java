@@ -81,7 +81,7 @@ public class SpraddrService {
         return spraddrlist;
     }
 
-    public static List<Spraddr> findByPIDM(int spbpersPidm) {
+    public static List<Spraddr> findByPIDM(int spraddrPidm) {
         List<Spraddr> findmSpraddr = null;
         try {
             DAOServices ds = new DAOServices(HibernateUtil.
@@ -89,7 +89,7 @@ public class SpraddrService {
             QueryParameter query_1 = new QueryParameter(QueryParameter.$TYPE_WHERE);
             query_1.setColumnName("id.spraddrPidm");
             query_1.setWhereClause("=");
-            query_1.setValue(spbpersPidm);
+            query_1.setValue(spraddrPidm);
             List parameList = new ArrayList();
             parameList.add(query_1);
             List< Spraddr> listClients = ds.customQuery(parameList, Spraddr.class);

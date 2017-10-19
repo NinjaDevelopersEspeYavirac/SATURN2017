@@ -7,6 +7,7 @@ package ec.edu.espe.saturn.test;
 
 import ec.edu.espe.saturn.controller.GoremalController;
 import ec.edu.espe.saturn.controller.PebemplController;
+import ec.edu.espe.saturn.controller.SfrstcrController;
 
 import ec.edu.espe.saturn.controller.SgbstdnController;
 import ec.edu.espe.saturn.controller.SmrprleController;
@@ -41,109 +42,61 @@ public class test {
      */
     public static void main(String[] args) {
 
-        // CLASE SPRTELE (TELEFONO)
-        // clase spriden
+        // clase spriden PIDM "SpridenPidm", PRIMER NOMBRE "SpridenFirstName", APELLIDO "SpridenLastName"
         Spriden objsprinden = SpridenController.FindByPIDM(331906);
-        System.out.println(">>"+objsprinden.getId().getSpridenPidm()+" "+objsprinden.getId().getSpridenFirstName()+" "+objsprinden.getId().getSpridenLastName()+" "+objsprinden.getId().getSpridenId());
-        // clase spbpers
+        System.out.println("SPRIDEN>> " + objsprinden.getId().getSpridenPidm() + " " + objsprinden.getId().getSpridenFirstName() + " " + objsprinden.getId().getSpridenLastName());
+
+        // clase spbpers CEDULA "SpbpersSsn", SEXO "SpbpersSex ", USER_ID "SpbpersUserId", FECHA DE NACIMINETO "SpbpersBirthDate"
         Spbpers objspbpers = SpbpersController.FindByPIDM(331906);
-        System.out.println(">>"+objspbpers.getSpbpersPidm()+" "+objspbpers.getSpbpersSsn()+" "+objspbpers.getSpbpersSex()+" "+objspbpers.getSpbpersUserId()+" "+objspbpers.getSpbpersBirthDate());
-        //clase Goremal
-        List<Goremal> objgoremal = GoremalController.FindByPIDM(331906);          
-            for(Goremal email : objgoremal){
-                System.out.println(">> "+email.getId().getGoremalPidm()+" "+email.getId().getGoremalEmalCode()+" "+email.getId().getGoremalEmailAddress());
-                
-            }
-        //clase sprtele
+        System.out.println("SPBPERS>> " +objspbpers.getSpbpersSsn() + " " + objspbpers.getSpbpersSex() + " " + objspbpers.getSpbpersUserId() + " " + objspbpers.getSpbpersBirthDate());
+
+        //clase Goremal EMAIL(EMAIL "GoremalEmailAddress")
+        List<Goremal> objgoremal = GoremalController.FindByPIDM(331906);
+        for (Goremal email : objgoremal) {
+            System.out.println(" GOREMAL>> "+ email.getId().getGoremalEmailAddress());
+
+        }
+
+        //clase sprtele TELEFONO( AREA "SprtelePhoneArea", EXTENCIÓN "SprtelePhoneExt", NÚMERO DE TELEFONO "SprtelePhoneNumber")
         List<Sprtele> objsprtele = SprteleController.FindByPIDM(331906);
-            for(Sprtele telefono : objsprtele){
-                System.out.println(">> "+telefono.getId().getSprtelePidm()+" "+telefono.getId().getSprteleTeleCode()+" "
-                        +telefono.getSprtelePhoneArea()+" "+telefono.getSprtelePhoneExt()+" "+telefono.getSprtelePhoneNumber());
-            }
-        //clase spraddr
+        for (Sprtele telefono : objsprtele) {
+            System.out.println("SRPETELE>> "+ telefono.getSprtelePhoneArea() + " " + telefono.getSprtelePhoneExt() + " " + telefono.getSprtelePhoneNumber());
+        }
+
+        //clase spraddr DIRECCIÓN( NÚMERO DE CASA "SpraddrHouseNumber", CALLE PRINCIPAL "SpraddrStreetLine1", CALLE SECUNDARIA "SpraddrStreetLine2()", BARRIO "SpraddrStreetLine3", CIUDAD "SpraddrCity")
         List<Spraddr> objspraddr = SpraddrController.FindByPIDM(331906);
-            for(Spraddr direccion : objspraddr){
-                System.out.println(">>"+direccion.getId().getSpraddrPidm()+" "+direccion.getId().getSpraddrHouseNumber()+" "+
-                        direccion.getId().getSpraddrStreetLine1()+" "+direccion.getId().getSpraddrStreetLine2()+" "+direccion.getId().getSpraddrStreetLine3());
-            }
-        //clase sobcurr
+        for (Spraddr direccion : objspraddr) {
+            System.out.println("SPRADDR>> "+ direccion.getId().getSpraddrHouseNumber() + " "
+                    + direccion.getId().getSpraddrStreetLine1() + " " + direccion.getId().getSpraddrStreetLine2() + " " + direccion.getId().getSpraddrStreetLine3()+" "+direccion.getId().getSpraddrCity());
+        }
         
-        //clase stvcoll
+        // clase Smrprle PROGRAMA "SmrprleProgram"
+        List<Smrprle> objsmrprle = SmrprleController.ListSmrprle();
+        for (Smrprle smrprle : objsmrprle) {
+            System.out.println("SMRPRLE>> " + smrprle.getSmrprleProgram());
+        }
+        /*LA SMRPRLE SMRPRLE_PROGRAM NECESITA LA SGBSTDN_PROGRAM_2*/
+        
+        //clase stvcoll 
         Stvcoll objstvcoll = StvcollController.HFindByCODE("99");
-                System.out.println(">>"+objstvcoll.getStvcollCode()+" "+objstvcoll.getStvcollDesc());
-                
+        System.out.println("STVCOLL>> " + objstvcoll.getStvcollCode() + " " + objstvcoll.getStvcollDesc());
+
         //clase stvcamp
         Stvcamp objstvcamp = StvcampController.HFindByCODE("10");
-            System.out.println(">>"+objstvcamp.getStvcampCode()+" "+objstvcamp.getStvcampDesc());
-            
-        //clase smrprle
-        List<Smrprle>  objsmrprle = SmrprleController.ListSmrprle();
-            for(Smrprle smrprle : objsmrprle ){
-                System.out.println(">>"+smrprle.getSmrprleProgram()+" "+smrprle.getSmrprleProgramDesc());
-            }
-            
-         //clase pebempl
-         List<Pebempl> objpebempl = PebemplController.FindByPIDM(331906);
-            for(Pebempl pebempl: objpebempl){
-                System.out.println(">>"+pebempl.getPebemplJblnCode());
-            }
-            
-            
-        /*
-        List<Sprtele> objg = SprteleController.FindByPIDM(664);
-        for (Sprtele telefono : objg) {
+        System.out.println(" STVCAMP>> " + objstvcamp.getStvcampCode() + " " + objstvcamp.getStvcampDesc());
 
-            System.out.println(">> " + telefono.toString());
-
-        }*/
-        //ClASE GOREMAL (E-MAIL)
-       
-//        List<Goremal> objg = GoremalController.FindByPIDM(357353);
-//        for (Goremal gmail : objg) {
-//
-//            System.out.println(">> " + gmail.toString());
-//        }
+        //clase pebempl (CODIGO DEL CAMPUS "PebemplCampCode", NOMBRE DEL CAMPUS "PebemplJblnCode", CODIDO DE LOCALIZACIÓN "PebemplLcatCode") 
+        List<Pebempl> objpebempl = PebemplController.FindByPIDM(12630);
+        for (Pebempl peml : objpebempl) {
+            System.out.println("PEBEMPL>> " + peml.getPebemplCampCode()+" "+peml.getPebemplJblnCode()+" "+peml.getPebemplLcatCode());
+        }
         
-        // CLASE SPRADDR (DIRECCION)
-//        List<Spraddr> objg2 = SpraddrController.FindByPIDM(1116);
-//        for (Spraddr direccion : objg2) {
-//           System.out.println(">> " + direccion.toString());
-//        }
+        //clase Sfrstcr (PERIODO "SfrstcrTermCode")
+           Sfrstcr periodo = SfrstcrController.findByPidem(331906);
+           System.out.println("Sfrstcr>> "+periodo.getId().getSfrstcrTermCode()); 
         
-        //CLASE STVCOLL
-//        List<Stvcoll> obj = StvcollController.FindByCode("99");
-//        for (Stvcoll carrera: obj) {
-//            System.out.println(">>"+carrera.toString());
-//        }
-        //CLASE STVCAMP
-//        List<Stvcamp> obj = StvcampController.FindByCode("01");
-//        System.out.println(">>"+obj.toString());
-
-        //ClASE PEBEMPLCONTROLLER (CAMPUS)    
-//        List<Pebempl> obj = PebemplController.FindByPIDM(16992);
-//        for (Pebempl telefono : obj) {
-//        System.out.println(">>"+obj.toString());
-//        }
-         
-        //CLASE SGBSTDN
-        //QUERY NATIVO
-//      Sgbstdn objsg = SgbstdnController.FindByPIDM_H(2889);
-//           System.out.println(">>"+objsg.toString());
-        //QUERY HIBERNATE
-       /* List<Sgbstdn> objsg = SgbstdnController.FindByPIDM(2889);
-            System.out.println(">>"+objsg.toString());
-         */   
-          /*  
-        List<Sprtele> SprteleList = SprteleController.FindByPIDM(12630);
-        System.out.println(">> "+SprteleList.size());
-        for(Sprtele peml : SprteleList){
-            System.out.println(">> "+peml.toString());
-        }*/
-      
-        
-
-
-
+//         Sgbstdn objSgbstdn = SgbstdnController.FindByPIDM_H(331906);
+//           System.out.println("SGBSTDN>> " + objSgbstdn.getSmrprleBySgbstdnProgram2() + " " + objSgbstdn.getStvcampBySgbstdnCampCode());
     }
-    
+
 }

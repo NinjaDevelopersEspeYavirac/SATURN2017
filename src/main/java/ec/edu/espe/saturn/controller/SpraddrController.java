@@ -49,4 +49,28 @@ public class SpraddrController {
         }
         return findmSpraddr;
     }
+         public static List<Spraddr> findByPidem_h(int spraddrPidm) {
+        List<Spraddr> findmSpraddr = null;
+        HibernateSessionHandler hss = new HibernateSessionHandler();
+        Exception delegateException = null;
+        try {
+            if (spraddrPidm != 0) {
+                findmSpraddr = SpraddrService.findByPIDMH(spraddrPidm);
+            }
+        } catch (Exception ex) {
+            log.level.error("HFindByPidem : " + ex.getMessage());
+            delegateException = ex;
+        } finally {
+            hss.close();
+            if (delegateException != null) {
+                try {
+                    throw delegateException;
+                } catch (Exception ex) {
+                    log.level.info("delageException " + ex.toString());
+                }
+            }
+        }
+        return findmSpraddr;
+
+    }
 }

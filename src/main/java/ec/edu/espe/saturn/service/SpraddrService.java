@@ -28,7 +28,7 @@ public class SpraddrService {
         List<Spraddr> spraddrlist = new ArrayList<>();
 
         try {
-            String sql = "SELECT * FROM SATUR.SPRADDR WHERE SPRADDR_PIDM = " + spraddrPidm;
+            String sql = "SELECT * FROM SATURN.SPRADDR WHERE SPRADDR_PIDM = " + spraddrPidm;
             List<Object[]> list = HibernateUtil.
                     getSessionFactory().getCurrentSession().createSQLQuery(sql).list();
             if (!list.isEmpty()) {

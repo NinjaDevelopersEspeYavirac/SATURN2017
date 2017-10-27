@@ -6,6 +6,7 @@
 package ec.edu.espe.saturn.test;
 
 import ec.edu.espe.saturn.controller.GoremalController;
+import ec.edu.espe.saturn.controller.NbrjobsController;
 import ec.edu.espe.saturn.controller.PebemplController;
 import ec.edu.espe.saturn.controller.PerapptController;
 import ec.edu.espe.saturn.controller.PtrtenrController;
@@ -21,6 +22,7 @@ import ec.edu.espe.saturn.controller.StvcampController;
 import ec.edu.espe.saturn.controller.StvcollController;
 
 import ec.edu.espe.saturn.model.Goremal;
+import ec.edu.espe.saturn.model.Nbrjobs;
 import ec.edu.espe.saturn.model.Pebempl;
 import ec.edu.espe.saturn.model.Perappt;
 import ec.edu.espe.saturn.model.Ptrtenr;
@@ -103,14 +105,25 @@ public class test {
 //        Stvcamp objstvcamp = StvcampController.HFindByCODE(campo);
 //        System.out.println(" STVCAMP>> " + " CODIGO: " + objstvcamp.getStvcampCode() + " DESCRIPCION: " + objstvcamp.getStvcampDesc());
 //        
-        //>>>OBTENER CARGO
-        //PERAPPT BUSCAR POR: perappt_pidm, IMPRIMIR: perappt_activity_date
-//         Perappt objPerappt= PerapptController.FindByPidmPerappt(295874);
-//         System.out.println("PERAPPT>> "+objPerappt.getId().getPerapptPidm());
-//     
-         //PTRTENR BUSCAR POR: ptrtenr_code, IMPRIMIR: ptrtenr_code, ptrtenr_desc
+        //>>>OBTENER TITULARIDAD
+        
+        //PTRTENR BUSCAR POR: ptrtenr_code, IMPRIMIR: ptrtenr_code, ptrtenr_desc
          Ptrtenr objptrtenr = PtrtenrController.FindByCode("06");
-        System.out.println("PTRTENR>> Nº: " +objptrtenr.getPtrtenrCode()+" DESCRIPCION: "+objptrtenr.getPtrtenrDesc());
+         System.out.println("PTRTENR>> Nº: " +objptrtenr.getPtrtenrCode()+" DESCRIPCION: "+objptrtenr.getPtrtenrDesc());
+ 
+        
+        //NBRJOBS BUSCAR POR: NBRJOBS_pidm, IMPRIMIR: nbrjobs_posn, nbrjobs_pict_code, nbrjobs_effective_date
+        List<Nbrjobs> objNbrjobs = NbrjobsController.FindByPIDMNbrjobs(8005);
+        for (Nbrjobs jobs : objNbrjobs) {
+            System.out.println("NBRJOBS >> " + "PIDM: " + jobs.getId().getNbrjobsPidm() + " POSN: " + jobs.getId().getNbrjobsPosn() + " DESCRIPCION: " + jobs.getNbrjobsDesc() + " ESTATUS: " + jobs.getNbrjobsStatus());
+        }
+
+//        //PERAPPT BUSCAR POR: perappt_pidm, IMPRIMIR: perappt_activity_date
+//        List<Perappt> objPerappt = PerapptController.FindByPidmPerappt(8005);
+//        for (Perappt date : objPerappt) {
+//            System.out.println("PERAPPT>> " + date.getId().getPerapptPidm());
+//        }ESTE NO FUNCIONA TODAVIA
+
     }
 
 }

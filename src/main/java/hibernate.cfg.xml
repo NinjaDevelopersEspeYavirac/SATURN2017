@@ -21,5 +21,8 @@
         <mapping resource="ec/edu/espe/saturn/model/Stvcoll.hbm.xml"/>
         <mapping resource="ec/edu/espe/saturn/model/Pebempl.hbm.xml"/>
         <mapping resource="ec/edu/espe/saturn/model/Goremal.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Ptrtenr.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Perappt.hbm.xml"/>
+        <mapping resource="ec/edu/espe/saturn/model/Nbrjobs.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

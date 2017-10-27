@@ -2,8 +2,6 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 
 <hibernate-reverse-engineering>
-  <schema-selection match-schema="PAYROLL"/>
-  <table-filter match-name="PEBEMPL"/>
-  <table-filter match-name="PTRTENR"/>
-  <table-filter match-name="PERAPPT"/>
+  <schema-selection match-schema="POSNCTL"/>
+  <table-filter match-name="NBRJOBS"/>
 </hibernate-reverse-engineering>

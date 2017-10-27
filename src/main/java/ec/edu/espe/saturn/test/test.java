@@ -45,7 +45,7 @@ public class test {
         // clase spriden PIDM "SpridenPidm", PRIMER NOMBRE "SpridenFirstName", APELLIDO "SpridenLastName"
         Spriden objsprinden = SpridenController.FindByPIDM(331906);
         System.out.println("SPRIDEN>> " + " PIDM: " + objsprinden.getId().getSpridenPidm() + " PRIMER NOMBRE: " + objsprinden.getId().getSpridenFirstName() + " APELLIDO: " + objsprinden.getId().getSpridenLastName());
-
+  
         // clase spbpers CEDULA "SpbpersSsn", SEXO "SpbpersSex ", USER_ID "SpbpersUserId", FECHA DE NACIMINETO "SpbpersBirthDate"
         Spbpers objspbpers = SpbpersController.FindByPIDM(331906);
         System.out.println("SPBPERS>> " + " CEDULA: " + objspbpers.getSpbpersSsn() + " SEXO: " + objspbpers.getSpbpersSex() + " USER_ID: " + objspbpers.getSpbpersUserId() + " FECHA DE NACIMINETO: " + objspbpers.getSpbpersBirthDate());
@@ -75,7 +75,7 @@ public class test {
         for (Smrprle smrprle : objsmrprle) {
             System.out.println("SMRPRLE>> " + "PROGRAMA: " + smrprle.getSmrprleProgram());
         }
-        /*LA SMRPRLE SMRPRLE_PROGRAM NECESITA LA SGBSTDN_PROGRAM_2*/
+        //LA SMRPRLE SMRPRLE_PROGRAM NECESITA LA SGBSTDN_PROGRAM_2
 
         //clase Sfrstcr (PERIODO "SfrstcrTermCode")
         Sfrstcr periodo = SfrstcrController.findByPidem(331906);
@@ -89,14 +89,17 @@ public class test {
         //clase stvcoll DEPARTAMENTO INGENIEROS
         Stvcoll objstvcoll = StvcollController.HFindByCODE(departamento);
         System.out.println("STVCOLL>> " + " CODIGO: " + objstvcoll.getStvcollCode() + "DESCRIPCIÓN: " + objstvcoll.getStvcollDesc());
+        
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         //clase sgbstdn
         Sgbstdn objSgbstdn = SgbstdnController.FindByPIDM_H(331906);
-        System.out.println("SGBSTDN >> " + objSgbstdn.getSmrprleBySgbstdnProgram2().getSmrprleProgram() + " " + objSgbstdn.getStvcampBySgbstdnCampCode().getStvcampCode());
+        System.out.println("SGBSTDN PROGRAMA >> " + objSgbstdn.getSmrprleBySgbstdnProgram2().getSmrprleProgram() + " " + objSgbstdn.getStvcampBySgbstdnCampCode().getStvcampCode());
         String campo = objSgbstdn.getStvcampBySgbstdnCampCode().getStvcampCode();
         //clase stvcamp
         Stvcamp objstvcamp = StvcampController.HFindByCODE(campo);
         System.out.println(" STVCAMP>> " + " CODIGO: " + objstvcamp.getStvcampCode() + " DESCRIPCION: " + objstvcamp.getStvcampDesc());
+      
+        
     }
 
 }

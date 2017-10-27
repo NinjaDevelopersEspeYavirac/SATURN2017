@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27-oct-2017 9:54:17 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Perappt" table="PERAPPT" schema="PAYROLL">
+        <comment>Faculty Appointment/Tenure History Table.</comment>
+        <composite-id name="id" class="ec.edu.espe.saturn.model.PerapptId">
+            <key-property name="perapptPidm" type="int">
+                <column name="PERAPPT_PIDM" precision="8" scale="0" />
+            </key-property>
+            <key-property name="perapptActionDate" type="date">
+                <column name="PERAPPT_ACTION_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptOrgn" type="string">
+                <column name="PERAPPT_ORGN" length="24" />
+            </key-property>
+            <key-property name="perapptCoasCode" type="string">
+                <column name="PERAPPT_COAS_CODE" length="4" />
+            </key-property>
+            <key-property name="perapptPosn" type="string">
+                <column name="PERAPPT_POSN" length="24" />
+            </key-property>
+            <key-property name="perapptSuff" type="string">
+                <column name="PERAPPT_SUFF" length="8" />
+            </key-property>
+            <key-property name="perapptBeginDate" type="date">
+                <column name="PERAPPT_BEGIN_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptEndDate" type="date">
+                <column name="PERAPPT_END_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptApptEffDate" type="date">
+                <column name="PERAPPT_APPT_EFF_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptNextDate" type="date">
+                <column name="PERAPPT_NEXT_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptTenureCode" type="string">
+                <column name="PERAPPT_TENURE_CODE" length="8" />
+            </key-property>
+            <key-property name="perapptInitialTenure" type="string">
+                <column name="PERAPPT_INITIAL_TENURE" length="4" />
+            </key-property>
+            <key-property name="perapptTenureEffDate" type="date">
+                <column name="PERAPPT_TENURE_EFF_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptTenureTracBeginDate" type="date">
+                <column name="PERAPPT_TENURE_TRAC_BEGIN_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptTenureRevDate" type="date">
+                <column name="PERAPPT_TENURE_REV_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptRevtTenureCode" type="string">
+                <column name="PERAPPT_REVT_TENURE_CODE" length="8" />
+            </key-property>
+            <key-property name="perapptRevtReappCode" type="string">
+                <column name="PERAPPT_REVT_REAPP_CODE" length="8" />
+            </key-property>
+            <key-property name="perapptCredit" type="big_decimal">
+                <column name="PERAPPT_CREDIT" precision="5" />
+            </key-property>
+            <key-property name="perapptTerminalAppt" type="string">
+                <column name="PERAPPT_TERMINAL_APPT" length="4" />
+            </key-property>
+            <key-property name="perapptDecisionDeferDate" type="date">
+                <column name="PERAPPT_DECISION_DEFER_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptDecision" type="string">
+                <column name="PERAPPT_DECISION" length="4" />
+            </key-property>
+            <key-property name="perapptDecisionDate" type="date">
+                <column name="PERAPPT_DECISION_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptComment" type="string">
+                <column name="PERAPPT_COMMENT" length="0" />
+            </key-property>
+            <key-property name="perapptDispCode" type="string">
+                <column name="PERAPPT_DISP_CODE" length="24" />
+            </key-property>
+            <key-property name="perapptFtypCode" type="string">
+                <column name="PERAPPT_FTYP_CODE" length="24" />
+            </key-property>
+            <key-property name="perapptPrevGrtTenr" type="big_decimal">
+                <column name="PERAPPT_PREV_GRT_TENR" precision="5" />
+            </key-property>
+            <key-property name="perapptAppealDate" type="date">
+                <column name="PERAPPT_APPEAL_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptActivityDate" type="date">
+                <column name="PERAPPT_ACTIVITY_DATE" length="7" />
+            </key-property>
+            <key-property name="perapptTenureFte" type="big_decimal">
+                <column name="PERAPPT_TENURE_FTE" precision="7" scale="4" />
+            </key-property>
+            <key-property name="perapptUserId" type="string">
+                <column name="PERAPPT_USER_ID" length="120" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="ptrtenr" class="ec.edu.espe.saturn.model.Ptrtenr" update="false" insert="false" fetch="select">
+            <column name="PERAPPT_TENURE_CODE" length="8">
+                <comment>Tenure Code.</comment>
+            </column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

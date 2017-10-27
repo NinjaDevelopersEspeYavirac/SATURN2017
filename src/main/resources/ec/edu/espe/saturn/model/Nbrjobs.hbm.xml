@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27-oct-2017 9:54:17 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Nbrjobs" table="NBRJOBS" schema="POSNCTL" optimistic-lock="version">
+        <comment>Assignment Repeating Table</comment>
+        <composite-id name="id" class="ec.edu.espe.saturn.model.NbrjobsId">
+            <key-property name="nbrjobsPidm" type="int">
+                <column name="NBRJOBS_PIDM" precision="8" scale="0" />
+            </key-property>
+            <key-property name="nbrjobsPosn" type="string">
+                <column name="NBRJOBS_POSN" length="24" />
+            </key-property>
+            <key-property name="nbrjobsSuff" type="string">
+                <column name="NBRJOBS_SUFF" length="8" />
+            </key-property>
+            <key-property name="nbrjobsEffectiveDate" type="date">
+                <column name="NBRJOBS_EFFECTIVE_DATE" length="7" />
+            </key-property>
+        </composite-id>
+        <property name="nbrjobsStatus" type="string">
+            <column name="NBRJOBS_STATUS" length="4" not-null="true">
+                <comment>STATUS: Status of the job. Valid values are A = Active, B = Leave without pay with benefits, L = Leave without pay without benefits, F = Leave with full
+                pay and benefits, P = Leave with partial pay and benefits , T = Terminated.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsDesc" type="string">
+            <column name="NBRJOBS_DESC" length="120">
+                <comment>DESCRIPTION: Description of the job. Defaults from the Position Title if left blank.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsEclsCode" type="string">
+            <column name="NBRJOBS_ECLS_CODE" length="8" not-null="true">
+                <comment>EMPLOYEE CLASSIFICATION CODE: The employee class attached to the job, based on the Employee Class entered on the Position Form (NBAPOSN).</comment>
+            </column>
+        </property>
+        <property name="nbrjobsPictCode" type="string">
+            <column name="NBRJOBS_PICT_CODE" length="8" not-null="true">
+                <comment>PAY ID CODE: The Pay ID attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsCoasCodeTs" type="string">
+            <column name="NBRJOBS_COAS_CODE_TS" length="4">
+                <comment>TIME SHEET CHART OF ACCOUNTS CODE: Valued only if Banner Finance is installed.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsOrgnCodeTs" type="string">
+            <column name="NBRJOBS_ORGN_CODE_TS" length="24" not-null="true">
+                <comment>TIME SHEET ORGANIZATION: Organization where time sheet is sent for this job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsSalTable" type="string">
+            <column name="NBRJOBS_SAL_TABLE" length="8">
+                <comment>SALARY TABLE: The Salary Table attached to the job. Defaults from the Salary/Rate Rule Form (NTRSALA) via the Position Form (NBAPOSN).</comment>
+            </column>
+        </property>
+        <property name="nbrjobsSalGrade" type="string">
+            <column name="NBRJOBS_SAL_GRADE" length="20">
+                <comment>SALARY GRADE: The Salary Grade attached to the job. Defaults from the Salary/Rate Rule Form (NTRSALA) via the Position Form (NBAPOSN).</comment>
+            </column>
+        </property>
+        <property name="nbrjobsSalStep" type="java.lang.Short">
+            <column name="NBRJOBS_SAL_STEP" precision="3" scale="0">
+                <comment>SALARY STEP: The Salary Step attached to the job. Defaults from the Salary/Rate Rule Form (NTRSALA) or can be entered online.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsApptPct" type="big_decimal">
+            <column name="NBRJOBS_APPT_PCT" precision="5" not-null="true">
+                <comment>APPOINTMENT PERCENTAGE: The Appointment percent attached to the Job. Used to establish the percentage of full time appointment for an employee in a
+                position. The value defaults from the position record, but t he user may change at the job level. The appointment percent cannot exceed 100.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsFte" type="big_decimal">
+            <column name="NBRJOBS_FTE" precision="6" scale="3">
+                <comment>FULL TIME EQUIVALENCY: The full time percentage attached to the job. Defaults to 1.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsHrsDay" type="big_decimal">
+            <column name="NBRJOBS_HRS_DAY" precision="6" not-null="true">
+                <comment>HOURS PER DAY: The hours attached to the job that are normally worked in a day.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsHrsPay" type="big_decimal">
+            <column name="NBRJOBS_HRS_PAY" precision="6" not-null="true">
+                <comment>HOURS PER PAY: The hours attached to the job that are normally worked in a pay period.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsShift" type="string">
+            <column name="NBRJOBS_SHIFT" length="4" not-null="true">
+                <comment>SHIFT: The shift attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsRegRate" type="big_decimal">
+            <column name="NBRJOBS_REG_RATE" precision="11" scale="6">
+                <comment>REGULAR RATE: The regular rate attached to the job. If this field is entered or defaulted from the Salary/Rate Rule Form, the Assign Salary is system
+                calculated and vice versa.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsAssgnSalary" type="big_decimal">
+            <column name="NBRJOBS_ASSGN_SALARY" precision="11" not-null="true">
+                <comment>ASSIGNMENT SALARY: The salary to be paid each pay period. If the Assignment Salary is entered, the Annual Salary is calculated based on the factor and
+                vice versa.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsFactor" type="big_decimal">
+            <column name="NBRJOBS_FACTOR" precision="3" scale="1" not-null="true">
+                <comment>FACTOR: The number of pays per calendar year.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsAnnSalary" type="big_decimal">
+            <column name="NBRJOBS_ANN_SALARY" precision="11" not-null="true">
+                <comment>ANNUAL SALARY: The annual salary attached to the job based on the calendar year. If the Annual Salary is entered, the Assignment Salary is system
+                calculated based the factor and vice versa.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsPerPaySalary" type="big_decimal">
+            <column name="NBRJOBS_PER_PAY_SALARY" precision="11" not-null="true">
+                <comment>PER PAY SALARY: Used for deferred pay calculations.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsPays" type="big_decimal">
+            <column name="NBRJOBS_PAYS" precision="3" scale="1" not-null="true">
+                <comment>PAYS: Used for deferred pay calculations.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsPerPayDeferAmt" type="big_decimal">
+            <column name="NBRJOBS_PER_PAY_DEFER_AMT" precision="11" not-null="true">
+                <comment>PER PAY DEFERRED AMOUNT: The amount deferred each pay period for deferred pay calculation.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsActivityDate" type="date">
+            <column name="NBRJOBS_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>Date of last activity (insert or update) on the record.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsJcreCode" type="string">
+            <column name="NBRJOBS_JCRE_CODE" length="20">
+                <comment>CHANGE REASON CODE: Associates the reason for the change with the job detail record.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsSgrpCode" type="string">
+            <column name="NBRJOBS_SGRP_CODE" length="24" not-null="true">
+                <comment>SALARY GROUP CODE: The Salary Group Code attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsEmprCode" type="string">
+            <column name="NBRJOBS_EMPR_CODE" length="16">
+                <comment>EMPLOYER CODE: The Employer Identification code attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsLgcdCode" type="string">
+            <column name="NBRJOBS_LGCD_CODE" length="16">
+                <comment>LONGEVITY CODE: Longevity code attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsLocnCode" type="string">
+            <column name="NBRJOBS_LOCN_CODE" length="24">
+                <comment>LOCATION CODE: EEO location attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsSchlCode" type="string">
+            <column name="NBRJOBS_SCHL_CODE" length="24">
+                <comment>SCHOOL CODE: EEO school attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsSupervisorPidm" type="java.lang.Integer">
+            <column name="NBRJOBS_SUPERVISOR_PIDM" precision="8" scale="0">
+                <comment>SUPERVISOR PIDM: Internal identification number of the supervisor attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsSupervisorPosn" type="string">
+            <column name="NBRJOBS_SUPERVISOR_POSN" length="24">
+                <comment>SUPERVISOR POSN: The position number of the supervisor attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsSupervisorSuff" type="string">
+            <column name="NBRJOBS_SUPERVISOR_SUFF" length="8">
+                <comment>SUPERVISOR SUFFIX: Suffix attached to the supervisor's position.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsWkcpCode" type="string">
+            <column name="NBRJOBS_WKCP_CODE" length="16">
+                <comment>WORKER COMPENSATION CODE: Workers' Compensation Classification Code attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsJblnCode" type="string">
+            <column name="NBRJOBS_JBLN_CODE" length="24">
+                <comment>JOB LOCATION CODE: Job Location Code attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsPersChgDate" type="date">
+            <column name="NBRJOBS_PERS_CHG_DATE" length="7" not-null="true">
+                <comment>PERSONNEL CHANGE DATE: Date the change was actually made as opposed to the effective date which is for payroll purposes.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsPcatCode" type="string">
+            <column name="NBRJOBS_PCAT_CODE" length="16">
+                <comment>PREMIUM PAY CODE: Generates premium pay attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsDfprCode" type="string">
+            <column name="NBRJOBS_DFPR_CODE" length="16">
+                <comment>DEFER PAY CODE: The defer pay schedule attached to the job. Defaults from PTRDFPR.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsEncumbranceHrs" type="big_decimal">
+            <column name="NBRJOBS_ENCUMBRANCE_HRS" precision="6">
+                <comment>ENCUMBRANCE HOURS: Hours used to calculate the encumbrance amount for this job in the active fiscal year.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsContractNo" type="string">
+            <column name="NBRJOBS_CONTRACT_NO" length="32">
+                <comment>JOB CONTRACT NUMBER: Job contract number attached to the job.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsStrsAssnCode" type="string">
+            <column name="NBRJOBS_STRS_ASSN_CODE" length="8">
+                <comment>STRS ASSIGNMENT CODE: STRS Assignment Code attached to the job. Valid values are STRS mandated.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsStrsPayCode" type="string">
+            <column name="NBRJOBS_STRS_PAY_CODE" length="8">
+                <comment>STRS PAY CODE: STRS Pay Code for the employee attached to the job. The value selected determines how the employee's salary will be reported to STRS
+                administration on the monthly F-496 report.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsPersPayCode" type="string">
+            <column name="NBRJOBS_PERS_PAY_CODE" length="8">
+                <comment>PERS PAY CODE: PERS Pay Code for the employee attached to the job. The value selected determines how the employee's salary will be reported to PERS
+                administration on the PERS Monthly Contribution Report .</comment>
+            </column>
+        </property>
+        <property name="nbrjobsTimeEntryMethod" type="string">
+            <column name="NBRJOBS_TIME_ENTRY_METHOD" length="4" not-null="true">
+                <comment>TIME ENTRY METHOD: Time Entry Method attached to the job. Valid values are P = Payroll, W = Web, D = Departmental, T = Third Party.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsTimeEntryType" type="string">
+            <column name="NBRJOBS_TIME_ENTRY_TYPE" length="4" not-null="true">
+                <comment>TIME ENTRY TYPE: Time Entry Type attached to the job. It represents the structure of how time will be entered over the Web or on the Electronic Approvals
+                of Time Entry Form (PHATIME). Valid values are T = Time Sheet, E = Exception Time Only, N = None.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsTimeInOutInd" type="string">
+            <column name="NBRJOBS_TIME_IN_OUT_IND" length="4" not-null="true">
+                <comment>TIME IN AND OUT INDICATOR: Time In/Out Indicator attached to the job. Valiod values are Y = Yes and N = No. If Y, this employee must enter time in and out
+                information on the Web or have it entered by a department administrator on the Electronic Approvals of Time Entry Form (PHATIME). Time In and out must be entered
+                for all earn codes that require hours entry. Time in and out will not be entered for earn codes that require units entry.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsLcatCode" type="string">
+            <column name="NBRJOBS_LCAT_CODE" length="8">
+                <comment>LEAVE CATEGORY CODE: A code which identifies a group of leave types. It is used when the Leave by Job Method has been selected for leave
+                processing.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsLeavReptMethod" type="string">
+            <column name="NBRJOBS_LEAV_REPT_METHOD" length="4" not-null="true">
+                <comment>LEAVE REPORT ENTRY METHOD: Leave Report Method Attached to the job. Valid values are P = None, W = Leave Report on the Web, D = Departmental Leave Report,
+                T = Third Party Leave Report.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsPictCodeLeavRept" type="string">
+            <column name="NBRJOBS_PICT_CODE_LEAV_REPT" length="8" not-null="true">
+                <comment>LEAVE REPORT PAY ID: The Leave Report Pay ID attached to the job and associated with a leave report or leave request.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsUserId" type="string">
+            <column name="NBRJOBS_USER_ID" length="120">
+                <comment>USER ID: The Oracle ID of the user who changed the record.</comment>
+            </column>
+        </property>
+        <property name="nbrjobsDataOrigin" type="string">
+            <column name="NBRJOBS_DATA_ORIGIN" length="120">
+                <comment>DATA ORIGIN: Source system that created or updated the row.</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

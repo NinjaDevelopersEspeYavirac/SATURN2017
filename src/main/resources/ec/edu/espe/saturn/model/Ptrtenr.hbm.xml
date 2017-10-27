@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27-oct-2017 9:54:17 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ec.edu.espe.saturn.model.Ptrtenr" table="PTRTENR" schema="PAYROLL">
+        <comment>Faculty Member Tenure Status Code Table</comment>
+        <id name="ptrtenrCode" type="string">
+            <column name="PTRTENR_CODE" length="8" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="ptrtenrDesc" type="string">
+            <column name="PTRTENR_DESC" length="120" not-null="true">
+                <comment>Description of faculty member tenure status code</comment>
+            </column>
+        </property>
+        <property name="ptrtenrDateInd" type="string">
+            <column name="PTRTENR_DATE_IND" length="4" not-null="true">
+                <comment>Tenure Date Indicator</comment>
+            </column>
+        </property>
+        <property name="ptrtenrReviewDateInd" type="string">
+            <column name="PTRTENR_REVIEW_DATE_IND" length="4" not-null="true">
+                <comment>Tenure Review Date Indicator</comment>
+            </column>
+        </property>
+        <property name="ptrtenrEeoTenureInd" type="string">
+            <column name="PTRTENR_EEO_TENURE_IND" length="4" not-null="true">
+                <comment>EEO Tenure Indicator.</comment>
+            </column>
+        </property>
+        <property name="ptrtenrActivityDate" type="date">
+            <column name="PTRTENR_ACTIVITY_DATE" length="7" not-null="true">
+                <comment>The date of the last insert or update of this record</comment>
+            </column>
+        </property>
+        <set name="perappts" table="PERAPPT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PERAPPT_TENURE_CODE" length="8">
+                    <comment>Tenure Code.</comment>
+                </column>
+            </key>
+            <one-to-many class="ec.edu.espe.saturn.model.Perappt" />
+        </set>
+    </class>
+</hibernate-mapping>

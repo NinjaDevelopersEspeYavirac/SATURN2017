@@ -92,6 +92,11 @@ public class Ptrtenr  implements java.io.Serializable {
         this.perappts = perappts;
     }
 
+    @Override
+    public String toString() {
+        return "Ptrtenr{" + "ptrtenrCode=" + ptrtenrCode + ", ptrtenrDesc=" + ptrtenrDesc + ", ptrtenrDateInd=" + ptrtenrDateInd + ", ptrtenrReviewDateInd=" + ptrtenrReviewDateInd + ", ptrtenrEeoTenureInd=" + ptrtenrEeoTenureInd + ", ptrtenrActivityDate=" + ptrtenrActivityDate + '}';
+    }
+
 
 
 

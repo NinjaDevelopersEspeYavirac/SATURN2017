@@ -13,6 +13,7 @@ public class Perappt  implements java.io.Serializable {
      private Ptrtenr ptrtenr;
 
     public Perappt() {
+        this.id = new PerapptId();
     }
 
 	
@@ -39,8 +40,12 @@ public class Perappt  implements java.io.Serializable {
         this.ptrtenr = ptrtenr;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Perappt{" + "id=" + id + ", ptrtenr=" + ptrtenr + '}';
+    }
+    
+    
 
 }
 

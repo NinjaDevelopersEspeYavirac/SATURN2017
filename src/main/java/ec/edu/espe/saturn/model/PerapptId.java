@@ -289,8 +289,12 @@ public class PerapptId  implements java.io.Serializable {
         this.perapptUserId = perapptUserId;
     }
 
+    @Override
+    public String toString() {
+        return "PerapptId{" + "perapptPidm=" + perapptPidm + ", perapptActionDate=" + perapptActionDate + ", perapptOrgn=" + perapptOrgn + ", perapptCoasCode=" + perapptCoasCode + ", perapptPosn=" + perapptPosn + ", perapptSuff=" + perapptSuff + ", perapptBeginDate=" + perapptBeginDate + ", perapptEndDate=" + perapptEndDate + ", perapptApptEffDate=" + perapptApptEffDate + ", perapptNextDate=" + perapptNextDate + ", perapptTenureCode=" + perapptTenureCode + ", perapptInitialTenure=" + perapptInitialTenure + ", perapptTenureEffDate=" + perapptTenureEffDate + ", perapptTenureTracBeginDate=" + perapptTenureTracBeginDate + ", perapptTenureRevDate=" + perapptTenureRevDate + ", perapptRevtTenureCode=" + perapptRevtTenureCode + ", perapptRevtReappCode=" + perapptRevtReappCode + ", perapptCredit=" + perapptCredit + ", perapptTerminalAppt=" + perapptTerminalAppt + ", perapptDecisionDeferDate=" + perapptDecisionDeferDate + ", perapptDecision=" + perapptDecision + ", perapptDecisionDate=" + perapptDecisionDate + ", perapptComment=" + perapptComment + ", perapptDispCode=" + perapptDispCode + ", perapptFtypCode=" + perapptFtypCode + ", perapptPrevGrtTenr=" + perapptPrevGrtTenr + ", perapptAppealDate=" + perapptAppealDate + ", perapptActivityDate=" + perapptActivityDate + ", perapptTenureFte=" + perapptTenureFte + ", perapptUserId=" + perapptUserId + '}';
+    }
 
-
+    
 
 }
 

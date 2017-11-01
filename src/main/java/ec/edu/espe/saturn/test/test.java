@@ -107,22 +107,23 @@ public class test {
         System.out.println(" STVCAMP>> " + " CODIGO: " + objstvcamp.getStvcampCode() + " DESCRIPCION: " + objstvcamp.getStvcampDesc());
         
         //>>>OBTENER TITULARIDAD DOCENTES 
-        
-        //PTRTENR BUSCAR POR: ptrtenr_code, IMPRIMIR: ptrtenr_code, ptrtenr_desc
-         Ptrtenr objptrtenr = PtrtenrController.FindByCode("06");
-         System.out.println("PTRTENR>> Nº: " +objptrtenr.getPtrtenrCode()+" DESCRIPCION: "+objptrtenr.getPtrtenrDesc());
  
-        
-        //NBRJOBS BUSCAR POR: NBRJOBS_pidm, IMPRIMIR: nbrjobs_posn, nbrjobs_pict_code, nbrjobs_effective_date
+        //NBRJOBS BUSCAR POR: NBRJOBS_pidm, IMPRIMIR: nbrjobs_desc, nbrjobs_status
         List<Nbrjobs> objNbrjobs = NbrjobsController.FindByPIDMNbrjobs(7714);
         for (Nbrjobs jobs : objNbrjobs) {
-            System.out.println("NBRJOBS >> " + "PIDM: " + jobs.getId().getNbrjobsPidm() + " POSN: " + jobs.getId().getNbrjobsPosn() + " DESCRIPCION: " + jobs.getNbrjobsDesc() + " ESTATUS: " + jobs.getNbrjobsStatus());
+            System.out.println("NBRJOBS >> " + "PIDM: " + jobs.getId().getNbrjobsPidm() + " DESCRIPCION: " + jobs.getNbrjobsDesc() + " ESTATUS: " + jobs.getNbrjobsStatus());
         }
 
-//        //PERAPPT BUSCAR POR: perappt_pidm, IMPRIMIR: perappt_activity_date
+        //PERAPPT BUSCAR POR: perappt_pidm, IMPRIMIR: perappt_activity_date
         List<Perappt> objPerappt = PerapptController.FindByPidmPerappt(7714);
         for (Perappt pera : objPerappt) {
-            System.out.println("PERAPPT>> " +pera.getId().getPerapptTenureCode() +" "+ pera.getId().getPerapptActivityDate());
+            System.out.println("PERAPPT>> PIDM: "+ pera.getId().getPerapptPidm()+ " CODIGO: " +pera.getId().getPerapptTenureCode() +" FECHA ACTIVIDAD: "+ pera.getId().getPerapptActivityDate());
+                String TernureCode = pera.getId().getPerapptTenureCode();
+                   
+                    //PTRTENR BUSCAR POR: ptrtenr_code, IMPRIMIR: ptrtenr_code, ptrtenr_desc
+                   Ptrtenr objptrtenr = PtrtenrController.FindByCode(TernureCode);
+                    System.out.println("PTRTENR>> CODIGO: " +objptrtenr.getPtrtenrCode()+" DESCRIPCION: "+objptrtenr.getPtrtenrDesc());
+ 
         }
     }
 
